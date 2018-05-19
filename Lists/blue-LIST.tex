@@ -1,0 +1,76 @@
+%%%%%
+%%
+%% This file sets up the Blue datatype and creates Blue macros.  These
+%% are for bluesheets.
+%%
+%%%%%
+
+\DECLARESUBTYPE{Blue}{Element}
+\PRESETS{Blue}{
+  \FD\MYfile	{} %% filename (in \blues directory)
+  \FS\MYtext	{\ifx\MYfile\empty\else%
+		  \getextractenvs{document}{\blues/\MYfile}%
+		\fi}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Blue}{\bTest}{
+  \s\MYname	{Test Bluesheet}
+  \s\MYfile	{README.tex}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Blue}{\bGMPotions}{
+  \s\MYname	{GM info on potions}
+  \s\MYfile	{GM_Potions.tex}
+  }
+
+\NEW{Blue}{\bAtlantican}{
+  \s\MYname	{History and Structure of Atlantican Society}
+  \s\MYfile	{Atlantican.tex}
+  }
+  
+\NEW{Blue}{\bHuman}{
+  \s\MYname	{History and Structure of Europan Society}
+  \s\MYfile	{Human.tex}
+  }
+  
+\NEW{Blue}{\bHumanShort}{
+  \s\MYname	{History and Structure of Europan Society}
+  \s\MYfile	{HumanCurtailed.tex}
+  }  
+
+\NEW{Blue}{\bPacifican}{
+  \s\MYname	{A Brief History of Pacifica}
+  \s\MYfile	{Pacifican.tex}
+  }
+
+\NEW{Blue}{\bMagician}{
+  \s\MYname	{The Magician's Guild}
+  \s\MYfile	{Magician.tex}
+  }
+
+\NEW{Blue}{\bAssassin}{
+  \s\MYname	{The Assassin's Guild}
+  \s\MYfile	{Assassin.tex}
+  }
+
+\NEW{Blue}{\bGuardian}{
+  \s\MYname	{The Guardian's Guild}
+  \s\MYfile	{Guardian.tex}
+  }
+  
+\NEW{Blue}{\bExplorer}{
+  \s\MYname	{The Explorer's Guild}
+  \s\MYfile	{Explorer.tex}
+  }
+  
+\NEW{Blue}{\bMerchant}{
+  \s\MYname	{The Merchant's Guild}
+  \s\MYfile	{Merchant.tex}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

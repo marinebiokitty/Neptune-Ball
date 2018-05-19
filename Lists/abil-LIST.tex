@@ -1,0 +1,312 @@
+%%%%%
+%%
+%% This file sets up the Abil datatype and creates Abil macros.  These
+%% are for abilities that characters may have.
+%%
+%%%%%
+
+\DECLARESUBTYPE{Abil}{Element}
+\PRESETS{Abil}{
+  \F\MYtext	%% text of ability, read by user
+  \F\MYeffect	%% effect text of ability, read by recipient(s)
+  }
+
+
+%%%%%
+%% \ability{<name>}{<text>}{<effect>}
+%%
+%% \ability is a wrapper around \INSTANCE, useful for 1-shot abilities,
+%% etc.
+\newinstance{Abil}{\ability[3]}{
+  \s\MYname{#1}\s\MYtext{#2}\s\MYeffect{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Abil}{\aTest}{
+  \s\MYname	{Test Ability}
+  \s\MYtext	{You are a test.}
+  \s\MYeffect	{This is a Test.}
+  }
+
+\NEW{Abil}{\aSpecial}{
+  \s\MYname	{Special Powers}
+  \s\MYtext	{You have special powers, as detailed in your \gTest{}
+		greensheet.}
+  \s\MYeffect	{I have special powers!}
+  \s\MYgreens	{\gTest{}}
+  \suite
+  }
+
+\NEW{Abil}{\aFiremansCarry}{
+  \s\MYname	{Fireman's Carry}
+  \s\MYtext	{You can carry a body as if it were two hands bulky.}
+  \s\MYeffect	{I can carry this body well.}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  
+%% Basic DarkWater-style Martial Attack abilities
+
+
+%% Everyone has these 3
+\NEW{Abil}{\aAssist}{
+  \s\MYname	{Assist}
+  \s\MYtext	{You can assist someone else's attack.  You must be
+		within ZoC of both the attacker and target.  Within two
+		seconds of an attack, direct this at the attacker,
+		saying ``\MYname'' and your CR.}
+  \s\MYeffect	{I assist your attack.}
+  }
+
+\NEW{Abil}{\aKnockOut}{
+  \s\MYname	{Knock Out}
+  \s\MYtext	{You can knock someone out as an attack.  This requires
+		a {\bf blunt} weapon.  Say ``\MYname'' and your CR.}
+  \s\MYeffect	{I knock you out.}
+  }
+
+\NEW{Abil}{\aWound}{
+  \s\MYname	{Wound}
+  \s\MYtext	{You can wound someone as an attack.  This requires an
+		{\bf edged} weapon, such as a knife.  Say ``\MYname'' and
+		your CR.}
+  \s\MYeffect	{I wound you.}
+  }
+
+
+%% the \basecombat macro can be prepended to the Char abils list
+%% (in char-LIST.tex)
+\def\basecombat{\aKnockOut{}\aWound{}\aAssist{}}
+
+%% only some people have these
+\NEW{Abil}{\aDisarm}{
+  \s\MYname	{Disarm}
+  \s\MYtext	{You can disarm one item from someone as an attack.  Say
+		``\MYname'' and your CR.  Point at the item you want to
+		disarm.  If the attack works, they must drop that item.}
+  \s\MYeffect	{I disarm that item.}
+  }
+
+\NEW{Abil}{\aRestrain}{
+  \s\MYname	{Restrain}
+  \s\MYtext	{You can restrain someone as an attack.  Say ``\MYname''
+		and your CR.  You may freely drag, attack, or (if you have
+		a weapon) killing-blow them.  To do anything else, or if
+		your health state changes, incant ``release'' and let them
+		go.}
+  \s\MYeffect	{I restrain you.  You are restrained until I incant
+		``release.''}
+  }
+\NEW{Abil}{\aThrow}{
+  \s\MYname	{Throw}
+  \s\MYtext	{You can throw someone as an attack.  Say ``\MYname'' and
+		your CR.  Point in the direction you want to throw them.}
+  \s\MYeffect	{I throw you.  Go in the direction I point ten full steps
+		or until you hit a wall or similar.}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%Magic
+\NEW{Abil}{\aPerceive}{
+  \s\MYname	{Sense Magic}
+  \s\MYtext	{If you talk to someone for one minute, you may use this ability on them. }
+  \s\MYeffect	{Tell me your $\alpha$ score and show me all items labeled ``magical effect''.}
+  }
+
+\NEW{Abil}{\aLesserDispel}{
+  \s\MYname	{Lesser Dispel}
+  \s\MYtext	{Can completely remove a magical effect of level-2 or lower. Can be used on magical locks to increase your ``working hand'' size by 1 for the duration of the session. Can disrupt shape shifters.}
+  \s\MYeffect	{A faint light glows around you and dispels all magical effects of level 2 or lower.}
+  }
+
+\NEW{Abil}{\aGreaterDispel}{
+  \s\MYname	{Greater Dispel}
+  \s\MYtext	{Can break spells up to level-4. Can be used on magical locks to increase your ``working hand'' size by 2 for the duration of the session. Can disrupt shape shifters.}
+  \s\MYeffect	{A strong light glows around you and dispels all magical effects of level 4 or lower.}
+}
+
+\NEW{Abil}{\aAbsoluteDispel}{
+  \s\MYname	{Absolute Dispel}
+  \s\MYtext	{This ability can be used to do any of the following things an unlimited number of times: Can be used to dispel \emph{any} magical effect in game. Can bypass any magical lock. Can disrupt shape shifters. Can give you a defensive CR of 10 for 30 seconds, usable in response to an attack. Can cure wounds and wake unconscious targets instantly. Once the stone has been used, it cannot be used again for the next 5 minutes.}
+  \s\MYeffect	{A blinding light emanates from the stone.}
+}
+
+\NEW{Abil}{\aRevealed}{
+  \s\MYname	{Psychlim: Shape shifting Disrupted}
+  \s\MYtext	{If a dispel spell is cast on you (ask OOC if you aren't sure), the magic disrupts your shape shifting for a time. If a {\bf \aLesserDispel{}} is cast on you, you turn into a human for a split second. If a {\bf \aGreaterDispel{}} is cast on you, you turn into a human for 5 minutes (put on a green headband for the duration). If an {\bf \aAbsoluteDispel{}} is cast on you, you turn into a human for the rest of game (put on a green headband for the rest of game). In all cases, tell any observers what they see.}
+  \s\MYeffect	{Ask me what you see.}
+}
+
+\NEW{Abil}{\aRampage}{
+  \s\MYname	{Psychlim: Shape shifting Disrupted}
+  \s\MYtext	{If a dispel spell is cast on you (ask OOC if you aren't sure), the magic disrupts your shape shifting for a time, turning you into a CR 5 shark for the duration. Put on a shark headband. You go into a blind rage and attack anyone you can see with knockout attacks. You have vague control of your choice of targets, but prioritize those with red headbands. The transformation takes about 5 seconds (tell any observers what they see), and lasts until you are rendered unconscious, you can no longer see any conscious players, or the only conscious players left in sight have resisted your attacks this rampage. At that time, turn back, and if you are not already unconscious, fall unconscious for 1 minute.}
+  \s\MYeffect	{I turn into a shark.}
+}
+
+\NEW{Abil}{\aBloodthirsty}{
+  \s\MYname	{Bloodthirsty}
+  \s\MYtext	{You have become addicted to fresh blood. Use this ability on a willing or helpless target as a 10 count, with the count being ``I gnaw on your arm 1. I gnaw on you arm 2...'''. If you do not successfully use this ability at least once before \cTThree{}, activate your \aRampage{} ability. The blood of magicians tastes icky, and doesn't count.}
+  \s\MYeffect	{I gnaw on your arms and suck out the blood. Take a 1 CR penalty for 10 minutes.}
+}
+
+\NEW{Abil}{\aFirstAid}{
+  \s\MYname	{First Aid}
+  \s\MYtext	{Spend 1 minute roleplaying ministering to your patient. At the end of this minute, if they have not already died, show this card to them. They are no longer wounded or bloody.}
+  \s\MYeffect	{You are no longer wounded or bloody. Take off you red headband immediately and wake up after 2 minutes.}
+}
+
+%\NEW{Abil}{\aRunAway}{
+%  \s\MYname	{Run Away}
+%  \s\MYtext	{When you are affected by a CR-based attack, show this ability to your attacker. You become immune to CR-based attacks for 15 seconds, during which you must flee the dangerous situation, attempting to find your mother as soon as possible. This ability only refreshes when you spend one minute receiving comfort from your mother or another family member (roleplay accordingly).}
+%  \s\MYeffect	{Your ability has no effect.}
+%}
+
+%\NEW{Abil}{\aUnnoticed}{
+%  \s\MYname	{Unnoticed}
+%  \s\MYtext	{When you use this ability, you are effectively invisible for 2 minutes. Set your egg timer for 2 minutes and go 'Not Here.' At the end of the 2 minutes, when the timer goes off, announce to anyone nearby 'You see me,' and come back from 'Not Here.' You can activate this ability when no one can see you.}
+%  \s\MYeffect	{You don't see me.}
+%}
+
+\NEW{Abil}{\aTeleport}{
+  \s\MYname	{Teleport}
+  \s\MYtext	{When you use this ability, you go 'Not Here' and immediately move directly to any other location in game. You do not see or hear anything during this movement, and when you arrive, return from 'Not Here.' You may use this ability from anywhere in game and even while restrained, though not if you are unconscioius. This is a single use ability.}
+  \s\MYeffect	{I vanish.}
+}
+
+\NEW{Abil}{\aRemoveDisguise}{
+  \s\MYname	{Remove Disguise}
+  \s\MYtext	{When you use this ability, put on a purple headband. You reveal your true self, \cQueen{\King} \cQueen{} of \pAtlantis{}!}
+  \s\MYeffect	{I tear off my mask, alter my posture, and suddenly look totally different.}
+}
+
+\NEW{Abil}{\aMonsterTransformation}{
+  \s\MYname	{Monster Transformation}
+  \s\MYtext	{When you use this ability, call a game halt and find a GM. You resist any darkwater attack currently being leveled at you, break out of anything restraining you, and turn into a 10 foot tall terror of the deep. See the associated greensheet.}
+  \s\MYeffect	{Rawr!}
+  \s\MYgreens {\gMonsterTransformation{}}
+}
+
+\NEW{Abil}{\aDrawBlood}{
+  \s\MYname	{Siphon Soul}
+  \s\MYtext	{You draw a mote of the target's soul to pay the cost of a spell or potion. One draw is enough to pay for any spell or potion you can make in game, but feel free to charge more for more difficult or dangerous ones. {\bf This ability cannot be used on targets that are already bloody (wearing a red headband)}}
+  \s\MYeffect	{I draw a piece of your soul out through a cut in your arm. Put on a red headband for 5 minutes and suffer -1 CR for as long as you wear the red headband.}
+}
+
+\NEW{Abil}{\aXStep}{
+  \s\MYname	{Cross Step Waltz}
+  \s\MYtext	{You know how to Cross Step Waltz. If you would like to teach this to someone else, show them this card, then spend 5 minutes roleplaying teaching them (feel free to actually teach them if you know how).}
+  \s\MYeffect	{I teach you the basics of Cross Step Waltz. Learn enough to fake it out of game, then go to the ballroom to get a copy of this ability.}}
+
+
+\NEW{Abil}{\aMerengue}{
+  \s\MYname	{Merengue}
+  \s\MYtext	{You know how to Merengue. If you would like to teach this to someone else, show them this card, then spend 5 minutes roleplaying teaching them (feel free to actually teach them if you know how).}
+  \s\MYeffect	{I teach you the basics of Merengue. Learn enough to fake it out of game, then go to the ballroom to get a copy of this ability.}  
+}
+
+\NEW{Abil}{\aSwing}{
+  \s\MYname	{Swing}
+  \s\MYtext	{You know how to Swing. If you would like to teach this to someone else, show them this card, then spend 5 minutes roleplaying teaching them (feel free to actually teach them if you know how).}
+  \s\MYeffect	{I teach you the basics of Swing. Learn enough to fake it out of game, then go to the ballroom to get a copy of this ability.}
+}
+
+%\NEW{Abil}{\aInspiration}{
+%  \s\MYname	{Inspiration}
+%  \s\MYtext	{Use only when solving a puzzle or trivia question. For a puzzle, you may look at the answer and ignore any penalty for not having solved it. For a trivia question, go find a GM and ask them the answer to the question. You may use this ability twice in game, but the uses must be at least 5 minutes apart. If in doubt as to whether a question qualifies, ask a GM.}
+%  \s\MYeffect	{I know, I know!}
+%}
+
+\NEW{Abil}{\aNo}{
+  \s\MYname	{No.}
+  \s\MYtext	{This ability is the culmination of your will that you have built up over several years. You may refuse any one command that \cWitch{} gives you and become immune to \cWitch{\their} commands for 30 seconds by showing \cWitch{\them} this ability. This allows you to ignore the effects of the \iEnslavementSpell{}, {\bf but not} the \iIdentityProtectionSpell{}. This ability is single use.}
+  \s\MYeffect	{I refuse.}
+}
+
+\NEW{Abil}{\aShark}{
+  \s\MYname	{Collateral Damage}
+  \s\MYtext	{Use only on a target \emph{without} a red headband that you just knocked out. They are knocked out for 2 minutes instead of 5.}
+  \s\MYeffect	{I knock you out for 2 minutes instead of 5.}
+}
+
+\NEW{Abil}{\aReligiousRites}{
+  \s\MYname	{Religious Rites}
+  \s\MYtext	{You know how to perform different priestly rites, including, but not limited to, performing blessings, last rites, and weddings. Roleplay as you see fit given the gravity of the rite you perform. This may include requiring a certain number of participants and should definitely include a preacher voice as you wax poetic about the Moon and/or the Tides.}
+  \s\MYeffect	{I perform a religious ceremony.}
+}
+
+\NEW{Abil}{\aForge}{
+  \s\MYname	{Forgery}
+  \s\MYtext	{You have contacts outside of the palace who may be able to assist you in forging certain documents. You can interact with the \sForgery{} in the entryway. \emph{You can only forge documents that specifically reference this ability.} In order to use this mechanic, drop off a piece of \iPaper{} in envelope 1, then return 10 minutes later to receive the document from your contact (take the item from envelope 2).}
+  \s\MYeffect	{I am talking with a page.}
+}
+
+% Dance abilities
+
+%Triton
+\NEW{Abil}{\aJoy}{
+  \s\MYname	{Moon Joy}
+  \s\MYtext	{You are filled with an immesurable joy, wiping away the depression you've been feeling lately. Immediately increase your $\beta$ score cap by 2 and immediately fill your $\beta$ to your new maximum. You may use this ability once in the rest of game to recall this joy and increase your $\beta$ score by 2.}
+  \s\MYeffect	{I beam with happiness.}
+}
+
+% Adrianna normal, Jared
+\NEW{Abil}{\aTemperance}{
+  \s\MYname	{Temperance of the Moon}
+  \s\MYtext	{You call with divine authority for everyone around you to stop hostilities. Anyone within earshot of you cannot initiate any sort of combat for 5 minutes, though this does not affect attacks in progress. This has no effect within sight of a black headband. This is a one use ability.}
+  \s\MYeffect	{I call with divine authority for everyone to STOP.}
+}
+
+% Adrianna Super
+\NEW{Abil}{\aClarity}{
+  \s\MYname	{Clarity of the Moon}
+  \s\MYtext	{You glow with divine authority. If the last statement that the person you're talking to told you was a lie, they must tell you so. If it was a half truth, they must tell you that as well. Otherwise, they may tell you that it was the unvarnished truth. Tell them out of game that they may not lie on this.}
+  \s\MYeffect	{I glow with moonlight. If your last statement was a lie or a half-truth, you must tell me so out of game.}
+}
+
+
+% Sebastian, Pearl, Desiree, Hermes
+\NEW{Abil}{\aTruth}{
+  \s\MYname	{Truth of the Moon}
+  \s\MYtext	{Once per game, when you are legitimately, objectively, telling the truth, you may use this ability to compel one person to believe you. This does not work on NPCs.}
+  \s\MYeffect	{You believe that I am telling the truth.}
+}
+
+% Valerie
+\NEW{Abil}{\aDexterity}{
+  \s\MYname	{Dexterity of the Moon}
+  \s\MYtext	{You open your mind to the light of the Goddess and feel your fingers grow lighter than ever. 
+	
+	Your working hand size for lockpicking increases by 1.  Every time you fail to pick a lock, reduce the difficulty by 1, instead of every second time as stated on the greensheet.}
+  \s\MYeffect	{My fingers grow faintly and move more quickly.}
+}
+
+% Gladius, Iris, Ariel
+\NEW{Abil}{\aProtection}{
+  \s\MYname	{Protection of the Moon}
+  \s\MYtext	{Once per game, you may resist any one attack currently in progress against you, no matter how powerful, and any attack made against you for the next 10 seconds. This works against waylays as well.}
+  \s\MYeffect	{A bright pulse of moonlight deflects your strike.}
+}
+
+% Morvyn
+\NEW{Abil}{\aSight}{
+  \s\MYname	{Moonsight}
+  \s\MYtext	{3 times per game, you may spend 3 minutes alone casting the Tarot. At the end of this time you may ask the Moon Goddess (a GM) a question. The Moon Goddess may or may not choose to answer your question, but a refusal will not use up your uses of this ability.}
+  \s\MYeffect	{My eyes glow bright with moonlight.}
+}
+
+% Willow
+\NEW{Abil}{\aCloak}{
+  \s\MYname	{Moon Cloak}
+  \s\MYtext	{Two times in the game, you may go ``Not Here'' for two minutes. At the end of this time, you pop back into existence - show anyone who sees you this ability. In this state, you can see and hear everything around you, but other people can not see or hear you (inform them of this). You may only use this ability when not observed.}
+  \s\MYeffect	{I pop into existence.}
+}
+
+\NEW{Abil}{\aBlades}{
+  \s\MYname	{Moon Blades}
+  \s\MYtext	{Your unarmed attacks become capable of wounding, and don’t cause the target to bleed.}
+  \s\MYeffect	{My forearms sprout blades of light.}
+}

@@ -1,0 +1,51 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2013.1.10)  10 JAN 2013 23:40
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**"C:/Users/Acata/Desktop/Guild Camp/sgs-guild-camp-2012/LaTeX/guildcamp1.cls"
+(c:/Users/Acata/Desktop/Guild Camp/sgs-guild-camp-2012/LaTeX/guildcamp1.cls
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+runsystem(echo \begingroup\catcode`\*0> TempWindowsEnvironmentVariable.tex)...e
+xecuted.
+
+runsystem(echo *catcode`*\=12>> TempWindowsEnvironmentVariable.tex)...executed.
+
+runsystem(echo *noexpand*gdef*gamepath{%guildcamp1%}*endgroup>> TempWindowsEnvi
+ronmentVariable.tex)...executed.
+
+(./TempWindowsEnvironmentVariable.tex)
+! I can't find file `C:\Users\Acata\Desktop\Guild'.
+\gamepath ->C:\Users\Acata\Desktop\Guild 
+                                         Camp\sgs-guild-camp-2012
+l.269 \input \latex
+                   /gametex.sty
+(Press Enter to retry, or Control-Z to exit)
+Please type another input file name
+! Emergency stop.
+\gamepath ->C:\Users\Acata\Desktop\Guild 
+                                         Camp\sgs-guild-camp-2012
+l.269 \input \latex
+                   /gametex.sty
+*** (job aborted, file error in nonstop mode)
+
+ 
+Here is how much of TeX's memory you used:
+ 70 strings out of 493488
+ 1060 string characters out of 3144727
+ 49432 words of memory out of 3000000
+ 3468 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 5i,0n,5p,209b,22s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,51 @@
+%%%%%
+%%
+%% Research Notebooks live in this directory.  This file doubles as a
+%% latex'able example notebook.
+%%
+%% Notebook macros (in ../Lists/notebook-LIST.tex, presumably) each
+%% have a file that lives here.  The argument to \startnotebook{...}
+%% probably should be the macro for the given whitesheet.  However,
+%% you can also just use \name{Some Text} if you want.
+%%
+%% Note that every \startnotebook command needs a matching
+%% \endnotebook command.  Also note that no ownership information
+%% appears on the notebook.
+%%
+%%%%%
+
+\documentclass[greennotebook]{NeptuneBall}
+\begin{document}
+
+%\item 
+%\item 
+
+\startnotebook{\nMafia{}}
+
+\begin{page}{first}
+
+You are determined to catch the mafia contact here tonight. You will need to figure out who it is though. Since you have been investigating the mafia for several years now, you should be able to spot the necessary clues. Do a background check on as many people as necessary (see your ``\gBackground{\MYname}'' greensheet) to find your suspect. Turn to page \nbref{second} when directed to do so by your ``\nMafia{\MYname}'' membook.
+
+\end{page}
+
+\begin{page}{second}
+
+This is incredibly disturbing. The Church of the Tides involved in selling children? Or is the priest thing just an act? This warrants further investigation. Spend 2 minute talking to a \pPacifica{}n and see if you can learn more about the black market. Once you have done so, turn to page \nbref{third}
+
+\end{page}
+
+\begin{page}{third}
+
+The more you learn, the more disgusted you are. If \cPriest{} is actually involved in this black market, it would be enough to put \cPriest{\them} away for life. You just have to prove it. You will have to persuade \cPriest{} to sell or trade you a child. You will also need to obtain some sort of physical documentation of the exchange - a receipt, contract, or the like - or a reliable witness. Once you have achieved this, turn to page \nbref{fourth}.
+
+\end{page}
+
+\begin{page}{fourth}
+
+With this proof, you should be able to arrest \cPriest{}. Rather than try to do it now though, it is probably worth letting the Guardian's Guild tail \cPriest{\them} for a few weeks and see if \cPriest{} leads them to the rest of the mafia. If \cPriest{} does anything too illegal though, you might be forced to persuade \cKing{} to arrest \cPriest{} tonight.
+
+\end{page}
+
+\endnotebook
+
+\end{document}

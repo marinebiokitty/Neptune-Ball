@@ -1,0 +1,1362 @@
+
+%%%%
+%%
+%% This file sets up the Sign and Label datatypes and creates Sign and
+%% Label macros.
+%%
+%% Signs generally represent interesting parts of game area, usually
+%% as things posted on walls.  Labels represent other things, often on
+%% or inside envelopes, that are part of complex mechanics.
+%%
+%% The default value for \MYloc will inherit location from the Place
+%% or Sign most immediately up the ownership tree.  Override this by
+%% setting \MYloc to anything (even blank).
+%%
+%% Sign is for full-sized signs that would cover most of a large
+%% manila envelope; SignMedium is for signs sized to half-sized manila
+%% envelopes; SignSmall is for signs sized for small manila envelopes
+%% (the same size as item cards).  Label, LabelMedium, and LabelSmall
+%% are analagous, but they don't have a \takedownby note at the
+%% bottom.  You can always use a sign or label without an envelope or
+%% with a differently-sized envelope.  Choose which based on
+%% visibility and content.
+%%
+%% SignTiny is for signs you want to be hard to find; it is small and
+%% does not have a \takedownby note.  SignDot is for a very small
+%% "dot" which only has a title.
+%%
+%% SignStrip produces a strip of paper (without a \takedownby note)
+%% with labels on the outside that show on both sides if you fold it
+%% in half.  These are a convenient alternative to sub-envelopes. They
+%% can also be used for "s-packets" taped to walls (see
+%% Extras/README-s-packets).
+%%
+%% LabelCover produces a label similar to the cover to a research
+%% notebook.  LabelPage, likewise, produces a page.
+%%
+%% EOG is for full-sized end-of-game signs.
+%%
+%%%%%
+
+\DECLARESUBTYPE{Sign}{Element}
+\PRESETS{Sign}{
+  \FD\MYloc	{\mylocation} %% real-space location
+  \FD\MYtext	{} %% text of sign
+  }
+\POSTSETS{Sign}{
+  \edef\mylocation{\MYloc}
+  \protected@edef\@ownerstring{%
+    \MYname%
+    \ifx\mylocation\empty\else\ (\mylocation)\fi%
+    }
+  }
+\def\mylocation{}
+
+\def\loc#1{\rs\MYloc{#1}}
+
+\DECLARESUBTYPE{SignMedium}{Sign}
+\DECLARESUBTYPE{SignSmall}{Sign}
+\DECLARESUBTYPE{SignTiny}{Sign}
+\DECLARESUBTYPE{SignDot}{Sign}
+\PRESETS{SignDot}{\s\MYtext{}}
+
+\DECLARESUBTYPE{Label}{Sign}
+\PRESETS{Label}{\s\MYloc{}}
+\DECLARESUBTYPE{LabelMedium}{Label}
+\DECLARESUBTYPE{LabelSmall}{Label}
+
+\DECLARESUBTYPE{SignStrip}{Sign}
+\DECLARESUBTYPE{LabelCover}{Label}
+\DECLARESUBTYPE{LabelPage}{Label}
+
+\DECLARESUBTYPE{EOG}{Sign}
+\PRESETS{EOG}{%
+  \s\MYname	{End Of Game}
+  \s\MYtext	{{\bf\Huge You may not pass through here.}}
+  }
+
+
+%%%%%
+%% \signbig[<location>]{<name>}{<text>}
+%% \eog[<location>]
+%%
+%% \signmdeium[<location>]{<name>}{<text>}
+%% \signsmall[<location>]{<name>}{<text>}
+%% \signtiny[<location>]{<name>}{<text>}
+%% \signdot[<location>]{<name>}
+%%
+%% \labelbig{<name>}{<text>}
+%% \labelmedium{<name>}{<text>}
+%% \labelsmall{<name>}{<text>}
+%%
+%% \signstrip[<location>]{<name>}{<text>}
+%% \labelcover{<name>}{<text>}
+%% \labelpage{<name>}{<text>}
+\newinstance{Sign}{\signbig[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{EOG}{\eog[1][\mylocation]}{\s\MYloc{#1}}
+
+\newinstance{SignMedium}{\signmedium[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{SignSmall}{\signsmall[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{SignTiny}{\signtiny[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{SignDot}{\signdot[2][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}}
+
+\newinstance{Label}{\labelbig[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+\newinstance{LabelMedium}{\labelmedium[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+\newinstance{LabelSmall}{\labelsmall[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+
+\newinstance{SignStrip}{\signstrip[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{LabelCover}{\labelcover[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+\newinstance{LabelPage}{\labelpage[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+
+
+%%%%%
+%% \sEOG{}
+%% use \sEOg[\loc{<location>}]{} for EOG sign at a specific place
+\NEW{EOG}{\sEOG}{
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Sign}{\sTest}{
+  \s\MYname	{A Room}
+  \s\MYloc	{10-250}
+  \s\MYtext	{A lecture hall with large, sliding blackboards.}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The bedrooms
+\NEW{Sign}{\sKing}{
+  \s\MYname	{King Triton's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{These are the private quarters of King Triton.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sKingPapers}{
+  \s\MYname	{King Triton's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{There is nothing useful here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sGeneral}{
+  \s\MYname	{General Gladius' Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{General \cGeneral{} and Lady \cQueen{} are staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sGeneralPapers}{
+  \s\MYname	{General Gladius' Papers / Lady Iris' Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{A plateau would be a great place to mass an army and prepare for war.}
+  \s\MYitems {}
+}
+
+
+\NEW{Sign}{\sMorvyn}{
+  \s\MYname	{Pandora's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cSlave{} and \cWitch{} are staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sMorvynPapers}{
+  \s\MYname	{Pandora's Papers / Pearl's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{There is nothing useful here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPriest}{
+  \s\MYname	{Mercury's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cPriest{} is staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPriestPapers}{
+  \s\MYname	{Mercury's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{The patron animal of The Church of the Tides is the Sperm Whale.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPrincess}{
+  \s\MYname	{Adriana's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is \cPrincess{}'s private quarters.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPrincessPapers}{
+  \s\MYname	{Adriana's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{There is nothing useful here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sAriel}{
+  \s\MYname	{Ariel's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cAriel{} and \cWillow{} are staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sArielPapers}{
+  \s\MYname	{Ariel's Papers / Willow's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{The \ppolio{} vaccine was developed in the province of \pCity{}.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sManta}{
+  \s\MYname	{Sebastian's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{These are \cManta{}'s private quarters.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sMantaPaper}{
+  \s\MYname	{Sebastian's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{The papers go on for quite a while about some \cMother{\mer} named \cMother{}. You can't really understand why though. The documents are clearly incomplete.
+  }
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sDiplomat}{
+  \s\MYname	{Mirage's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cDiplomat{} is staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sDiplomatPapers}{
+  \s\MYname	{Mirage's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\pGazaStrip{} is so precious to \pPacifica{} because \cLiar{} saw the Kraken there on \cKraken{}.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPrince}{
+  \s\MYname	{Jared's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cPrince{} and \cBodyguard{} are staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPrincePapers}{
+  \s\MYname	{Jared's Papers / Valerian's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\pGazaStrip{} is so precious to \pPacifica{} because \cLiar{} saw the Kraken there on \cKraken{}.
+  
+  The Campbell Plateau is south of the Tasmanian Sea.
+  
+   {\bf You may only take an item from this sign if your $\gamma$ score is 2.}
+   If you have an $\gamma$ score of 2, you may place both hands on it for 30 seconds and then take the item from the packet.}
+  \s\MYitems {\iReference{}}
+}
+
+\NEW{Sign}{\sSpy}{
+  \s\MYname	{Damien's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cSpy{} is staying here.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sSpyPapers}{
+  \s\MYname	{Damien's Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cMother{} was a \pPacifica{}n \cMother{\prince} many years ago. There is very little information about \cMother{\them}}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sPlant}{
+  \s\MYname	{Osiris's Room}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is \cPlant{}'s private quarters.
+  
+  There are three ways to gain entrance to this bedroom:
+
+{\bf 1. } Be one of the people staying in this room. 
+
+{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+
+{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+
+Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.}
+  \s\MYitems {\multi{10}{\iWillPacket{}}}
+}
+
+\NEW{Sign}{\sPlantPapers}{
+  \s\MYname	{Osiris' Papers}
+  \s\MYloc	{- 002}
+  \s\MYtext	{There is nothing coherent here.}
+  \s\MYitems {}
+}
+ 
+%Library
+\NEW{Sign}{\sMuseum}{
+  \s\MYname	{The Royal Museum}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This area houses the royal treasury and the royal archives. It is a large, open space with vaulted ceilings and many priceless artifacts scattered among the ancient texts.}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sMuseumItems}{
+  \s\MYname	{The Royal Treasury}
+  \s\MYloc	{- 002}
+  \s\MYtext	{There are many valuable items in the Royal Treasury. They chronicle the history of \pAtlantis{}n art. They are on display for all citizens to enjoy.
+  
+  The acting ruler of \pAtlantis{} has the authority to dispense these items as rare and valuable gifts. (The ruler may take the sign off the wall; it now becomes an in game item.) This only happens once in a lifetime or so, since the items are so dear to \pAtlantis{}. It is a sign of highest honor to receive one.
+  
+  Some items may also be vulnerable to being broken or destroyed. It is a crime punishable by 10 years of hard labor to destroy or steal an artifact housed in the Royal Treasury.}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sArtifactZero}{
+  \s\MYname	{An Empty Pedestal}
+  \s\MYloc	{- 002}
+  \s\MYtext	{There is an empty pedestal here. There is no plaque. It is anyone's guess what it is meant to hold.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sArtifactZeroRestored}{
+  \s\MYname	{Athena's Music Box}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cAthena{}'s music box is a powerful magical artifact which plays a beautiful melody that helps to protect \pAtlantis{}.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sArtifactOne}{
+  \s\MYname	{The Bow of Artemis}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This bow is rumored to have been used by Artemis, one of \pAtlantis{}'s greatest warriors. It is very valuable.}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sArtifactTwo}{
+  \s\MYname	{Necklace of Diana} %%Diana is the greek goddess of the moon
+  \s\MYloc	{- 002}
+  \s\MYtext	{This piece is an elaborate necklace. It is the crowning achievement of a famous \pAtlantis{}n jeweler, \cJeweler{}. It's centerpiece is a huge black pearl.
+  
+  \emph{You can hit this piece with a CR 8+ attack to break it. If you do, take \iPearl{} from the envelope below and swap this sign with the one under it.}
+  }
+  \s\MYitems {\iPearl{}}
+} 
+
+\NEW{Sign}{\sArtifactTwoBroken}{
+  \s\MYname	{Ruined Necklace of Diana}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This piece was once an elaborate and expensive necklace. It was the crowning achievement of a famous \pAtlantis{}n jeweler, \cJeweler{}. The protective case has been smashed and the necklace has been mangled. Whatever used to hang as the pendant has been removed.}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sArtifactThree}{
+  \s\MYname	{Cassandra's Mirror} %%
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is the pedestal display for \iScryingMirror{}. This artifact is rumored to show the future to those pure of heart.
+  
+   \emph{You can hit this display with a CR 8+ attack to break the glass protecting the mirror. Alternately, if you can {\bf pick locks}, you may break in at difficulty 8. If you do either of these, take \iScryingMirror{} from the envelope below and swap this sign with the one under it.}}
+
+  \s\MYitems {\iScryingMirror{}}
+} 
+
+\NEW{Sign}{\sArtifactThreeBroken}{
+  \s\MYname	{A Pedestal Displaying Nothing}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This pedestal stands empty, but the tag underneath it says that \iScryingMirror{} should be on display. Where could it be?}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sArtifactFour}{
+  \s\MYname	{Ornate Box} 
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is the pedestal display for an ornate box inscribed with ancient runes.
+  
+  A small plaque under the box explains that the runes on the box are believed to be \pPacifica{}n in origin.
+  
+  There is a circular indentation on the front of the box, bearing the \pPacifica{}n royal crest. If you have a signet ring bearing the crest of \pPacifica{}, you may open the box. If you do so, take the item from the packet below and, replace this sign with the one under it.}
+
+  \s\MYitems {\iJournal{}}
+} 
+
+\NEW{Sign}{\sArtifactFourOpened}{
+  \s\MYname	{Open Ornate Box}
+  \s\MYloc	{- 002}
+  \s\MYtext	{The ornate box stands open. There is a cavity inside big enough to hold a small book.
+  
+  A small plaque under the box explains that the runes on the box are believed to be \pPacifica{}n in origin.
+  
+  There is a circular indentation on the front of the box, bearing the \pPacifica{}n royal crest.}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sBookshelf}{
+  \s\MYname	{A Bookshelf}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is a bookshelf. There are many books here for perusal, both casual and intense.
+  
+  {\bf If you would like to read one of the books, put one hand on this sign for 2 minutes, then take out the page from the packet labeled appropriately. Replace the page in the packet once you are done looking at it.}
+  
+  Books on this shelf:
+  \begin{itemize}
+  \item Royal History
+  \item History of The Merchant's Guild
+  \item History of the Guardian's Guild
+  \item History of the Explorer's Guild
+  \item History of Magic
+  \end{itemize}
+  }
+  \s\MYitems {}
+}
+
+\NEW{SignMedium}{\sRoyalHistory}{
+  \s\MYname	{A Book of Royal History}
+  \s\MYloc	{- 002}
+  \s\MYtext	{\cNixie{} gave \cExKing{} the \iTrident{}.
+  }
+  \s\MYitems {}
+}
+
+\NEW{SignMedium}{\sGuardianHistory}{
+  \s\MYname	{A Book of The Guardian's Guild History}
+  \s\MYloc	{- 002}
+  \s\MYtext	{The current leader of the Guardian's Guild is \cKratos{}. \cKratos{\They} is \cKratos{\MYnumber} years old.}
+  \s\MYitems {}
+}
+
+\NEW{SignMedium}{\sMerchantHistory}{
+  \s\MYname	{A Book of The Merchant's Guild History}
+  \s\MYloc	{- 002}
+  \s\MYtext	{
+  The current leader of the Merchant's guild is \cNautilus{}. \cNautilus{\They} is \cNautilus{\MYnumber} years old.
+  }
+  \s\MYitems {}
+}
+
+\NEW{SignMedium}{\sExplorerHistory}{
+  \s\MYname	{A Book of The Explorer's Guild History}
+  \s\MYloc	{- 002}
+  \s\MYtext	{
+  The current leader of the Explorer's guild is \cOsiris{}. \cOsiris{\They} is \cOsiris{\MYnumber} years old.
+  }
+  \s\MYitems {}
+}
+
+\NEW{SignMedium}{\sMagicHistory}{
+  \s\MYname	{A Book of the History of Magic}
+  \s\MYloc	{- 002}
+  \s\MYtext	{The \iGlowShell{} is a magical artifact purported to bring marital bliss.
+  }
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sBookshelfRapsheet}{
+  \s\MYname	{A Bookshelf}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is a bookshelf. There are many books here for perusal, both casual and intense.
+  
+    {\bf You may only take an item from this bookshelf if your $\gamma$ score is 2.} 
+    If you have an $\gamma$ score of 2, you may place both hands on it for 30 seconds and then take the item from the packet.
+  
+  If you would like to take a book from the bookshelf, place both hands on this sign for 30 seconds.}
+  \s\MYitems {\iRapSheet{}}
+} 
+
+\NEW{Sign}{\sBookshelfBook}{
+  \s\MYname	{A Bookshelf}
+  \s\MYloc	{- 002}
+  \s\MYtext	{This is a bookshelf. There are many books here for perusal, both casual and intense.
+  
+  {\bf You may only take an item from this bookshelf if your $\alpha$ score is 2.}
+  If you have an $\alpha$ score of 2, you may place both hands on it for 30 seconds and then take the item from the packet.
+  }
+  \s\MYitems {\iBook{}}
+}  
+
+\NEW{Sign}{\sBlackboard}{
+  \s\MYname	{Blackboard}
+  \s\MYloc	{-002}
+  \s\MYtext	{A blackboard with a few scribbles on it. Nothing too interesting.
+  
+  {\bf You may only interact with this sign if you have an $\alpha$ score of 2.}
+	f}
+  \s\MYitems {\multi{5}{\iChalk{}}}
+}
+
+\NEW{Sign}{\sInheritance}{
+  \s\MYname	{Book of Lineage}
+  \s\MYloc	{-002}
+  \s\MYtext	{A book documenting the long, proud lineage of \pAtlantis{}n rulers. It also contains a document detailing the complicated inheritance for the crown of \pAtlantis{}. If you would like to view this inheritance, you may lift this sign and look at the one under it.}
+  \s\MYitems {}
+  }
+
+\NEW{Sign}{\sLineageOne}{
+  \s\MYname	{Atlantican Inheritance Pg 1}
+  \s\MYloc	{-002}
+  \s\MYtext	{
+  It may come to pass that the currently confirmed or acting ruler of \pAtlantis{} dies or is otherwise found unfit to rule. This can come about in a number of ways. They could be found mentally unstable, demonstrated to have usurped power from the rightful heir, be an illicit form of magical creature (such as a shapeshifter), or be proven to have committed treason. The supreme justice, judge of the highest court of the land may be summoned (find a GM or NPC) to verify any claim that the ruler is unfit. If any of these conditions can be proven to have come to pass, the monarch is then immediately removed. 
+
+To determine who is next in line of succession, follow the list below until you find the first eligible candidate. Assume all classifications that could have multiple members (more than one male child for example) process in order of age. Women who marry into another line of succession forfeit their position in line for the throne of their old kingdom. Bastards of proven lineage are eligible. For example, a bastard cousin is considered in the line of succession as appropriate.
+
+From the last \emph{confirmed} (not acting) ruler of \pAtlantis{} power passes to:
+\begin{multicols}{2}
+\begin{enumerate}
+\item Male children
+\item Female children
+\item Husband or Wife
+\item Brothers 
+\item Sisters
+\item Brothers-in-law
+\item Sisters-in-law
+\item The Father
+\item The Mother
+\item Uncles on the {\bf Father’s} side
+\item Uncles on the {\bf Mother’s} side
+\item Aunts on the {\bf Father’s} side
+\item Aunts on the {\bf Mother’s} side
+\item Male cousins on the {\bf Father’s} side
+\item Male cousins on the {\bf Mother’s} side
+\item Female cousins on the {\bf Father’s} side
+\item Female cousins on the {\bf Mother’s} side
+\end{enumerate}
+\end{multicols}
+
+If for some reason, no eligible candidate can be  found, the Council of Advisors will elect a new monarch in a closed meeting as soon as possible. (out of the scope of the game.)
+
+Cont. on PG 2 (You may lift this sign up and read the sign under it.)
+  }
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sLineageTwo}{
+  \s\MYname	{Atlantican Inheritance Pg 2}
+  \s\MYloc	{-002}
+  \s\MYtext	{
+
+If power passes to a new person, the acting monarch is considered only a steward until confirmed. If the discredited person manages to reestablish their eligibility before the acting monarch is confirmed they can re-assume power immediately. The process of actually confirming the monarch takes about a week and is the duty of the Council of Advisors.
+
+In order to pass power to the acting monarch:
+\begin{enumerate}
+\item The supreme justice must preside over the ceremony
+\item The eligibility of the candidate must be verified by at least 2 \pAtlantis{}ns (using the chart above).
+\item They need to take an oath to protect \pAtlantis{} in front of 3 witnesses in addition to the supreme justice (at least 1 must be \pAtlantis{}n).
+\end{enumerate}
+
+Following the completion of the ceremony, NPC pages will inform everyone in game of the change.
+
+\iTrident{} rightfully belongs to the acting ruler of \pAtlantis{}. The acting monarch should not hesitate to use his or her extensive authority to acquire  \iTrident{} if anyone is foolish enough to withhold it.
+
+  }
+  \s\MYitems {}
+}
+
+
+\NEW{SignSmall}{\sGlowingBrick}{
+  \s\MYname	{Glowing Brick}
+  \s\MYloc	{}
+  \s\MYtext	{A random brick is glowing.
+  
+  {\bf You may not interact with this sign unless you know otherwise.}}
+  \s\MYitems {}
+}
+
+% Glow Shell Plot Signs
+\NEW{Sign}{\sGlowShellStart}{
+  \s\MYname	{An ornate chest}
+  \s\MYloc	{-002}
+  \s\MYtext	{This exquisitely decorated chest has a large, strange lock with no keyhole. Instead, the lock has four smooth stones arranged around a larger stone in the center, with a picture of a glowing shell on it. Touching one of the four stones causes words to appear faintly on the surface of the larger one, displaying a cryptic riddle...
+	
+	If you would like to try to open this chest, you will need to find the four answers associated with the different stones, in order - North, East, South, West. Each of the four stones will present a riddle. When you think you have solved the riddle, lift the respective sign. If your answer exactly matches the answer displayed, you have solved the puzzle and may move on to the next stone immediately. Otherwise, you must wait a certain amount of time before you can consider yourself to have solved it (your character is still puzzling out the solution in their head, so during this time, you cannot share the answer). This penalty starts at 15 minutes, and requires an additional 15 minutes for each time you have answered incorrectly in the past. Once you have solved a puzzle, you don't need to retain the answer (your character remembers it).
+	
+	When you know all four answers, you may attempt to open the chest with them. Solve the riddle on the large stone lock, then lift the sign. If you are correct, you may open the chest by replacing this sign with the one below it and removing the item from the packet below. If you answered incorrectly, you must take a time penalty as if you had failed at one of the stone's riddles before opening the chest.}
+  \s\MYitems {\iGlowShell{}}
+  }
+	
+\NEW{Sign}{\sGlowShellEnd}{
+  \s\MYname	{An open ornate chest}
+  \s\MYloc	{-002}
+  \s\MYtext	{This exquisitely decorated chest has a large, strange lock with no keyhole. The lock is open and whatever was inside is gone.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sSouthStoneCover}{
+  \s\MYname	{3. South Stone}
+  \s\MYloc	{-002}
+  \s\MYtext	{\emph{Do not attempt to interact with this sign until directed to do so} \\
+
+	The words on the large stone direct you to a book on a nearby bookshelf that has suddenly started to glow. You open the book to a confusing set of shifting numbers. \\
+	
+	f you would like to attempt to solve this riddle, lift only \emph{this} sign to find the sign marked ``North Stone Question'' and find the riddle below.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sSouthStoneQuestion}{
+  \s\MYname	{South Stone Question}
+  \s\MYloc	{-002}
+  \s\MYtext	{Take a Sudoku puzzle from the envelope below and solve for the spaces marked with a red circle. Once you find the three numbers indicated, put them in numerical order and check your answer on the sign below this one. You will not need to solve the entire Sudoku to complete this puzzle.\\
+	
+	{\bf Sudoku rules} \\
+	The objective of a sudoku is to fill a 9 Ã— 9 grid with digits so that each column, each row, and each of the nine 3 Ã— 3 sub-grids that compose the grid contains all of the digits from 1 to 9 once. Each puzzle has a unique solution.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sSouthStoneAnswer}{
+  \s\MYname	{South Stone Answer}
+  \s\MYloc	{-002}
+  \s\MYtext	{{\bf 169} \\
+	You may move on to the riddle of the West stone. If you did not answer this question correctly, take a 15 minute penalty first.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sEastStoneCover}{
+  \s\MYname	{2. East Stone}
+  \s\MYloc	{-002}
+  \s\MYtext	{\emph{Do not attempt to interact with this sign until directed to do so.} \\
+	
+	The words on the large stone show a scene of the Gardens with a golden inscription of shifting letters. You should go there to find the next clue. \\
+	
+	If you would like to attempt to solve this riddle, lift the \sEastStoneHidden{} in the Gardens to find the sign marked ``East Stone Question'' and find the riddle below. Lift this sign when you are ready to check your answer.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sEastStoneHidden}{
+  \s\MYname	{E Sign}
+  \s\MYloc	{-032}
+  \s\MYtext	{\emph{Do not attempt to interact with this sign until directed to do so}}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sEastStoneQuestion}{
+  \s\MYname	{East Stone Question}
+  \s\MYloc	{-032}
+  \s\MYtext	{The lock has challenged you with a set of anagrams. The puzzle is transcribed on the sheet in the packet below.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sEastStoneRiddle}{
+  \s\MYname	{East Stone Riddle}
+  \s\MYloc	{-032}
+  \s\MYtext	{
+	
+	Anagram each of these words, putting the answer in the spaces. Instead of putting the letter where the number is, place it in the final answer slot that corresponds to it.
+	
+	Balm \\
+	\underline{\hspace{.5cm}}   1   \underline{\hspace{.5cm}} \underline{\hspace{.5cm}}
+	
+	Earth \\
+	2   \underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}}
+	
+	Wolf \\
+	3   \underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}}
+	
+	Lump \\
+	\underline{\hspace{.5cm}}   4   \underline{\hspace{.5cm}} \underline{\hspace{.5cm}}
+	
+	Answers
+	1   2   3   4 \\
+	\underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}}
+	
+	Now create a word from the answers above. This is your final answer.
+	
+	Final Answer
+	\underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}} \underline{\hspace{.5cm}}}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sEastStoneAnswer}{
+  \s\MYname	{East Stone Answer}
+  \s\MYloc	{-002}
+  \s\MYtext	{{\bf Half} \\
+	
+	You may move on to the riddle of the South stone. If you did not answer this question correctly, take a 15 minute penalty per question you have failed first.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sNorthStoneCover}{
+  \s\MYname	{1. North Stone}
+  \s\MYloc	{-002}
+  \s\MYtext	{\emph{Read the sign for ''An ornate chest'' before attempting to interact with this sign.} \\
+	
+	The words on the large stone show a hazy magical rune that you can't quite make out. Out of the corner of your eye, you notice a small piece of the wall light up behind you. \\
+	
+	If you would like to attempt to solve this riddle, lift only \emph{this} sign to find the sign marked ``North Stone Question'' and find the riddle below.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sNorthStoneQuestion}{
+  \s\MYname	{North Stone Question}
+  \s\MYloc	{-002}
+  \s\MYtext	{You are searching for a magical rune hidden somewhere around the palace. The \sGlowingBrick{}s are the possible locations of the rune. When you find one, you may look inside the packet. When you find the rune inside {\bf do not remove it} - finding it is sufficient to solve the puzzle. When you have found the rune, you may move on to the riddle of the East stone.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sWestStoneCover}{
+  \s\MYname	{4. West Stone}
+  \s\MYloc	{-002}
+  \s\MYtext	{\emph{Do not attempt to interact with this sign until directed to do so} \\
+	
+	The images on the large stone show a set of paintings you recognize from the Banquet Hall. You're not quite sure what to make of it - maybe you're supposed to look for clues there? \\
+	
+	If you would like to attempt to solve this riddle, lift the ``W Sign'' in the Banquet Hall and solve the riddle below. Lift this sign when you want to check your answer.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sWestStoneHidden}{
+  \s\MYname	{W Sign}
+  \s\MYloc	{-013}
+  \s\MYtext	{\emph{Do not attempt to interact with this sign until directed to do so}}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sWestStoneQuestion}{
+  \s\MYname	{West Stone Question}
+  \s\MYloc	{-013}
+  \s\MYtext	{The lock has altered the paintings in this hall ever so slightly, hiding letters within. This takes the form of a word search in the packet below. Certain letters are highlighted on the word search. These are the possible letters that you may need to find. If a hidden word has a highlighted letter, that is one of the 5 letters that compose your answer. Once you have found 5 letters that are both highlighted and part of a hidden word, alphabetize them, and return to the chest to input your answer.
+	
+	Because this puzzle requires you to look closely at the paintings in order to solve it, you must stay within line of sight of the paintings in this room in order to work on the puzzle.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sPainting}{
+  \s\MYname	{Painting}
+  \s\MYloc	{-013}
+  \s\MYtext	{This is a beautiful painting by one of the most accomplished artists in \pAtlantis{}.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sWestStoneAnswer}{
+  \s\MYname	{West Stone Answer}
+  \s\MYloc	{-002}
+  \s\MYtext	{{\bf EGHIL} \\
+	
+	You may attempt to solve the lock on the large stone. If you did not answer this question correctly, take a 15 minute penalty per question you have failed first.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sLargeStoneCover}{
+  \s\MYname	{Large Stone Lock}
+  \s\MYloc	{-002}
+  \s\MYtext	{\emph{Do not attempt to interact with this sign until directed to do so} \\
+	
+	The large stone lock stands before you. You must use the answers you have gathered to open it - and claim your prize. \\
+	
+	If you would like to attempt to solve this riddle, lift only \emph{this} sign to find the sign marked ``Stone Lock Question'' and find the riddle below.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sLargeStoneQuestion}{
+  \s\MYname	{Stone Lock Question}
+  \s\MYloc	{-002}
+  \s\MYtext	{The large stone presents you with an intimidating logic puzzle. You must inscribe the answers from the previous puzzles into the four stones. The only problem is that you don't know which stones to put which answer into, and you don't know in which order to do it.
+	
+Put another way, there are three factors you are trying to match up: The lock, North, South, East, or West, the order, first, second, third, or fourth, and the answer type, letter, number, rune, and word.
+
+Your answer should be in this form:
+
+First: lock, answer type
+Second: lock, answer type
+Third: lock, answer type
+Fourth: lock, answer type
+
+You may find the blank paper provided in the packet below helpful.
+	
+{\bf Inscription}
+	
+The answer begins when the sun rises. 
+
+-----------------------------------------
+
+One must learn the letters of their tongue before they may form the words of a great speech. Look to the four corners of the earth to hone your skill, then reveal your answer when you are ready.
+
+Look to the natives of the West for sound council. They often warn that it is bad luck to begin with magical signs.
+
+The warriors of the East portray themselves as justice, whose word is law. Their words are not to be trusted, however, as their every moral has a price.
+
+Trust the priests of the North as they spread the holy word. They often advise that learning your letters is never the most important thing you can do - for to them, God comes first.
+
+The pirates of the South are ever a pushy lot. They say that their interests come first, but you can never trust their words.
+
+Though you have learned much of those around the world, you still do not have the key. Think on what you have seen as you lay down to rest - but keep your eyes and ears open.
+
+-----------------------------------------
+
+The answer ends when the sun sets.}
+  \s\MYitems {}
+ }
+
+\NEW{Sign}{\sLargeStoneAnswer}{
+  \s\MYname	{Stone Lock Answer}
+  \s\MYloc	{-002}
+  \s\MYtext	{{\bf First: East Number \\
+	Second: South Letter \\
+	Third: North Word \\
+	Fourth: West Rune} \\
+	
+	You may change out the sign on the ornate chest and claim your prize. If you did not answer this question correctly, take a 15 minute penalty per question you have failed first.}
+  \s\MYitems {}
+ }
+
+%Dungeon
+\NEW{Sign}{\sDungeons}{
+  \s\MYname	{The Dungeons}
+  \s\MYloc	{Hallway off - 002}
+  \s\MYtext	{These are the royal dungeons. Party-goers probably shouldn't be in here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sCells}{
+  \s\MYname	{Cells in the Dungeon}
+  \s\MYloc	{Hallway off - 002}
+  \s\MYtext	{There are six empty cells here. All the doors are locked.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sBarnacles}{
+  \s\MYname	{Barnacles}
+  \s\MYloc	{Hallway off - 002}
+  \s\MYtext	{There is a growth of barnacles on the wall here. The servants have neglected to clear it off. 
+  
+  {\bf You may spend 30 seconds scraping one off of the wall. If you do, take one item from the envelope below.}}
+  \s\MYitems {\multi{5}{\iBarnacle{}}}
+} 
+
+%Stairwell
+
+\NEW{Sign}{\sBustOne}{
+  \s\MYname	{A Bust of King Titus}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{This is a bust of King Titus. He ruled \pAtlantis{} many years ago.}
+} 
+
+\NEW{Sign}{\sBustTwo}{
+  \s\MYname	{A Bust of King Neptune}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{This is a bust of King Neptune. He ruled \pAtlantis{} when the war started.}
+} 
+
+\NEW{Sign}{\sBustThree}{
+  \s\MYname	{A Bust of King Posiden}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{This is a bust of King Posiden. He ruled \pAtlantis{} before the current king.}
+} 
+
+\NEW{Sign}{\sBustFour}{
+  \s\MYname	{A Bust of King Triton}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{This is a bust of King Triton. He is the current ruler of \pAtlantis{}}
+} 
+
+\NEW{Sign}{\sOldMan}{
+  \s\MYname	{The Palace Storyteller}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{There is an old merman floating here. {\bf He accosts all passersby with epic tales of powerful magical artifacts and impossible wishes.} No one seems surprised he is here, but most people aren't paying much attention to him. He seems sad but earnest.
+  
+  {\bf If you wish to listen to one of the old man's stories, you may lift this sign up and read what is on the sign below.}}
+} 
+
+\NEW{Sign}{\sOldManStory}{
+  \s\MYname	{The Story of the Wishing Stone}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{The old merman is happy to have an audience. He spins a melancholy tale:\\
+  
+  \emph{Come closer young one, and I will tell you the story of the \iWishingStone{\MYname}. This innocuous little stone has the power to grant wishes -- even the most impossible ones. There was once an old merman who had seen great sorrow in his life. He had lost his wife to \ppolio{}, and his children to the war. He was alone in his old age. He wished more than anything to see his family again.}
+  
+  \emph{The old man therefore set out on a quest to find the \iWishingStone{\MYname}. This stone, the old man knew, could allow him to see his family again.  He journeyed for many days and nights, asking at every house he encountered, but none could -- or would -- help him. They said ``Go away old man. Wishes are for the young.''}
+  
+  \emph{Eventually the old man found his way to the Angola plain, where he knocked on the door of a young mermaid's house, to ask if she knew of the \iWishingStone{\MYname}. The mermaid was sad and quiet, but she invited him in for a meal. The merman asked her why one so young and beautiful was sad. She explained that her dear brother had gone on a quest for the \iWishingStone{\MYname}. He found it, but before he could make his wish, he was killed by another, jealous of her brother's success. To embitter the story, the \iWishingStone{\MYname} vanished from the clutches of the murderer, rejecting one who would resort to violence.}
+  
+  \emph{The old merman was saddened to hear that even the young suffer such pain. He looked back at his own life, and thought that he had many good parts, and all was not dark. He therefore offered to wish for happiness in the mermaid's future, instead of seeing his own family again.}
+  
+  \emph{The mermaid smiled then. She got up, and went to a chest in the corner of her house. She drew from within it, a humble stone. She brought it back to the old man, and said ``You are worthy.'' She then melted away into sea foam, and was carried off on the current.}
+  
+  As the storyteller's tale concludes, his eyes glitter mysteriously. ``Would you like to search for the \iWishingStone{\MYname}? Do you think you are worthy of it?''
+  
+  {\bf If you would like to search for \iWishingStone{}, take a greensheet from the packet below and follow the instructions}
+  }
+  \s\MYgreens {\multi{10}{\gWS{}}}
+} 
+
+
+\NEW{Sign}{\sFamily}{
+  \s\MYname	{F packet}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{You may not interact with this sign unless you know otherwise}
+  \s\MYitems {\iCipherLetter{}}
+} 
+
+\NEW{Sign}{\sForgery}{
+  \s\MYname	{H packet}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{You may not interact with this sign unless you know otherwise.}
+  \s\MYitems {}
+} 
+
+\NEW{Sign}{\sBackgroundCheck}{
+  \s\MYname	{G packet}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{You may not interact with this sign unless you know otherwise.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sBackgroundCheckTwo}{
+  \s\MYname	{G packet 2}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{You are currently investigating:}
+  \s\MYitems {}
+}
+
+%Banquet hall
+\NEW{Sign}{\sBanquetHall}{
+  \s\MYname	{The Banquet Hall}
+  \s\MYloc	{-013}
+  \s\MYtext	{This is the royal banquet hall. No expense was spared in decorating this room with rare shells from across \pAtlantis{}. The banquet will take place here at \cTTwo{}.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sStage}{
+  \s\MYname	{The Band Stage}
+  \s\MYloc	{-013}
+  \s\MYtext	{This is the stage for the band. There are a number of instruments lying around here -- It looks like the musicians each brought several so they could play many kinds of music.
+  
+  If you would like to borrow an instrument, put 1 hand on this sign for 30 seconds, then take an instrument at random from the envelope.
+  
+  {\bf You must return the instrument within 10 minutes otherwise the band will be very upset.}}
+  \s\MYitems {\iDrums{} \iSaxaphone{} \iGuitar{} \iBass{}}
+}
+
+\NEW{Sign}{\sRevealed}{
+  \s\MYname	{S Packet}
+  \s\MYloc	{- 013}
+  \s\MYtext	{You cannot interact with this sign unless you know otherwise.}
+  \s\MYabils {\aRevealed{}}
+	\s\MYitems {}
+}
+
+%Explorer's guild
+\NEW{Sign}{\sExplorersDoor}{
+  \s\MYname	{The Explorer's Guild}
+  \s\MYloc	{Hallway near -015}
+  \s\MYtext	{This is an office of the Explorer's Guild in the palace. If you are an Explorer's Guild member, the door recognizes you and lets you, and anyone you are escorting, pass freely (You may look at the sign under this one immediately.) 
+  
+  If you are not an Explorer's Guild member and would like to break in, you may try to pick the lock with a decking hand of {\bf 3}.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sExplorersInventory}{
+  \s\MYname	{The Explorer's Guild Inventory}
+  \s\MYloc	{Hallway near -015}
+  \s\MYtext	{This is the inventory of the Explorer's Guild office. You may take any {\bf 1} of the following items by searching through the inventory for a period of time, then crossing it off the list below. If you are an Explorer's Guild member, this action takes 1 minute as the magic of the room aids you. Otherwise, it takes 2 minutes. You may as many items as you like, after fulfilling the time requirement for it.
+  \begin{multicols}{2}
+  \begin{enumerate}
+	\item \iAnglerFish{}
+	\item \iAnglerFish{}
+	\item \iAnglerFish{}
+	\item \iAnglerFish{}
+	\item \iAnglerFish{}
+	\item \iAnglerFish{}
+	\item \iManOfWar{}  (Dangerous)
+	\item \iManOfWar{}  (Dangerous)
+	\item \iManOfWar{}  (Dangerous)
+	\item \iManOfWar{}  (Dangerous)
+	\item \iDeepClam{}
+	\item \iDeepClam{}
+	\item \iElectricEel{}
+	\item \iElectricEel{}
+	\item \iElectricEel{}
+	\item \iIceFish{}
+  \item \iIceFish{}
+	\item \iSquid{}
+	\item \iSquid{}
+	\item \iSquid{}
+	\item \iSquid{}
+  \end{enumerate}
+  \end{multicols}
+  If you take one of these items, cross it off of the list above. It is immediate apparent to anyone in this room what has been taken.
+  }
+  \s\MYitems {\iIceFish{} \iIceFish{} \multi{4}{\iSquid{}} \multi{6}{\iAnglerFish{}} \iElectricEel{} \iElectricEel{} \iDeepClam{} \iDeepClam{} \multi{4}{\iManOfWar{}}}
+}
+
+\NEW{Sign}{\sPileOfMaps}{
+  \s\MYname	{A Big, Disorderly Pile of Maps}
+  \s\MYloc	{Hallway near -015}
+  \s\MYtext	{There is a big pile of maps in the corner here. They have clearly been thrown there without much care to their order. 
+  
+  {\bf You may not interact with this sign unless you know otherwise}}
+  \s\MYitems {\iMapOfIndia{} \iMapOfAtlantica{} \iMapOfPacifica{}}
+}
+
+\NEW{Sign}{\sJournals}{
+  \s\MYname	{A Bookshelf Full of Old Journals}
+  \s\MYloc	{Hallway near -015}
+  \s\MYtext	{There is a bookshelf overflowing with old journals here
+  
+  {\bf You may not interact with this sign unless you know otherwise}}
+  \s\MYitems {\iNorthSeasJournal{}}
+}
+
+
+%caves
+\NEW{Sign}{\sCaves}{
+  \s\MYname	{The Caves}
+  \s\MYloc	{-015}
+  \s\MYtext	{This is a set of caves that are on the palace grounds but not part of the palace themselves. Party-goers should have no business here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sSnails}{
+  \s\MYname	{The Caves}
+  \s\MYloc	{-015}
+  \s\MYtext	{This is a set of caves that are on the palace grounds but not part of the palace themselves. Party-goers should have no business here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sClamBed}{
+  \s\MYname	{A bed of clams}
+  \s\MYloc	{-015}
+  \s\MYtext	{There are a bed of clams here. {\bf You may spend 1 minute to  break open one of the clams.} To do so, take one of the clams from the envelope below and open it after {\bf 1 additional minute} has passed.}
+  \s\MYitems {\multi{9}{\iClam{}} \iPearlClam{}}
+}
+
+\NEW{SignMedium}{\sPearlStorage}{
+  \s\MYname	{A Black Pearl}
+  \s\MYloc	{-015}
+  \s\MYtext	{You may only take the item from the $\theta$ packet below if you have been directed to do so by a mechanic. If you do so, remove this sign and accompanying envelope.}
+  \s\MYitems {\iPearl{}}
+}
+
+\NEW{Sign}{\sCrest}{
+  \s\MYname	{The Magician's Guild Crest}
+  \s\MYloc	{-015}
+  \s\MYtext	{The Crest of the now dissolved Magician's Guild has been hung on the cave wall here.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sRunicCircle}{
+  \s\MYname	{Runic Circle}
+  \s\MYloc	{-015}
+  \s\MYtext	{A runic circle is inscribed on the ground here.}
+  \s\MYitems {}
+  \s\MYgreens{\gPotions{} \gPotions{} \gPotions{}}
+  \s\MYabils{\aLesserDispel{} \aLesserDispel{} \aLesserDispel{}}
+}
+
+%Residential Wing
+\NEW{Sign}{\sResidences}{
+  \s\MYname	{The Residential Wing of the Palace}
+  \s\MYloc	{-030}
+  \s\MYtext	{This is the Residential Wing of the palace. The suite for the royal family, and many of their long term guests are found in this area.}
+  \s\MYitems {}
+}
+
+
+%Garden
+\NEW{Sign}{\sGardens}{
+  \s\MYname	{The Palace Gardens}
+  \s\MYloc	{-032}
+  \s\MYtext	{These are the royal gardens. They are some of the most beautiful in all of \pAtlantis{}. It is a nice quiet place to talk, or take a stroll.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sSeaFans}{
+  \s\MYname	{A Rocky Outcropping}
+  \s\MYloc	{-032}
+  \s\MYtext	{There are many beautiful sea fans, coral and other ocean flora and fauna on this rock. It has clearly been carefully manicured for the palace.
+  
+  If you would like to take something from the garden, you may spend {\bf 30 seconds} with one hand the sign, and then take an item of your choosing.
+  
+  (The items available at this sign are essentially unlimited. If the envelope is empty, tell a GM.)}
+  \s\MYitems {\multi{20}{\iSeaFan{}}}
+}
+
+
+%Pacifican Embassy
+\NEW{Sign}{\sEmbassy}{
+  \s\MYname	{The Pacifican Embassy}
+  \s\MYloc	{-004}
+  \s\MYtext	{This is the suite dedicated to the Pacifican delegates. It has been set up in some haste, but there are plans to establish a permanent embassy once the treaty is signed.
+  
+%   There are three ways to gain entrance to this room:
+%
+%{\bf 1. } Be \pPacifica{}n. 
+%
+%{\bf 2. } Hit the door with a {\bf CR of 8} or greater.
+%
+%{\bf 3. } Pick the lock. This room has a lock difficulty of {\bf 2}. 
+%
+%Once you have completed one of the above requirements, put your hand on this sign for {\bf 2 minutes}. (If the room is yours, you may bypass the wait time as well.) Afterwards, you may lift the first sign and read what is underneath. This represents going into the room and digging through the person's papers for something useful.
+}
+  \s\MYitems {}
+}
+
+%\NEW{Sign}{\sEmbassyPapers}{
+%  \s\MYname	{The Pacifican Embassy Papers}
+%  \s\MYloc	{-004}
+%  \s\MYtext	{}
+%  \s\MYitems {}
+%}
+
+\NEW{Sign}{\sDesk}{
+  \s\MYname	{A Desk}
+  \s\MYloc	{-004}
+  \s\MYtext	{This desk is strewn with papers, many of them have only a few words jotted down on them. Many more are completely blank. 
+  
+  {\bf If you would like to take a blank piece of paper from the desk, put your hand on this sign for 30 seconds.}}
+  \s\MYitems {\multi{5}{\iPaper{}}}
+}
+
+
+%Kitchen
+\NEW{Sign}{\sKitchen}{
+  \s\MYname	{The Palace Kitchens}
+  \s\MYloc	{Across -004}
+  \s\MYtext	{These are the royal kitchens. Everything is in chaos due to the banquet.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sSeaSnake}{
+  \s\MYname	{A jar of Sea Snake Tails}
+  \s\MYloc	{Across -004}
+  \s\MYtext	{There is a jar of snake tails on the counter here. They are a handy snack on the go, although some merfolk don't like the aftertaste.
+  
+  If you would like to take \iSeaSnake{}, you may spend {\bf 30 seconds} with one hand the sign, and then take one.
+  
+  (The items available at this sign are essentially unlimited. If the envelope is empty, tell a GM.)}
+  \s\MYitems {\multi{20}{\iSeaSnake{}}}
+}
+
+\NEW{Sign}{\sSwordfishMeat}{
+  \s\MYname	{A Meat Locker}
+  \s\MYloc	{Across -004}
+  \s\MYtext	{There is a Meat Locker here. It is used for keeping fish fillets cold.
+  
+  If you would like to take something from the locker, you may spend {\bf 1 minute} with one hand the sign, and then take an item of your choosing.
+  }
+  \s\MYitems {\multi{5}{\iSwordfish{}}}
+}
+
+\NEW{Sign}{\sServantsEntrance}{
+  \s\MYname	{The Entrance to the Servants' Quarters}
+  \s\MYloc	{Across -004}
+  \s\MYtext	{This is the entrance to the servants' quarters.}
+  \s\MYitems {\multi{11}{\iDrug{}}}
+}
+
+%Cauldrons
+\NEW{Sign}{\sEmptyCauldron}{
+  \s\MYname	{An Empty Cauldron}
+  \s\MYloc	{}
+  \s\MYtext	{There is an empty cauldron here.
+  
+  {\bf You may not interact with this sign unless you know otherwise.}}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sFullCauldron}{
+  \s\MYname	{A Bubbling Cauldron}
+  \s\MYloc	{}
+  \s\MYtext	{There is a bubbling cauldron here.
+  
+  {\bf You may not interact with this sign unless you know otherwise.}
+  
+  The color of the liquid inside is:
+  
+  }
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sDoNotTouchPotions}{
+  \s\MYname	{Do Not Touch}
+  \s\MYloc	{}
+  \s\MYtext	{{\bf You may not interact with these packets unless you know otherwise.}}
+  \s\MYitems {\multi{8}{\iHealingPotion{}} \multi{8}{\iPoison{}} \multi{5}{\iTransformationPotion{}} \multi{2}{\iDeadlyPoison{}} \multi{8}{\iBuffPotion{}} \multi{1}{\iShapeshifterPotion{}} \multi{1}{\iLovePotion{}}}
+}
+
+%%Music Box locations
+
+\NEW{SignSmall}{\sPacketA}{
+  \s\MYname	{Packet A}
+  \s\MYloc	{Room 004}
+  \s\MYtext	{}
+  \s\MYitems {\iMusicBox{}}
+}
+
+\NEW{SignSmall}{\sPacketB}{
+  \s\MYname	{Packet B}
+  \s\MYloc	{Room 015}
+  \s\MYtext	{}
+  \s\MYitems {}
+}
+
+\NEW{SignSmall}{\sPacketC}{
+  \s\MYname	{Packet C}
+  \s\MYloc	{Room 030}
+  \s\MYtext	{}
+  \s\MYitems {}
+}
+
+\NEW{SignSmall}{\sPacketD}{
+  \s\MYname	{Packet D}
+  \s\MYloc	{the Dungeons}
+  \s\MYtext	{}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sApothecaryCover}{
+  \s\MYname	{Apothecary}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{A small, compact apothecary. You may not interact with it unless you know otherwise.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sApothecaryOne}{
+  \s\MYname	{Apothecary}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{The apothecary squints across the counter at his patient, then declares that he needs a sample of the drug in question to make a diagnosis. If you have a sample already, great - otherwise, you can use a CR5 attack to arrest the dealer if you can figure out when and where he appears. If you successfully arrest the dealer, you may take one sample of \iDrug{\MYnumber{}} from the location. Inform your patient that the dealer will not appear again.
+	
+	When you can produce item \iDrug{\MYnumber{}}, lift this sign.}
+  \s\MYitems {}
+}
+
+\NEW{Sign}{\sApothecaryTwo}{
+  \s\MYname	{Apothecary}
+  \s\MYloc	{Stairwell}
+  \s\MYtext	{The apothecary declares that this is a magical drug, and detoxing requires a magical solution. \cWillow{} should take a \iHealingPotion{} and a \iPoison{} at the same time (don't process the effects of either). \cWillow{\They} will retch violently for 30 seconds, at the end of which, then be fully free of the effects.}
+  \s\MYitems {}
+}
+
+%GM / oog signs
+
+\NEW{SignDot}{\sDotOne}{
+  \s\MYname	{0}
+  \s\MYloc	{}
+  \s\MYitems {}
+}
+
+\NEW{SignDot}{\sDotTwo}{
+  \s\MYname	{1}
+  \s\MYloc	{}
+  \s\MYitems {}
+}
+
+\NEW{SignDot}{\sDotThree}{
+  \s\MYname	{5}
+  \s\MYloc	{}
+  \s\MYitems {}
+}

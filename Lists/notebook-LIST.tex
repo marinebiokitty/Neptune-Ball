@@ -1,0 +1,76 @@
+%%%%%
+%%
+%% This file sets up the Notebook and GreenNotebook datatypes and
+%% creates Notebook and GreenNotebook macros.  These are for in-game
+%% and out-of-game notebooks.
+%%
+%%%%%
+
+\DECLARESUBTYPE{Notebook}{TransElement}
+\PRESETS{Notebook}{
+  \FD\MYfile	{} %% filename (in \notebooks dir)
+  \FS\MYtext	{\getextractenvs{document}{\notebooks/\MYfile}}
+  \sd\MYlistmap	{\item\MYname\ (in-game notebook)}
+  }
+
+\DECLARESUBTYPE{GreenNotebook}{Element}
+\PRESETS{GreenNotebook}{
+  \FD\MYfile	{} %% filename (in \notebooks dir)
+  \FS\MYtext	{\getextractenvs{document}{\notebooks/\MYfile}}
+  \sd\MYlistmap	{\item\MYname\ (out-of-game notebook)}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Notebook}{\nTest}{
+  \s\MYname	{Test Research Notebook}
+  \s\MYfile	{README.tex}
+  }
+
+\NEW{GreenNotebook}{\nGreenTest}{
+  \s\MYname	{Test Out-of-Game Notebook}
+  \s\MYfile	{README-green.tex}
+  }
+
+\NEW{GreenNotebook}{\nMusicBox}{
+  \s\MYname	{Where is the Music Box?}
+  \s\MYfile	{MusicBoxSearch.tex}
+}
+
+\NEW{GreenNotebook}{\nIllicitWeapons}{
+  \s\MYname	{Acquiring Weapons to give Pacifica the upper hand.}
+  \s\MYfile	{IllicitWeapons.tex}
+}
+
+\NEW{GreenNotebook}{\nSpellBreakNotebook}{
+  \s\MYname	{Breaking the Spell}
+  \s\MYfile	{SpellBreakNotebook.tex}
+}
+
+\NEW{GreenNotebook}{\nIndianAggression}{
+  \s\MYname	{Finding Proof of Indian Aggression}
+  \s\MYfile	{IndianAggression.tex}
+}
+
+\NEW{GreenNotebook}{\nGazaStrip}{
+  \s\MYname	{Securing The Falkland Plain}
+  \s\MYfile	{GazaStrip.tex}
+}
+
+\NEW{GreenNotebook}{\nShipwreck}{
+  \s\MYname	{The Truth about your Father's Death}
+  \s\MYfile	{Shipwreck.tex}
+}
+
+\NEW{GreenNotebook}{\nWar}{
+  \s\MYname	{The History of the War}
+  \s\MYfile	{HistoryOfTheWar.tex}
+}
+
+\NEW{GreenNotebook}{\nMafia}{
+  \s\MYname	{Persuing the Mafia}
+  \s\MYfile	{Mafia.tex}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,36 @@
+MusicalNote.jpeg x10
+
+Sudoku.png x15
+
+WordsearchPuzzle.pdf x12
+
+WordSearchSolution.pdf x2
+
+Blank Paper x10
+
+
+
+\multi{13}\sEastStoneRiddle{}
+
+\iBaby{} \iBaby{}
+
+\multi{10}\wTreaty{}
+
+\iSeaFan{\pageof}
+
+
+
+Bookshelf full of journals
+
+Cauldrons need to get prodded
+
+
+
+
+Next time
+
+Explicitly label Triton's pages as 7 and 8
+
+Print a "sign strip" for the books
+
+Cut off the name before giving it to the players!!

@@ -1,0 +1,162 @@
+%%%%%
+%%
+%% This file sets up the Place datatype and creates Place macros.
+%% Places correspond to general units of game that are not characters.
+%% Generally, game elements that do not come in some character's
+%% packet are owned by places.  A Place macro may contain zero or more
+%% of any kind of element (most likely Sign and Item macros).
+%%
+%% The simplest case is a single Place macro, \pWorld{}, which
+%% contains all miscellaneous game elements not owned by a character.
+%% However, Place macros are a good way to sort game area by general
+%% location or similar.  Place may also be used as a base for more
+%% complex and specific subtypes.
+%%
+%% Places do not necessarily correspond to only locations; you could
+%% set up a series of Place macros that each represent a time period
+%% in which certain elements are to be introduced into game.
+%%
+%%%%%
+
+\errorcontextlines=10
+
+\DECLARESUBTYPE{Place}{Owner}
+\PRESETS{Place}{
+  \FD\MYwhere	{} %% if a Place is a single identifiable location
+  \FD\MYwhen	{} %% if a Place is time-based
+  }
+\POSTSETS{Place}{
+  \edef\mylocation{\MYwhere}
+  \protected@edef\@ownerstring{%
+    \MYname%
+    \ifx\mylocation\empty\else\ (\mylocation)\fi%
+    \ifx\MYwhen\empty\else\ (\MYwhen)\fi%
+    }
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\NEW{Place}{\pTest}{
+%  \s\MYname	{Test Place}
+%  \s\MYsigns	{\sTest{}}
+%  \s\MYitems	{\iTest{}\iWhatzit{}}
+%  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Place}{\pLibrary}{ %%Royal archives; Treasury  = Museum
+   \s\MYname	{Room -002}
+   \s\MYsigns	{\sMuseum{} \sMuseum{} \sMuseumItems{} \sArtifactZero{} \sArtifactZeroRestored{} \sArtifactOne{} \sArtifactTwo{} \sArtifactTwoBroken{} \sArtifactThree{} \sArtifactThreeBroken{} \sArtifactFour{} \sArtifactFourOpened{} \sBlackboard{} \sBookshelf{} \sBookshelfRapsheet{} \sBookshelfBook{} \sInheritance{} \sLineageOne{} \sLineageTwo{} \sDotOne{} \sGlowingBrick{} \sRoyalHistory{} \sGuardianHistory{} \sMerchantHistory{} \sExplorerHistory{} \sMagicHistory{} \sGlowShellStart{} \sGlowShellEnd{} \sNorthStoneCover{} \sNorthStoneQuestion{} \sSouthStoneAnswer{} \sEastStoneCover{} \sEastStoneAnswer{} \sSouthStoneCover{} \sSouthStoneQuestion{} \sWestStoneCover{} \sWestStoneAnswer{} \sLargeStoneCover{} \sLargeStoneQuestion{} \sLargeStoneAnswer{}}
+   \s\MYitems	{\multi{8}{\iSponge{}}}
+}
+  
+  
+\NEW{Place}{\pDungeons}{
+  \s\MYname	{Hall off of -002}
+	\s\MYsigns	{\sBarnacles{} \sDungeons{} \sCells{} \sPacketD{} \sGlowingBrick{}}
+  \s\MYitems	{}
+}
+ 
+\NEW{Place}{\pEntryWay}{
+  \s\MYname	{Stairwell}
+	\s\MYsigns	{\sOldMan{} \sOldManStory{} \sDotTwo{} \sGlowingBrick{} \sApothecaryCover{} \sApothecaryOne{} \sApothecaryTwo{} \sFamily{} \sForgery{} \sBackgroundCheck{} \sBackgroundCheckTwo{} \sBustOne{} \sBustTwo{} \sBustThree{} \sBustFour{}}
+  \s\MYitems	{}
+}
+  
+\NEW{Place}{\pBanquet}{
+  \s\MYname	{-013}
+	\s\MYsigns	{\sBanquetHall{} \sBanquetHall{} \sStage{} \sGlowingBrick{} \sPainting{} \sPainting{} \sPainting{} \sWestStoneQuestion{} \sWestStoneHidden{}}
+  \s\MYitems	{}
+}
+
+\NEW{Place}{\pExplorerGuild}{
+  \s\MYname	{Hallway near -015}
+	\s\MYsigns	{\sExplorersDoor{} \sExplorersInventory{} \sPileOfMaps{} \sGlowingBrick{} \sJournals{}}
+  \s\MYitems	{}
+}
+
+\NEW{Place}{\pCaves}{
+  \s\MYname	{-015}
+	\s\MYsigns	{\sCaves{} \sClamBed{} \sPearlStorage{} \sCrest{} \sRunicCircle{} \sPacketB{} \sGlowingBrick{}}
+  \s\MYitems	{\multi{2}{\iSnails{}} \multi{6}{\iSeaUrchins{}}}
+} 
+  
+\NEW{Place}{\pResidentialWing}{
+  \s\MYname	{-030}
+	\s\MYsigns	{\sResidences{} \sResidences{} \sKing{} \sKingPapers{} \sGeneral{} \sGeneralPapers{} \sMorvyn{} \sMorvynPapers{} \sPriest{} \sPriestPapers{} \sPrincess{} \sPrincessPapers{} \sAriel{} \sArielPapers{} \sManta{} \sMantaPaper{} \sPlant{} \sPlantPapers{} \sPacketC{} \sGlowingBrick{}}
+  \s\MYitems	{}
+}
+  
+\NEW{Place}{\pGarden}{ %%Garden for items/negotiate
+  \s\MYname	{-032}
+	\s\MYsigns	{\sGardens{} \sSeaFans{} \sGlowingBrick{} \sEastStoneQuestion{} \sEastStoneRiddle{} \sEastStoneHidden{}}
+  \s\MYitems	{\multi{5}{\iTeeth{}} \multi{5}{\iConch{}}}
+}  
+
+\NEW{Place}{\pPacificanSuite}{ %%Big room farthest away.  Actually pacifican embassy.
+  \s\MYname	{Room -034}
+  \s\MYsigns	{\sEmbassy{} \sEmbassy{} \sDiplomat{} \sDiplomatPapers{} \sPrince{} \sPrincePapers{} \sSpy{} \sSpyPapers{} \sPacketA{} \sDesk{} \sGlowingBrick{}}
+  \s\MYitems  {}
+}
+
+\NEW{Place}{\pKitchen}{
+  \s\MYname	{across from -004}
+	\s\MYsigns	{\sKitchen{} \sSeaSnake{} \sSwordfishMeat{}\sDotThree{} \sGlowingBrick{} \sServantsEntrance{} \multi{5}{\sEmptyCauldron{} \sFullCauldron{}} \sDoNotTouchPotions{}}
+  \s\MYitems	{}
+}
+ 
+\NEW{Place}{\pGM}{
+  \s\MYname {Owned by GMs}
+  \s\MYgreens{\gDanceScoring{} \gChecklist{} \gWishingStone{} \multi{5}{\gNPC{}}}
+  \s\MYitems  {\iScroll{} \iBaby{}}
+	\s\MYabils  {\aBlades{} \aCloak{} \aSight{} \aProtection{} \aProtection{} \aProtection{} \aClarity{} \aDexterity{} \aTruth{} \aTruth{} \aTruth{} \aTruth{} \aTemperance{} \aTemperance{} \aJoy{} \aRevealed{} \aRevealed{}}
+	\s\MYwhites {\multi{10}{\wTreaty{}}}
+  \s\MYsigns  {}
+}
+
+%%Macro for In world Places
+\NEW{Place}{\pAtlantis}{
+  \s\MYname {Atlantica}
+} 
+
+\NEW{Place}{\pPacifica}{
+  \s\MYname {Pacifica}
+}
+
+\NEW{Place}{\pIndia}{
+  \s\MYname {India}
+} 
+
+\NEW{Place}{\pAssassin}{
+  \s\MYname {The Assassins Guild}
+}
+
+\NEW{Place}{\pMagician}{
+  \s\MYname {The Magican's Guild}
+} 
+
+\NEW{Place}{\pPolio}{
+  \s\MYname {Polio}
+} 
+
+\NEW{Place}{\ppolio}{
+  \s\MYname {polio}
+} 
+
+\NEW{Place}{\pGazaStrip}{
+  \s\MYname {Falkland Plain}
+} 
+
+\NEW{Place}{\ptrench}{
+  \s\MYname {trench}
+} 
+
+\NEW{Place}{\pAmerica}{
+  \s\MYname {Europa}
+}
+
+\NEW{Place}{\pCity}{
+  \s\MYname {Oslo}
+} 

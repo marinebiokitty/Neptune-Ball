@@ -1,0 +1,1 @@
+\edef\gamepath{"C:/Users/Acata/Desktop/Larps/the-neptune-ball"}

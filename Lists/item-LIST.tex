@@ -1,0 +1,638 @@
+
+%%
+%% This file creates the Item, ItemPacket, ItemFold, ItemEnvelope, and
+%% ItemLabel datatypes, and creates macros for each.  These are for
+%% various types of in-game items.
+%%
+%%%%%
+
+
+%%%%%
+%% Item macros are for normal item cards.
+\DECLARESUBTYPE{Item}{TransElement}
+\PRESETS{Item}{
+  \FD\MYtext	{} %% longer text of item
+  \FD\MYmark	{} %% possible contents of shaded ``mark'' on card
+  \FD\MYbulky	{0} %% potential bulkiness
+  \FD\MYcapacity{N/A} %% potential capacity
+  \sd\MYlistmap	{\item\MYname\ifx\MYnumber\empty\else\ (\MYnumber)\fi}
+  }
+
+
+%%%%%
+%% \prop
+%% \unstash
+%% \bulky{<number>}
+%% \contain{<number>}
+%%
+%% \prop inside an Item macro labels the card as a prop.  \unstash
+%% labels the card as unstashable.  \bulky{n} labels the card as
+%% n-hands bulky.  \contain{n} labels the card with n-hands capacity.
+\def\prop{%
+  \append\MYmark{ ~PROP~ }}
+\def\unstash{%
+  \append\MYmark{ ~UNSTASHABLE~ }}
+\def\val{%
+  \append\MYmark{ ~VALUABLE~ }}
+\def\effect{%
+  \append\MYmark{ ~MAGICAL EFFECT~ }}
+\def\bulky#1{%
+  \s\MYbulky{#1}%
+  \append\MYmark{\mbox{ ~\MYbulky-Hand~Bulky~ }}}
+\def\contain#1{%
+  \s\MYcapacity{#1}%
+  \append\MYmark{\mbox{ ~\MYcapacity-Hand~Capacity~ }}}
+
+
+%%%%%
+%% ItemPacket macros are for item cards with an attached packet.
+%% They are a subtype of Item.
+\DECLARESUBTYPE{ItemPacket}{Item}
+\PRESETS{ItemPacket}{
+  \F\MYcontents
+  }
+
+
+%%%%%
+%% ItemFold macros are for items represented by just a folded packet.
+%% They are a subtype of ItemPacket, with the longer text and ``mark''
+%% left blank, since they have no actual item card.
+\DECLARESUBTYPE{ItemFold}{ItemPacket}
+\PRESETS{ItemFold}{
+  \s\MYmark{}
+  }
+
+
+%%%%%
+%% ItemEnvelope macros are for items represented by just an envelope.
+%% They are a subtype of ItemPacket, with the longer text and ``mark''
+%% left blank, since they have no actual item card.
+\DECLARESUBTYPE{ItemEnvelope}{ItemPacket}
+\PRESETS{ItemEnvelope}{
+  \s\MYmark{}
+  }
+
+
+%%%%%
+%% ItemLabel macros are for small labels that would get used on
+%% physreps, e.g. gun labels.  The ``mark'' is left blank, since
+%% it isn't used for these.
+\DECLARESUBTYPE{ItemLabel}{Item}
+\PRESETS{ItemLabel}{
+  \s\MYmark{}
+  }
+
+
+%%%%%
+%% \icard[<extras>]{<name>}{<number>}{<text>}
+%% \specialicard[<extras>]{<name>}{<number>}{<text>}{<mark>}
+%% \itempacket[<extras>]{<name>}{<number>}{<text>}{<mark>}{<contents>}
+%% \itemfold{<name>}{<number>}{<text>}{<contents>}
+%% \itemenvelope{<name>}{<number>}{<text>}{<contents>}
+%% \itemlabel{<name>}{<number>}{<text>}
+%%
+%% These are wrappers around \INSTANCE, useful for 1-shots.
+%%
+%% For \icard, \specialicard, and \itempacket, the optional <extras>
+%% (in []'s) is for things like \unstash and \bulky{3}.  For example,
+%% \icard[\prop\contain{2}]{..}{..}{..}{..} gives an item that has a
+%% prop and 3-hands capacity.
+%%
+%% The last arg (#5) to \specialicard is for anything extra you may
+%% want in the ``mark''
+\newinstance{Item}{\icard[4][]}{
+  \s\MYname{#2}\s\MYnumber{#3}\s\MYtext{#4}#1}
+\newinstance{Item}{\specialicard[5][]}{
+  \s\MYname{#2}\s\MYnumber{#3}\s\MYtext{#4}\s\MYmark{#5}#1}
+\newinstance{ItemPacket}{\itempacket[6][]}{
+  \s\MYname{#2}\s\MYnumber{#3}\s\MYtext{#4}\s\MYmark{#5}\s\MYcontents{#6}#1}
+\newinstance{ItemFold}{\itemfold[4]}{
+  \s\MYname{#1}\s\MYnumber{#2}\s\MYtext{#3}\s\MYcontents{#4}}
+\newinstance{ItemEnvelope}{\itemenvelope[4]}{
+  \s\MYname{#1}\s\MYnumber{#2}\s\MYtext{#3}\s\MYcontents{#4}}
+\newinstance{ItemLabel}{\itemlabel[3]}{
+  \s\MYname{#1}\s\MYnumber{#2}\s\MYtext{#3}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Item}{\iTest}{
+  \s\MYname	{Test Item}
+  \s\MYnumber	{0000}
+  \s\MYtext	{A Test Item Card}
+  }
+
+\NEW{ItemPacket}{\iTestPacket}{
+  \s\MYname	{Test Item}
+  \s\MYnumber	{0000}
+  \s\MYtext	{A Test Item with a big red button.  Open packet if
+		you press the big red button.}
+  \s\MYcontents	{The item beeps at you.}
+  }
+
+\NEW{ItemFold}{\iTestFold}{
+  \s\MYname	{Test Food}
+  \s\MYnumber	{0000}
+  \s\MYtext	{open if you eat}
+  \s\MYcontents	{It tastes yummy.}
+  }
+
+\NEW{ItemEnvelope}{\iTestEnvelope}{
+  \s\MYname	{Test Food}
+  \s\MYnumber	{0000}
+  \s\MYtext	{open if you eat}
+  \s\MYcontents	{It tastes yummy.}
+  }
+
+\NEW{ItemLabel}{\iTestLabel}{
+  \s\MYname	{Test Gun Label}
+  \s\MYnumber	{0000}
+  \s\MYtext	{Disc gun, loadable to 20 shots.}
+  }
+
+\NEW{Item}{\iWhatzit}{
+  \s\MYname	{Whatzit}
+  \s\MYnumber	{12345}
+  \s\MYtext	{If you press it, open packet a.  If you twirl it, open
+		packet b.  If you pull it, open packet c.}
+  \bulky	{1}
+  \s\MYsigns	{\signstrip{a}{it goes ``beep.''}
+		\signstrip{b}{it goes ``whoop.''}
+		\signstrip{c}{it goes ``bang.''}
+		}
+  \s\MYabils	{\ability{Stop Crying}{By futzing with the Whatzit, you
+		can make babies stop crying.}{I make the baby stop
+		crying.}
+		}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Big Items
+
+\NEW{Item}{\iTrident}{
+  \s\MYname	{The Trident}
+  \s\MYnumber	{567}
+  \s\MYtext	{A powerful weapon. Dangerous in the wrong hands. The Trident gives {\bf the acting monarch} +3 CR as long as they possess this item.}
+}
+
+\NEW{Item}{\iPrototype}{
+  \s\MYname	{Prototype Weapon}
+  \s\MYnumber	{320}
+  \s\MYtext	{A strange, fearsome looking device. It can discharge, but needs to receive magical priming to actually harm anyone.}
+}
+  
+\NEW{Item}{\iMusicBox}{
+  \s\MYname	{Music Box}
+  \s\MYnumber	{565}
+  \s\MYtext	{A metal music box.}
+  \bulky{2}
+}
+
+\NEW{Item}{\iMusicBoxKey}{
+  \s\MYname	{A Tiny Gold Key}
+  \s\MYnumber	{691}
+  \s\MYtext	{A small key. I wonder what it goes to?}
+}
+
+\NEW{ItemFold}{\iBaby}{
+  \s\MYname	{A Baby}
+  \s\MYnumber	{268}
+  \s\MYtext	{A baby mer. Why would this be in the palace? If you are in possession of this baby, you must roleplay feeding it in the kitchens every half an hour. If you fail to feed the baby, run while carrying it, or engage in combat, give this item to an NPC and tell them to open it. You may voluntarily give the baby to an NPC to take to the palace nursery after 1 hr of care.}
+  \s\MYcontents	{This mer baby has not been well taken care of. Roleplay a nurse from the palace nursery who is very upset by this. You should berate the player soundly for being neglectful, preferably in front of as many others as possible, and then take the baby out of game.}
+  \bulky{1}
+  \unstash{}
+}
+
+\NEW{Item}{\iWishingStone}{
+  \s\MYname	{Wishing Stone}
+  \s\MYnumber	{204}
+	\s\MYabils	{\aAbsoluteDispel{}}
+  \s\MYtext	{An ordinary looking stone that feels exceptionally cool to the touch. {\bf This item must be transfered willingly. If the item is taken by force or from an unconscious holder, the stone immediately loses its ability.} Refer to the associated ability to learn what the stone can do.}
+  \unstash{}
+}
+
+\NEW{Item}{\iGlowShell}{
+  \s\MYname	{Glow Shell}
+  \s\MYnumber	{731}
+  \s\MYtext	{A beautiful shell glowing with a warm orange light.}
+  \val{}
+}
+
+\NEW{Item}{\iHemlock}{
+  \s\MYname	{Lionfish Spine}
+  \s\MYnumber	{122}
+  \s\MYtext	{Sharp looking spine from a beastly fish.}
+}
+
+\NEW{Item}{\iAmulet}{
+  \s\MYname	{A large, wooden amulet}
+  \s\MYnumber	{440}
+  \s\MYtext	{The eyes of the carved face glow with an other-worldly light.}
+}
+
+\NEW{Item}{\iArielAmulet}{
+  \s\MYname	{An amulet carved from shell}
+  \s\MYnumber	{640}
+  \s\MYtext	{The eyes of the carved face glow with an other-worldly light.}
+}
+
+\NEW{Item}{\iQueenNecklace}{
+  \s\MYname	{A Beautiful Necklace}
+  \s\MYnumber	{433}
+  \s\MYtext	{This sterling silver necklace is exquisite workmanship. The letters ``I'' and ``G'' are inscribed on the pendant.}
+  \val{}
+}
+
+\NEW{ItemFold}{\iPacificanLaw}{
+  \s\MYname	{An old book of Pacifican Law}
+  \s\MYnumber	{909}
+  \s\MYtext	{This book appears to contain old \pPacifica{}n laws that most have forgotten. Spend 1 minute reading it to open.}
+  \s\MYcontents	{Apparently, the \iGlowShell{} was once thought to be a powerful artifact sent from the Kraken, and presenting one to a member of \pPacifica{}n royalty allows you to become \pPacifica{}n royalty yourself. This information could be very useful in the right hands!}
+}
+
+\NEW{Item}{\iVaccine}{
+  \s\MYname	{Syringe}
+  \s\MYnumber	{112}
+  \s\MYtext	{A small syringe filled with a clear liquid.}
+}
+
+\NEW{Item}{\iArielBracelet}{
+  \s\MYname	{A Beautiful Emerald Bracelet}
+  \s\MYnumber	{891}
+  \s\MYtext	{The bracelet is made of gold and bears a beautiful, princess cut emerald.}
+  \val{}
+}
+
+%%Lineage plot items
+\NEW{ItemFold}{\iScroll}{
+  \s\MYname	{An old, fragile scroll}
+  \s\MYnumber	{661}
+  \s\MYtext	{This scroll appears to be a letter from \cMotherBrother{} to \cMother{}. Do not open unless directed to do so.}
+  \s\MYcontents	{This letter is from \cMotherBrother{\prince} \cMotherBrother{} to \cMother{}, lamenting the fact that \cMotherBrother{} could not mount a rescue effort fast enough to save \cMother{}'s virtue. It goes on to offer to kill the bastard \cManta{\offspring}.}
+}
+
+\NEW{ItemFold}{\iBirthCertificate}{
+  \s\MYname	{An official looking document}
+  \s\MYnumber	{322}
+  \s\MYtext	{This document bears the official seal of \pPacifica{}. Do not open unless directed to do so.}
+  \s\MYcontents	{This document is a birth certificate recording the birth of one \cManta{} to one \cMother{\prince} \cMother{} of \pPacifica{}. There is no \cExExKing{\parent} listed on the sheet.}
+  }
+  
+\NEW{ItemFold}{\iJournal}{
+  \s\MYname	{A Dusty, Old Journal}
+  \s\MYnumber	{224}
+  \s\MYtext	{This Journal bears the name \cMother{} embossed in gold lettering. Do not open unless directed to do so.}
+  \s\MYcontents	{This journal belonged to \cMother{\Prince} \cMother{} of \pPacifica{}. It details \cMother{\their} harrowing experience as \cExExKing{}'s prisoner, including conceiving and bearing a \cManta{\offspring}. There is a truth spell on the book so powerful that everyone can sense it, indicating that every word written within is true.}
+  }
+
+\NEW{Item}{\iSignetRing}{
+  \s\MYname	{A Pacifican Signet Ring}
+  \s\MYnumber	{879}
+  \s\MYtext	{A ring that bears the Seal of the \pPacifica{}n royal family.}
+  \val{}
+}
+
+%%For magician induction
+\NEW{Item}{\iChalk}{
+  \s\MYname	{Runic Chalk}
+  \s\MYnumber	{828}
+  \s\MYtext	{A glowing stick of limestone chalk.}
+}
+
+\NEW{Item}{\iBook}{
+  \s\MYname	{Book}
+  \s\MYnumber	{912}
+  \s\MYtext	{A normal looking book.}
+  \bulky{1}
+}
+
+%%Items in Library
+
+\NEW{Item}{\iSponge}{
+  \s\MYname	{Bioluminescent Sponge}
+  \s\MYnumber	{542}
+  \s\MYtext	{This sponge serves as a reading light.}
+}
+
+\NEW{ItemFold}{\iScryingMirror}{
+  \s\MYname	{Cassandra's Mirror}
+  \s\MYnumber	{145}
+  \s\MYtext	{Do not open unless directed to do so.}
+  \s\MYcontents	{The mirror shows scenes of massive armies training, generals drawing up battle plans, and \pIndia{} gearing up for war. This is incontrovertible proof that \pIndia{} is preparing for war with \pAtlantis{} and \pPacifica{}.}
+  \val{}
+  }
+
+\NEW{Item}{\iRapSheet}{
+  \s\MYname	{Rap Sheet}
+  \s\MYnumber	{280}
+  \s\MYtext	{This rap sheet is for \cLiar{}. It is long and detailed. \cLiar{\They} is clearly a master con artist.}
+}
+
+%%Items in banquet hall
+\NEW{Item}{\iDrums}{
+  \s\MYname	{Clam-Shell Drum Set}
+  \s\MYnumber	{445}
+  \s\MYtext	{This small drum set is made of hardy clam shells.}
+  \bulky{2}
+}
+
+\NEW{Item}{\iSaxaphone}{
+  \s\MYname	{Saxophone}
+  \s\MYnumber	{123}
+  \s\MYtext	{This is a shiny brass saxophone.}
+  \bulky{1}
+}
+
+\NEW{Item}{\iGuitar}{
+  \s\MYname	{Guitar}
+  \s\MYnumber	{386}
+  \s\MYtext	{A guitar. Luckily not electric.}
+  \bulky{1}
+}
+
+\NEW{Item}{\iBass}{
+  \s\MYname	{Bass Guitar}
+  \s\MYnumber	{345}
+  \s\MYtext	{A bass guitar. It makes a nice, deep sound.}
+  \bulky{1}
+}
+
+%Items in Dungeons
+
+\NEW{Item}{\iBarnacle}{
+  \s\MYname	{A Barnacle}
+  \s\MYnumber	{395}
+  \s\MYtext	{This is a barnacle.}
+}
+
+%Explorer's Guild Items
+\NEW{Item}{\iIceFish}{
+  \s\MYname	{Ice Fish Blood}
+  \s\MYnumber	{335}
+  \s\MYtext	{This is a vial of ice fish blood from the antarctic.}
+}
+
+\NEW{Item}{\iSquid}{
+  \s\MYname	{Squid Tentacle}
+  \s\MYnumber	{270}
+  \s\MYtext	{This is a tentacle from a juvenile giant squid.}
+}
+
+\NEW{Item}{\iAnglerFish}{
+  \s\MYname	{Angler Fish Lure}
+  \s\MYnumber	{412}
+  \s\MYtext	{This is a lure from an angler fish.}
+}
+
+\NEW{Item}{\iElectricEel}{
+  \s\MYname	{Electric Eel's Hunter's Organ}
+  \s\MYnumber	{600}
+  \s\MYtext	{This is a gland crucial for the electric discharge of the electric eel.}
+}
+
+\NEW{Item}{\iDeepClam}{
+  \s\MYname	{Deep Sea Clam}
+  \s\MYnumber	{243}
+  \s\MYtext	{This is a pure white deep sea clam.}
+}
+
+\NEW{Item}{\iManOfWar}{
+  \s\MYname	{Bell from a Man-of-War}
+  \s\MYnumber	{279}
+  \s\MYtext	{This is the bell from a Man-of-War. It is probably safe to handle.}
+}
+
+\NEW{Item}{\iMapOfIndia}{
+  \s\MYname	{Map of India}
+  \s\MYnumber	{631}
+  \s\MYtext	{This is a detailed map of India, including latitude and longitude.}
+}
+
+\NEW{Item}{\iMapOfAtlantica}{
+  \s\MYname	{Map of Atlantica}
+  \s\MYnumber	{583}
+  \s\MYtext	{This is a detailed map of \pAtlantis{}, including latitude and longitude.}
+}
+
+\NEW{Item}{\iMapOfPacifica}{
+  \s\MYname	{Map of Pacifica}
+  \s\MYnumber	{717}
+  \s\MYtext	{This is a detailed map of \pPacifica{}, including latitude and longitude.}
+}
+
+
+\NEW{Item}{\iNorthSeasJournal}{
+  \s\MYname	{A Journal of the North Sea Shipwrecks}
+  \s\MYnumber	{178}
+  \s\MYtext	{This is a detailed journal of an Explorer's Guild member's investigation of North Sea Shipwrecks. It documents a particular wreck that sunk on \cKraken{\MYname}, as having been beset upon by the Kraken, in the throes of a storm. It goes on to marvel for pages at the great strength of the Kraken.}
+}
+
+%caves
+\NEW{Item}{\iSeaUrchins}{
+  \s\MYname	{Black Sea Urchin}
+  \s\MYnumber	{843}
+  \s\MYtext	{This is a long-spined species of sea urchins. This species is poisonous, but can be handled with care.}
+}
+
+\NEW{Item}{\iSnails}{
+  \s\MYname	{Conus Snail}
+  \s\MYnumber	{743}
+  \s\MYtext	{All Conus snails are venomous and capable of ``stinging'' merfolk. Live ones should be handled with great care or preferably not at all.}
+}
+
+\NEW{ItemFold}{\iClam}{
+  \s\MYname	{A Clam}
+  \s\MYnumber	{704} %%Second Digit = 0
+  \s\MYtext	{Open if you break}
+  \s\MYcontents	{There is clam meat inside. Not very tasty.}
+}
+
+\NEW{ItemFold}{\iPearlClam}{
+  \s\MYname	{A Clam}
+  \s\MYnumber	{187}
+  \s\MYtext	{Open if you break}
+  \s\MYcontents	{There is a pearl here. Take the \iPearl{} item from the $\alpha$ packet behind the sign.}
+}
+
+\NEW{Item}{\iPearl}{
+  \s\MYname	{Black Pearl}
+  \s\MYnumber {288}
+  \s\MYtext	{This pearl is the size of a quarter and flawless. It is extremely rare and valuable.}
+  \val{}
+}
+
+%Residential Wing
+
+%Gardens
+\NEW{Item}{\iSeaFan}{
+  \s\MYname	{A frond of Sea Fan}
+  \s\MYnumber	{326}
+  \s\MYtext	{This is an ornate sea fan that is common in \pAtlantis{}n gardens.}
+}
+
+\NEW{Item}{\iTeeth}{
+  \s\MYname	{A Sharks Tooth}
+  \s\MYnumber	{418}
+  \s\MYtext	{This is a shark's tooth.  They are common \pAtlantis{} over.}
+}
+
+\NEW{Item}{\iConch}{
+  \s\MYname	{A Conch Shell}
+  \s\MYnumber	{330} %%Second Digit 3
+  \s\MYtext	{If you put it up to your ear, you can hear the wind blowing.}
+}
+
+%Pacifican Embassy
+\NEW{Item}{\iPaper}{
+  \s\MYname	{Waterproof Paper}
+  \s\MYnumber	{701} %%Second digit 0
+  \s\MYtext	{Waterproof paper is rare. Usually merfolk write on seaweed fronds.}
+}
+
+\NEW{Item}{\iReference}{
+  \s\MYname	{A News Article}
+  \s\MYnumber	{607} %%Second digit 0
+  \s\MYtext	{Waterproof paper is rare. Usually merfolk write on seaweed fronds.}
+}
+
+%Kitchen
+\NEW{Item}{\iSeaSnake}{
+  \s\MYname	{A Sea Snake Tail}
+  \s\MYnumber	{183}
+  \s\MYtext	{Sea snake tail is a common snack in \pAtlantis{}.}
+}
+
+\NEW{Item}{\iSwordfish}{
+  \s\MYname	{Swordfish Meat}
+  \s\MYnumber	{875}
+  \s\MYtext	{This is a swordfish fillet. It is a rare delicacy in \pAtlantis{}.}
+}
+
+%GM / oog signs
+\NEW{Item}{\iCipherLetter}{
+  \s\MYname	{A Letter from the Aquilino Family}
+  \s\MYnumber	{321}
+  \s\MYtext	{This letter is trite and sentimental.}
+}
+
+\NEW{ItemFold}{\iDrug}{
+  \s\MYname	{Red Seaweed}
+  \s\MYnumber	{632}
+  \s\MYtext	{open if you consume}
+  \s\MYcontents	{Your CR is +1 for the next 10 minutes. When this effect wears off, your CR is -1 for the next 10 minutes. This effect does not stack with consumption of additional Seaweed. It will stack with other CR effects.}
+}
+
+% Character Items
+
+\NEW{Item}{\iTablets}{
+  \s\MYname	{Medicinal Tablets}
+  \s\MYnumber {729}
+  \s\MYtext	{Tablets of an unidentifiable medicine.}
+}
+
+\NEW{Item}{\iKnife}{
+  \s\MYname	{Knife}
+  \s\MYnumber {351}
+  \s\MYtext	{A deadly knife. It enables Wound attacks (but not killing blows).}
+  \val{}
+}
+
+\NEW{Item}{\iBattlePlan}{
+  \s\MYname	{Troop Deployment Plan}
+  \s\MYnumber {598}
+  \s\MYtext	{A list of planned \pPacifica{}n troop movements for the war.}
+}
+
+\NEW{ItemFold}{\iWillPacket}{
+  \s\MYname	{My Will}
+  \s\MYnumber	{632}
+  \s\MYtext	{Open in the instance of my death - Signed, \cPlant{}}
+  \s\MYcontents	{}
+}
+
+%%Potions!!
+\NEW{ItemEnvelope}{\iHealingPotion}{
+  \s\MYname	{A Red Liquid in a Bottle}
+  \s\MYnumber	{939}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{If you are knocked out or wounded, wake up in 10 seconds, with no ill effects. If you are healthy, nothing happens.}
+}
+
+\NEW{ItemEnvelope}{\iPoison}{
+  \s\MYname	{A Green Liquid in a Bottle}
+  \s\MYnumber	{221}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{You have been poisoned! You are slightly nauseous, now mute, and will die in 10 minutes if you do not receive first aid {\bf AND} consume a healing potion. As soon as you do both of these things, you are cured-- you won't die and are no longer mute.}
+}
+
+\NEW{ItemEnvelope}{\iTransformationPotion}{
+  \s\MYname	{An Orange Liquid in a Bottle}
+  \s\MYnumber	{763}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{You have been transformed from a mer-person to a human or vice versa. If necessary, acquire a green headband from \pBanquet{}. Your CR is {\bf reduced by one} while not in the form you started game (your CR cannot go below zero).}
+  \s\MYitems {\iTransformed{}}
+}
+
+\NEW{ItemEnvelope}{\iDeadlyPoison}{
+  \s\MYname	{A Black Liquid in a Bottle}
+  \s\MYnumber	{106}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{You have been poisoned! The poison is very powerful and will kill you in 10 minutes. Since you are moderately nauseous, your CR drops to zero (and cannot be increased) and you must walk heel to toe. Only an exceptionally powerful magical artifact (\iWishingStone{\MYnumber}) can save you. Using this item to heal you will {\bf consume} the item.}
+}
+
+\NEW{ItemEnvelope}{\iBuffPotion}{
+  \s\MYname	{A Blue Liquid in a Bottle}
+  \s\MYnumber	{198}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{Your CR increases by 2 for 10 minutes.}
+}
+
+\NEW{ItemEnvelope}{\iShapeshifterPotion}{
+  \s\MYname	{A Gold Liquid in a Bottle}
+  \s\MYnumber	{925}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{If you are knocked out or wounded, wake up in 10 seconds, with no ill effects. If you are healthy, nothing happens.}
+	\s\MYmems{\mRevealedMem{}}
+}
+
+\NEW{ItemEnvelope}{\iLovePotion}{
+  \s\MYname	{A Purple Liquid in a Bottle}
+  \s\MYnumber	{500}
+  \s\MYtext	{Open if you drink}
+  \s\MYcontents	{You suddenly realize that you are madly in love with \cWitch{}. You only want to make \cWitch{\them} happy, and are thus compelled to obey \cWitch{\their} every command that doesn't involve killing yourself or others. You also gain the goal: ``Find some way to remain with \cWitch{} once the ball concludes.''}
+  \s\MYitems {\iLoveSpell{}}
+  \s\MYmems{\mLovePacket{}}
+}
+
+% Spell effects
+
+\NEW{Item}{\iEnslavementSpell}{
+  \s\MYname	{Enslavement}
+  \s\MYnumber {748}
+  \s\MYtext	{Level 4. This spell prevents you from going against the will of your master in any way that does not directly harm you. You may not act in any way that would directly harm your master, including speaking ill of them. You also may not act in any way that would work towards revealing that you are ensorcelled (you must attempt to resist magical searches from anyone other than your master).}
+  \effect{}
+}
+
+\NEW{Item}{\iLoveSpell}{
+  \s\MYname	{Madly in Love}
+  \s\MYnumber {470}
+  \s\MYtext	{Level 4. This spell prevents you from going against the will of your lover in any way that does not directly harm you. You may not act in any way that would directly harm your lover, including speaking ill of them. You also may not act in any way that would work towards revealing that you are ensorcelled (you must attempt to resist magical searches from anyone other than your lover). {\bf The effect of this spell is not unpleasant and you have no desire to break it.}}
+  \effect{}
+}
+
+\NEW{Item}{\iTransformed}{
+  \s\MYname	{Transformed}
+  \s\MYnumber {447}
+  \s\MYtext	{Level 4. This spell effect is what has transformed you into a different species. If this magical effect is removed by any means, reverse all effects of being turned into a human or mer-person.).}
+  \effect{}
+}
+
+\NEW{Item}{\iIdentityProtectionSpell}{
+  \s\MYname	{Identity Protection}
+  \s\MYnumber {438}
+  \s\MYtext	{Level 4. This spell prevents you from revealing the identity of your master. You may not act in any way that would work towards revealing their identity, including speaking ill of them or attacking them without full justification. This includes identifying them by omission, radically changing the way you react to them, or other roleplaying tricks (you are bound by the spirit of this powerful effect).}
+  \effect{}
+}
+
+%%928 = number of nonexistant sand dollars

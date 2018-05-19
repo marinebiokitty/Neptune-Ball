@@ -1,0 +1,157 @@
+%%%%%
+%%
+%% This file sets up the Green datatype and creates Green macros.
+%% These are for greensheets.
+%%
+%%%%%
+
+\DECLARESUBTYPE{Green}{Element}
+\PRESETS{Green}{
+  \FD\MYfile	{} %% filename (in \greens dir)
+  \FS\MYtext	{\ifx\MYfile\empty\else%
+		  \getextractenvs{document}{\greens/\MYfile}%
+		\fi}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Green}{\gTest}{
+  \s\MYname	{Test Greensheet}
+  \s\MYfile	{README.tex}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Green}{\gPotions}{
+  \s\MYname	{Spells and Potions}
+  \s\MYfile	{Potions.tex}
+  }
+  
+\NEW{Green}{\gShapeshifter}{
+  \s\MYname	{Shapeshifter Potion}
+  \s\MYfile	{ShapeshifterPotion.tex}
+}
+
+\NEW{Green}{\gLove}{
+  \s\MYname	{Love Potion}
+  \s\MYfile	{LovePotion.tex}
+}
+
+\NEW{Green}{\gBuff}{
+  \s\MYname	{CR Boost Potion}
+  \s\MYfile	{BuffPotion.tex}
+}
+
+\NEW{Green}{\gDecking}{
+  \s\MYname	{Picking Locks}
+  \s\MYfile	{Decking.tex}
+}
+
+\NEW{Green}{\gGlowShell}{
+  \s\MYname	{GM Sheet for Glow Shell Quest}
+  \s\MYfile	{GlowShellRiddleQuest.tex}
+}
+
+\NEW{Green}{\gWishingStone}{
+  \s\MYname	{GM Sheet for Wishing Stone Quest}
+  \s\MYfile	{WishingStoneRiddleQuest.tex}
+}
+
+\NEW{Green}{\gWS}{
+  \s\MYname	{The Quest For The Wishing Stone}
+  \s\MYfile	{WishingStone.tex}
+}
+
+\NEW{Green}{\gMoveMusicBox}{
+  \s\MYname	{To Move the Music Box}
+  \s\MYfile	{MusicBoxMove.tex}
+}
+
+\NEW{Green}{\gMonsterTransformation}{
+  \s\MYname	{Rawr!}
+  \s\MYfile	{MonsterTransformation.tex}
+}
+
+\NEW{Green}{\gSpellBreak}{
+  \s\MYname	{Breaking the Spell}
+  \s\MYfile	{SpellBreak.tex}
+}
+
+\NEW{Green}{\gTarot}{
+  \s\MYname	{Casting the Tarot}
+  \s\MYfile	{Tarot.tex}
+}
+ 
+\NEW{Green}{\gTreaty}{
+  \s\MYname	{Signing the Treaty}
+  \s\MYfile	{TreatySigning.tex}
+}
+
+\NEW{Green}{\gLineage}{
+  \s\MYname	{Proving Your Lineage}
+  \s\MYfile	{Lineage.tex}
+}
+
+\NEW{Green}{\gDepression}{
+  \s\MYname	{Battling Depression}
+  \s\MYfile	{Depression.tex}
+}
+
+\NEW{Green}{\gDance}{
+  \s\MYname	{The Ballroom Dance Showcase}
+  \s\MYfile	{Dance.tex}
+}
+
+\NEW{Green}{\gDanceScoring}{
+  \s\MYname	{The Ballroom Dance Showcase Scoring}
+  \s\MYfile	{DanceScoringGM.tex}
+}
+
+\NEW{Green}{\gChecklist}{
+  \s\MYname	{GM Checklist}
+  \s\MYfile	{PreGameChecklistGM.tex}
+}
+
+\NEW{Green}{\gRoster}{
+  \s\MYname	{Roster for the Ballroom Dance Showcase}
+  \s\MYfile	{DanceRoster.tex}
+}
+
+\NEW{Green}{\gRitual}{
+  \s\MYname	{Soul Sacrifice}
+  \s\MYfile	{Ritual.tex}
+}
+
+\NEW{Green}{\gAmulet}{
+  \s\MYname	{Ariel's Amulet}
+  \s\MYfile	{Amulet.tex}
+}
+
+\NEW{Green}{\gSpirits}{
+  \s\MYname	{A New Magician}
+  \s\MYfile	{Spirits.tex}
+}
+
+\NEW{Green}{\gBackground}{
+  \s\MYname	{How to Perform a Background Check}
+  \s\MYfile	{BackgroundCheck.tex}
+}
+
+\NEW{Green}{\gAddicted}{
+  \s\MYname	{Addicted!}
+  \s\MYfile	{Addicted.tex}
+}
+
+\NEW{Green}{\gNPC}{
+  \s\MYname	{How to be an NPC}
+  \s\MYfile	{NPC.tex}
+}
+
+\NEW{Green}{\gInduction}{
+  \s\MYname	{How to Induct a New Magician}
+  \s\MYfile	{InductionRitual.tex}
+}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
