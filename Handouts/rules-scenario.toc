@@ -1,55 +1,56 @@
-\contentsline {section}{\numberline {1}Scenario}{1}
-\contentsline {paragraph}{Game Times:}{1}
-\contentsline {paragraph}{Game Spaces:}{1}
-\contentsline {section}{\numberline {2}Getting Started}{1}
-\contentsline {subsection}{\numberline {2.1}Character Packets}{1}
-\contentsline {paragraph}{Name-Badge:}{1}
-\contentsline {paragraph}{Character Sheet:}{1}
-\contentsline {paragraph}{Bluesheets:}{1}
-\contentsline {paragraph}{Greensheets:}{1}
-\contentsline {paragraph}{Stat Card:}{1}
-\contentsline {paragraph}{Ability Cards:}{2}
-\contentsline {paragraph}{Memory/Event Packets:}{2}
-\contentsline {paragraph}{Items:}{2}
-\contentsline {subsection}{\numberline {2.2}Reality and Game Reality}{2}
-\contentsline {paragraph}{Halts:}{2}
-\contentsline {paragraph}{Not-Here:}{2}
-\contentsline {paragraph}{Non-Players:}{2}
-\contentsline {paragraph}{Observers:}{2}
-\contentsline {paragraph}{Mechanics:}{3}
-\contentsline {paragraph}{Safety:}{3}
-\contentsline {subsection}{\numberline {2.3}Basic Strategy}{3}
-\contentsline {section}{\numberline {3}Items Etc.}{3}
-\contentsline {paragraph}{Written Information:}{4}
-\contentsline {paragraph}{Envelopes:}{4}
-\contentsline {paragraph}{Signs:}{4}
-\contentsline {paragraph}{Bulkiness:}{4}
-\contentsline {paragraph}{Valuable:}{4}
-\contentsline {paragraph}{Props:}{4}
-\contentsline {paragraph}{Character Bodies:}{4}
-\contentsline {paragraph}{Unstashable Items:}{4}
-\contentsline {subsection}{\numberline {3.1}Searching, Stashing, and Stealing}{4}
-\contentsline {paragraph}{Places:}{4}
-\contentsline {paragraph}{People:}{4}
-\contentsline {paragraph}{Bags:}{5}
-\contentsline {section}{\numberline {4}Violence, Damage, and Death}{5}
-\contentsline {subsection}{\numberline {4.1}Health States}{5}
-\contentsline {subsection}{\numberline {4.2}Weapons}{5}
-\contentsline {subsection}{\numberline {4.3}Killing Blow}{5}
-\contentsline {subsection}{\numberline {4.4}Martial Combat}{5}
-\contentsline {paragraph}{Martial Attack Abilities:}{6}
-\contentsline {subsection}{\numberline {4.5}Stealth}{6}
-\contentsline {paragraph}{Waylay:}{6}
-\contentsline {paragraph}{Rope:}{6}
-\contentsline {paragraph}{Doors and Locks:}{6}
-\contentsline {section}{\numberline {5}Miscellaneous}{6}
-\contentsline {paragraph}{Headband Colors:}{6}
-\contentsline {paragraph}{Badge Numbers:}{7}
-\contentsline {section}{\numberline {6}The Neptune Ball Specific Changes}{7}
-\contentsline {subsection}{\numberline {6.1}Tape on the floor}{7}
-\contentsline {subsection}{\numberline {6.2}The Banquet}{7}
-\contentsline {subsection}{\numberline {6.3}Magical Effects}{7}
-\contentsline {subsection}{\numberline {6.4}NPCs}{7}
-\contentsline {subsection}{\numberline {6.5}Stickers}{7}
-\contentsline {subsection}{\numberline {6.6}Other}{8}
-\contentsline {section}{\numberline {7}Closing Notes}{8}
+\contentsline {section}{\numberline {1}Scenario}{1}% 
+\contentsline {paragraph}{Game Times:}{1}% 
+\contentsline {section}{\numberline {2}Getting Started}{1}% 
+\contentsline {subsection}{\numberline {2.1}Character Packets}{1}% 
+\contentsline {paragraph}{Name-Badge:}{1}% 
+\contentsline {paragraph}{Character Sheet:}{1}% 
+\contentsline {paragraph}{Bluesheets:}{1}% 
+\contentsline {paragraph}{Greensheets:}{1}% 
+\contentsline {paragraph}{Stat Card:}{1}% 
+\contentsline {paragraph}{Ability Cards:}{1}% 
+\contentsline {paragraph}{Memory/Event Packets:}{2}% 
+\contentsline {paragraph}{Items:}{2}% 
+\contentsline {paragraph}{Electronic Copies:}{2}% 
+\contentsline {subsection}{\numberline {2.2}Reality and Game Reality}{2}% 
+\contentsline {paragraph}{Halts:}{2}% 
+\contentsline {paragraph}{Not-Here:}{2}% 
+\contentsline {paragraph}{Observers:}{2}% 
+\contentsline {paragraph}{Mechanics:}{2}% 
+\contentsline {paragraph}{Safety:}{3}% 
+\contentsline {subsection}{\numberline {2.3}Basic Strategy}{3}% 
+\contentsline {subsection}{\numberline {2.4}Potentially Triggery Topics}{3}% 
+\contentsline {subsection}{\numberline {2.5}Taking the Heavy Stuff Seriously}{3}% 
+\contentsline {section}{\numberline {3}Items Etc.}{3}% 
+\contentsline {paragraph}{Written Information:}{4}% 
+\contentsline {paragraph}{Envelopes:}{4}% 
+\contentsline {paragraph}{Signs:}{4}% 
+\contentsline {paragraph}{Bulkiness:}{4}% 
+\contentsline {paragraph}{Valuable:}{4}% 
+\contentsline {paragraph}{Props:}{4}% 
+\contentsline {paragraph}{Character Bodies:}{4}% 
+\contentsline {paragraph}{Unstashable Items:}{4}% 
+\contentsline {subsection}{\numberline {3.1}Searching, Stashing, and Stealing}{4}% 
+\contentsline {paragraph}{Places:}{4}% 
+\contentsline {paragraph}{People:}{4}% 
+\contentsline {paragraph}{Bags:}{5}% 
+\contentsline {section}{\numberline {4}Violence, Damage, and Death}{5}% 
+\contentsline {subsection}{\numberline {4.1}Health States}{5}% 
+\contentsline {subsection}{\numberline {4.2}Weapons}{5}% 
+\contentsline {subsection}{\numberline {4.3}Killing Blow}{5}% 
+\contentsline {subsection}{\numberline {4.4}Martial Combat}{5}% 
+\contentsline {paragraph}{Martial Attack Abilities:}{6}% 
+\contentsline {subsection}{\numberline {4.5}Stealth}{6}% 
+\contentsline {paragraph}{Waylay:}{6}% 
+\contentsline {paragraph}{Rope:}{6}% 
+\contentsline {paragraph}{Doors and Locks:}{6}% 
+\contentsline {section}{\numberline {5}Miscellaneous}{7}% 
+\contentsline {paragraph}{Headband Colors:}{7}% 
+\contentsline {paragraph}{Badge Numbers:}{7}% 
+\contentsline {section}{\numberline {6}The Neptune Ball Specific Changes}{7}% 
+\contentsline {subsection}{\numberline {6.1}Tape on the floor}{7}% 
+\contentsline {subsection}{\numberline {6.2}The Banquet}{7}% 
+\contentsline {subsection}{\numberline {6.3}Magical Effects}{7}% 
+\contentsline {subsection}{\numberline {6.4}NPCs}{7}% 
+\contentsline {subsection}{\numberline {6.5}Stickers}{8}% 
+\contentsline {subsection}{\numberline {6.6}Other}{8}% 
+\contentsline {section}{\numberline {7}Closing Notes}{8}% 
