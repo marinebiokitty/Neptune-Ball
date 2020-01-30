@@ -99,16 +99,16 @@
 \newcommand{\mf}[2]{\mfn{#1}{#2}{}}
 \newcommand{\pronoun}[4]{\def#1{\mfn{#2}{#3}{#4}}}
 
-\pronoun{\they}		{he}{she}{it}
-\pronoun{\They}		{He}{She}{It}
-\pronoun{\them}		{him}{her}{it}
-\pronoun{\Them}		{Him}{Her}{It}
-\pronoun{\their}	{his}{her}{its}
-\pronoun{\Their}	{His}{Her}{Its}
-\pronoun{\theirs}	{his}{hers}{its}
-\pronoun{\Theirs}	{His}{Hers}{Its}
-\pronoun{\themself}	{himself}{herself}{itself}
-\pronoun{\Themself}	{Himself}{Herself}{Itself}
+\pronoun{\they}		{he}{she}{they}
+\pronoun{\They}		{He}{She}{They}
+\pronoun{\them}		{him}{her}{them}
+\pronoun{\Them}		{Him}{Her}{Them}
+\pronoun{\their}	{his}{her}{their}
+\pronoun{\Their}	{His}{Her}{Their}
+\pronoun{\theirs}	{his}{hers}{theirs}
+\pronoun{\Theirs}	{His}{Hers}{Theirs}
+\pronoun{\themself}	{himself}{herself}{themself}
+\pronoun{\Themself}	{Himself}{Herself}{Themself}
 \pronoun{\spouse}	{husband}{wife}{spouse}
 \pronoun{\Spouse}	{Husband}{Wife}{Spouse}
 \pronoun{\offspring}	{son}{daughter}{offspring}
@@ -123,10 +123,10 @@
 \pronoun{\Sibling}	{Brother}{Sister}{Sibling}
 \pronoun{\parent}	{father}{mother}{parent}
 \pronoun{\Parent}	{Father}{Mother}{Parent}
-\pronoun{\uncle}	{uncle}{aunt}{uncle}
-\pronoun{\Uncle}	{Uncle}{Aunt}{Uncle}
-\pronoun{\nephew}	{nephew}{niece}{nephew}
-\pronoun{\Nephew}	{Nephew}{Niece}{Nephew}
+\pronoun{\uncle}	{uncle}{aunt}{auncle}
+\pronoun{\Uncle}	{Uncle}{Aunt}{Auncle}
+\pronoun{\nephew}	{nephew}{niece}{nibling}
+\pronoun{\Nephew}	{Nephew}{Niece}{Nibling}
 \def\aunt{\uncle}
 \def\Aunt{\Uncle}
 \def\niece{\nephew}
@@ -221,7 +221,7 @@
    \s\MYsex {\male}
    \s\MYnumber	{531}
    \s\MYdesc     {An elderly merman with a completely white beard}
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Chris Weil}
   
   \s\MYblues	{\bAtlantican{}}
   \s\MYgreens	{\gDecking{} \gTreaty{} \gDepression{}}
@@ -241,7 +241,7 @@
    \s\MYsex      {\female}
    \s\MYnumber	{580}
    \s\MYdesc     {An elderly merwoman with all the airs of the cultural elite}
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Laurel Newman}
     
   \s\MYblues	{\bAtlantican{} \bAssassin{}}
   \s\MYgreens	{\gDecking{}}
@@ -260,7 +260,7 @@
    \s\MYsex      {\male}
    \s\MYnumber	{598}
    \s\MYdesc     {A stern merman wearing a military uniform}
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Jesse Wertheimer}
   
   \s\MYblues	{\bAtlantican{} \bHumanShort{} \bGuardian{}}
   \s\MYgreens	{\gDecking{} \gTreaty{} \gBackground{} \nMafia{}}
@@ -279,7 +279,7 @@
    \s\MYsex      {\female}
    \s\MYnumber	{237}
    \s\MYdesc     {A stunningly beautiful mermaid}   
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Alison Joy}
 
   \s\MYblues	{\bAtlantican{} \bMagician{}}
   \s\MYgreens	{\gDecking{} \gLove{} \gPotions{} \gRitual{} \gAmulet{}}
@@ -293,13 +293,13 @@
 	\s\MYalpha	{2}
 }
 
-\NEW{PC}{\cSlave}{ %% Eric and Ariel know him by the name Aldric (he is in disguise right now)
-   \s\MYname	{Pandora}
+\NEW{PC}{\cSlave}{ %% Eric and Ariel know her by the name Morgan/Aldric (she is in disguise right now)
+   \s\MYname	{Pandora}%Morvyn
    \s\MYfile	{Slave.tex}
    \s\MYsex      {\female}
    \s\MYnumber	{649}
    \s\MYdesc     {An elderly merwoman with far off eyes}   
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Rita}
 
   \s\MYblues	{\bAtlantican{} \bHumanShort{} \bMerchant{}}
   \s\MYgreens	{\gDecking{} \gTarot{} \gSpellBreak{} \nSpellBreakNotebook{} \nShipwreck{}}
@@ -318,7 +318,7 @@
    \s\MYsex      {\male}
    \s\MYnumber	{312}
    \s\MYdesc     {A solemnly dressed priest of the Church of the Tides}
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Brian Richburg}
   
   \s\MYblues	{\bExplorer{} \bAtlantican{}}
   \s\MYgreens	{\gDecking{} \nGazaStrip{}}
@@ -338,7 +338,7 @@
    \s\MYsex      {\female}
    \s\MYnumber	{270}
    \s\MYdesc     {A pretty young mermaid with a tiara}   
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Aslanta Chen}
   
   \s\MYblues	{\bAtlantican{} \bExplorer{}}
   \s\MYgreens	{\gDecking{} \gTreaty{} \gDance{} \gRoster{}}
@@ -357,7 +357,7 @@
    \s\MYsex      {\female}
    \s\MYnumber	{386}
    \s\MYdesc     {An innocent looking human woman with flaming red hair}   
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Nancy M}
   
   \s\MYblues	{\bAtlantican{} \bHuman{}}
   \s\MYgreens	{\gDecking{} \nMusicBox{}}
@@ -373,10 +373,10 @@
 \NEW{PC}{\cWillow}{
    \s\MYname	{Willow}
    \s\MYfile	{Willow.tex}
-   \s\MYsex      {\female}
+   \s\MYsex      {\neuter}
    \s\MYnumber	{143}
-   \s\MYdesc     {An 16 year old human with curly red hair}
-	 \s\MYplayer	{}
+   \s\MYdesc     {An 16 year old human teenager with curly red hair}
+	 \s\MYplayer	{Ennis Rook Bashe}
   
   \s\MYblues	{\bHuman{}}
   \s\MYgreens	{\gDecking{} \gAddicted{}}
@@ -396,10 +396,10 @@
    \s\MYsex      {\male}
    \s\MYnumber	{615}
    \s\MYdesc     {A stately, elderly merman wearing magician's robes}
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Sean Shirato Almon}
   
   \s\MYblues	{\bMagician{} \bAtlantican{}}
-  \s\MYgreens	{\gDecking{} \gShapeshifter{} \gLineage{} \gPotions{} \gMoveMusicBox{}}
+  \s\MYgreens	{\gDecking{} \gShapeshifter{} \gLineage{} \gPotions{}}% \gMoveMusicBox{}}
   \s\MYabils	{\aLesserDispel{} \aPerceive{} \aTeleport{}}
   \s\MYitems	{}
   \s\MYwhites	{\wInheritance{} \wSpeech{}}
@@ -411,12 +411,12 @@
 } 
 
 \NEW{PC}{\cDiplomat}{
-   \s\MYname	{Mirage}
+   \s\MYname	{Mirage} %Caspian
    \s\MYfile	{Diplomat.tex}
    \s\MYsex      {\female}
    \s\MYnumber	{276}
    \s\MYdesc     {A young mermaid with a friendly smile}   
-	 \s\MYplayer	{}
+	 \s\MYplayer	{Xavid}
   
   \s\MYblues	{\bPacifican{} \bAssassin{}}
   \s\MYgreens	{\gTreaty{} \gDecking{}}
@@ -428,13 +428,14 @@
   \s\MYtarot {The Devil}
   \s\MYcr	{4}
 } 
+
 \NEW{PC}{\cBodyguard}{
    \s\MYname	{Valerian}
    \s\MYfile	{Bodyguard.tex}
-   \s\MYsex      {\male}
+   \s\MYsex      {\female}
    \s\MYnumber	{397}
-   \s\MYdesc     {An imposing merman with eyes constantly scanning for threats}   
-	 \s\MYplayer	{}
+   \s\MYdesc     {An imposing merwoman with vigilant eyes}   
+	 \s\MYplayer	{Adina}
 
   \s\MYblues	{\bPacifican{} \bMagician{}}
   \s\MYgreens	{\gPotions{} \gBuff{} \gDecking{} \nIndianAggression{}}
@@ -448,12 +449,12 @@
 	\s\MYalpha	{2}
 }
 \NEW{PC}{\cPrince}{
-   \s\MYname	{Jared}
+   \s\MYname	{Jared} %Narissa
    \s\MYfile	{PacificanPrince.tex}
    \s\MYsex      {\male}
    \s\MYnumber	{271}
-   \s\MYdesc     {A handsome young merman with a regal bearing}   
-	 \s\MYplayer	{}
+   \s\MYdesc     {A beautiful young merman with a regal bearing}   
+	 \s\MYplayer	{Nick Knapp}
 
   \s\MYblues	{\bPacifican{}}
   \s\MYgreens	{\gDecking{} \gTreaty{}}
@@ -468,12 +469,12 @@
 
 
 \NEW{PC}{\cSpy}{
-   \s\MYname	{Damien}
+   \s\MYname	{Desara}%Damien
    \s\MYfile	{PacificanSpy.tex}
    \s\MYsex      {\male}
    \s\MYnumber	{347}
-   \s\MYdesc     {A merman with an intelligent look}   
-	 \s\MYplayer	{}
+   \s\MYdesc     {A merwoman with an intelligent look}   
+	 \s\MYplayer	{Willis}
 
   \s\MYblues	{\bAssassin{} \bPacifican{}}
   \s\MYgreens	{\gDecking{} \nWar{} \nIllicitWeapons{}}
@@ -491,7 +492,7 @@
    \s\MYfile	{KingsBrother.tex}
    \s\MYsex      {\male}
      \s\MYnumber	{481}
-  \s\MYdesc     {A middle age merman with a rugged and wild look.}   
+  \s\MYdesc     {A middle aged merman with a rugged and wild look.}   
 	 \s\MYplayer	{}
   
   \s\MYblues	{\bAtlantican{} \bExplorer{}}
@@ -503,6 +504,25 @@
   
   \s\MYtarot {The World}
   \s\MYcr	{4}
+}
+
+\NEW{PC}{\cReporter}{
+   \s\MYname	{Arnav}
+   \s\MYfile	{Reporter.tex}
+   \s\MYsex      {\male}
+     \s\MYnumber	{324}
+  \s\MYdesc     {A reporter with a studied look.}   
+	 \s\MYplayer	{}
+  
+  \s\MYblues	{\bAtlantican{}}
+  \s\MYgreens	{\gDecking{}}
+  \s\MYabils	{}
+  \s\MYitems	{}
+  \s\MYwhites	{}
+  \s\MYmems {\mQPacketGeneric{}}
+  
+  \s\MYtarot {Wheel of Fortune}
+  \s\MYcr	{2}
 } 
  
 %\NEW{Name}{\cSomeGuy}{
@@ -513,7 +533,7 @@
 %%These characters do not exist in game.
 %%This character is the King's father, who does not appear in game
 \NEW{Name}{\cExKing}{
-  \s\MYname    {Posieden}
+  \s\MYname    {Poseidon}
   \s\MYsex      {\male}
 }
 
@@ -560,8 +580,8 @@
 }
 
 \NEW{Name}{\cArielsSon}{ %% Opposite gender to willow
-	\s\MYname   {Nathan} %Natalie
-	\s\MYsex			{\male}
+	\s\MYname   {Natalie} %Nathan
+	\s\MYsex			{\female}
 }
 
 \NEW{Name}{\cPolio}{ %%In case we need to change the name later (also easy to add  dif name to pacificans)
@@ -570,7 +590,7 @@
 }
 
 \NEW{Name}{\cVHusband}{
-	\s\MYname   {Jane}
+	\s\MYname   {Jane}%Jason
 	\s\MYsex			{\female}
 }
 
@@ -595,36 +615,36 @@
 }
 
 \NEW{Name}{\cTOneFifty}{ %1:50 after gamestart
- \s\MYname {9:50 pm}
+ \s\MYname {10:30 am}
 }
 
 \NEW{Name}{\cTTwo}{ %2 hours after gamestart
- \s\MYname {10:00 pm}
+ \s\MYname {11:00 am}
 }
 
 
 \NEW{Name}{\cTThree}{ %3 hours after gamestart
- \s\MYname {11:00 pm}
+ \s\MYname {12:00 pm}
 }
 
 \NEW{Name}{\cTThreeThirty}{ %3.5 hours after gamestart
- \s\MYname {11:30 pm}
+ \s\MYname {12:30 pm}
 }
 
 \NEW{Name}{\cTFifteen}{ %45 min after gamestart
- \s\MYname {8:45 pm}
+ \s\MYname {10:15 am}
 }
 
 \NEW{Name}{\cTOneFifteen}{ %1:45 hours after gamestart
- \s\MYname {9:45 pm}
+ \s\MYname {11:30 am}
 }
 
 \NEW{Name}{\cTTwoFifteen}{ %2:45 hours after gamestart
- \s\MYname {10:45 pm}
+ \s\MYname {12:15 pm}
 }
 
 \NEW{Name}{\cTThreeFifteen}{ %3:45 hours after gamestart
- \s\MYname {11:45 pm}
+ \s\MYname {12:45 pm}
 }
 %%Heads of the guilds
 \NEW{Name}{\cKratos}{ %Head of Guardian's Guild

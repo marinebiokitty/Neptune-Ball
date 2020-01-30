@@ -1,0 +1,11 @@
+Unhardcode the room names being the character names
+
+Fix the Black Pearl/A Clam problem - they refer to the packets with different symbols
+
+Explain F packet to GMs (2 envelopes, letter from Hermes' family)
+
+Explain H packet to GMs, including the exact wording of forgery to be made. Also 2 envelopes.
+
+GM NOTE music box goes from 013 to ???
+
+GM Magic rune goes under glowing bricks
