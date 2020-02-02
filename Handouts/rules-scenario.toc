@@ -47,10 +47,11 @@
 \contentsline {paragraph}{Headband Colors:}{7}% 
 \contentsline {paragraph}{Badge Numbers:}{7}% 
 \contentsline {section}{\numberline {6}The Neptune Ball Specific Changes}{7}% 
-\contentsline {subsection}{\numberline {6.1}Tape on the floor}{7}% 
-\contentsline {subsection}{\numberline {6.2}The Banquet}{7}% 
-\contentsline {subsection}{\numberline {6.3}Magical Effects}{7}% 
-\contentsline {subsection}{\numberline {6.4}NPCs}{7}% 
-\contentsline {subsection}{\numberline {6.5}Stickers}{8}% 
-\contentsline {subsection}{\numberline {6.6}Other}{8}% 
+\contentsline {subsection}{\numberline {6.1}Dancing}{7}% 
+\contentsline {subsection}{\numberline {6.2}Tape on the floor}{7}% 
+\contentsline {subsection}{\numberline {6.3}The Banquet}{7}% 
+\contentsline {subsection}{\numberline {6.4}Magical Effects}{7}% 
+\contentsline {subsection}{\numberline {6.5}NPCs}{8}% 
+\contentsline {subsection}{\numberline {6.6}Stickers}{8}% 
+\contentsline {subsection}{\numberline {6.7}Other}{8}% 
 \contentsline {section}{\numberline {7}Closing Notes}{8}% 

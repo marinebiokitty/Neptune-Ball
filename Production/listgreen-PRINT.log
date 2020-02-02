@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  29 JAN 2020 21:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  1 FEB 2020 15:58
 entering extended mode
 **C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Production/listgreen-PR
 INT.tex
@@ -704,100 +704,19 @@ G,.JBIG2,.JB2,.eps]
 ) (listgreen-PRINT.aux)
 \openout1 = `listgreen-PRINT.aux'.
 
-
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Greensheets/Decking.tex
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 1.
-
-("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptmcm.fd
-"
-File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 1.
-
-
-("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlptmcm.fd
-"
-File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 1.
-
-
-("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxpsycm.fd
-"
-File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 1.
- ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
-("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
-("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 21.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 21.
-[1
-Non-PDF special ignored!
-<special> header=pstricks.pro
-Non-PDF special ignored!
-<special> header=pst-algparser.pro
-Non-PDF special ignored!
-<special> header=pst-tools.pro
-Non-PDF special ignored!
-<special> header=pst-dots.pro
-{C:/Users/charf/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-Non-PDF special ignored!
-<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
-Non-PDF special ignored!
-<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-Non-PDF special ignored!
-<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
-Non-PDF special ignored!
-<special> header="C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/P...
-
-] [2
-
-] (listgreen-PRINT.aux)
-\openout1 = `listgreen-PRINT.aux'.
-
  (listgreen-PRINT.aux) ) 
 Here is how much of TeX's memory you used:
- 16563 strings out of 492895
- 229828 string characters out of 3123735
- 393774 words of memory out of 3000000
- 20216 multiletter control sequences out of 15000+200000
- 21407 words of font info for 51 fonts, out of 3000000 for 9000
+ 16417 strings out of 492895
+ 227010 string characters out of 3123735
+ 388893 words of memory out of 3000000
+ 20115 multiletter control sequences out of 15000+200000
+ 4760 words of font info for 17 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,45p,2423b,1472s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts
-/enc/dvips/base/8r.enc}<C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/urw/times/utmb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/urw/times/utmbi8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on listgreen-PRINT.pdf (2 pages, 52026 bytes).
+ 45i,2n,45p,1314b,1475s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+No pages of output.
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 0 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

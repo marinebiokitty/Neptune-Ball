@@ -65,7 +65,7 @@
 %% as the \MYhp field, that defaults to 5.
 \PRESETS{Char}{
   \FD\MYdesc	{} %% badge description
-
+\newstat\MYpronouns	{Pronouns}{P}{They/Them} %% for DarkWater-style combat
   \newstat\MYcr	{Combat Rating}{CR}{2} %% for DarkWater-style combat
   \newstat\MYgamma	{$\gamma$}{$\gamma$}{0} % Underground connections
   \newstat\MYbeta	{$\beta$}{$\beta$}{0} % Emotional stats
@@ -220,12 +220,13 @@
    \s\MYname	{King \pre Triton}
    \s\MYfile	{King.tex}
    \s\MYsex {\male}
+	\s\MYpronouns  {He/Him}
    \s\MYnumber	{531}
    \s\MYdesc     {An elderly merman with a completely white beard}
 	 \s\MYplayer	{Chris Weil}
   
   \s\MYblues	{\bAtlantican{}}
-  \s\MYgreens	{\gDecking{} \gTreaty{} \gDepression{}}
+  \s\MYgreens	{\gTreaty{} \gDepression{}}
   \s\MYabils	{\aFirstAid{} \aMerengue{}}
   \s\MYitems	{\iTrident{} \iTablets{}} 
   \s\MYwhites	{\wTreaty{}}
@@ -240,8 +241,9 @@
    \s\MYname	{Iris}
    \s\MYfile	{Athena.tex}
    \s\MYsex      {\female}
+	\s\MYpronouns  {She/Her}
    \s\MYnumber	{580}
-   \s\MYdesc     {An elderly merwoman with all the airs of the cultural elite}
+   \s\MYdesc     {An elderly, Noble merwoman}
 	 \s\MYplayer	{Laurel Newman}
     
   \s\MYblues	{\bAtlantican{} \bAssassin{}}
@@ -259,6 +261,7 @@
    \s\MYname	{General \pre Gladius}
    \s\MYfile	{Shapeshifter.tex}
    \s\MYsex      {\male}
+	\s\MYpronouns  {He/Him}
    \s\MYnumber	{598}
    \s\MYdesc     {A stern merman wearing a military uniform}
 	 \s\MYplayer	{Jesse Wertheimer}
@@ -278,12 +281,13 @@
    \s\MYname	{Pearl}
    \s\MYfile	{SeaWitch.tex}
    \s\MYsex      {\female}
+	\s\MYpronouns  {She/Her}
    \s\MYnumber	{237}
    \s\MYdesc     {A stunningly beautiful mermaid}   
 	 \s\MYplayer	{Alison Joy}
 
   \s\MYblues	{\bAtlantican{} \bMagician{}}
-  \s\MYgreens	{\gDecking{} \gLove{} \gPotions{} \gRitual{} \gAmulet{}}
+  \s\MYgreens	{\gLove{} \gPotions{} \gRitual{} \gAmulet{}}
   \s\MYabils	{\aPerceive{} \aLesserDispel{} \aGreaterDispel{} \aMonsterTransformation{} \aDrawBlood{}}
   \s\MYitems	{\iPearl{} \iAmulet{} \iArielAmulet{}}
   \s\MYwhites	{}
@@ -298,12 +302,13 @@
    \s\MYname	{Pandora}%Morvyn
    \s\MYfile	{Slave.tex}
    \s\MYsex      {\female}
+	\s\MYpronouns  {She/Her}
    \s\MYnumber	{649}
    \s\MYdesc     {An elderly merwoman with far off eyes}   
 	 \s\MYplayer	{Rita}
 
   \s\MYblues	{\bAtlantican{} \bHumanShort{} \bMerchant{}}
-  \s\MYgreens	{\gDecking{} \gTarot{} \gSpellBreak{} \nSpellBreakNotebook{} \nShipwreck{}}
+  \s\MYgreens	{\gTarot{} \gSpellBreak{} \nSpellBreakNotebook{} \nShipwreck{}}
   \s\MYabils	{\aNo{} \aSwing{}}
   \s\MYitems	{\iEnslavementSpell{} \iIdentityProtectionSpell{}}
   \s\MYwhites	{}
@@ -317,6 +322,7 @@
    \s\MYname	{Hermes Aquilino}
    \s\MYfile	{Urchin.tex}
    \s\MYsex      {\male}
+	\s\MYpronouns  {He/Him}
    \s\MYnumber	{312}
    \s\MYdesc     {A solemnly dressed priest of the Church of the Tides}
 	 \s\MYplayer	{Brian Richburg}
@@ -337,6 +343,7 @@
    \s\MYname	{Adriana}
    \s\MYfile	{Princess.tex}
    \s\MYsex      {\female}
+	\s\MYpronouns  {She/Her}
    \s\MYnumber	{270}
    \s\MYdesc     {A pretty young mermaid with a tiara}   
 	 \s\MYplayer	{Aslanta Chen}
@@ -356,12 +363,13 @@
    \s\MYname	{Ariel}
    \s\MYfile	{Ariel.tex}
    \s\MYsex      {\female}
+	 \s\MYpronouns  {She/Her}
    \s\MYnumber	{386}
    \s\MYdesc     {An innocent looking human woman with flaming red hair}   
 	 \s\MYplayer	{Nancy M}
   
   \s\MYblues	{\bAtlantican{} \bHuman{}}
-  \s\MYgreens	{\gDecking{} \nMusicBox{}}
+  \s\MYgreens	{\nMusicBox{}}
   \s\MYabils	{\aFirstAid{} \aSwing{}}
   \s\MYitems	{\iArielBracelet{} \iVaccine{}}
   \s\MYwhites	{}
@@ -375,8 +383,9 @@
    \s\MYname	{Willow}
    \s\MYfile	{Willow.tex}
    \s\MYsex      {\neuter}
+	\s\MYpronouns  {They/Them}
    \s\MYnumber	{143}
-   \s\MYdesc     {An 16 year old human teenager with curly red hair}
+   \s\MYdesc     {An teenage human with curly red hair}
 	 \s\MYplayer	{Ennis Rook Bashe}
   
   \s\MYblues	{\bHuman{}}
@@ -395,12 +404,13 @@
    \s\MYname	{Sebastian}
    \s\MYfile	{Manta.tex}
    \s\MYsex      {\male}
+	\s\MYpronouns  {He/Him}
    \s\MYnumber	{615}
    \s\MYdesc     {A stately, elderly merman wearing magician's robes}
 	 \s\MYplayer	{Sean Shirato Almon}
   
   \s\MYblues	{\bMagician{} \bAtlantican{}}
-  \s\MYgreens	{\gDecking{} \gShapeshifter{} \gLineage{} \gPotions{}}% \gMoveMusicBox{}}
+  \s\MYgreens	{\gShapeshifter{} \gLineage{} \gPotions{}}% \gMoveMusicBox{}}
   \s\MYabils	{\aLesserDispel{} \aPerceive{} \aTeleport{}}
   \s\MYitems	{}
   \s\MYwhites	{\wInheritance{} \wSpeech{}}
@@ -415,6 +425,7 @@
    \s\MYname	{Mirage} %Caspian
    \s\MYfile	{Diplomat.tex}
    \s\MYsex      {\female}
+	\s\MYpronouns  {She/Her}
    \s\MYnumber	{276}
    \s\MYdesc     {A young mermaid with a friendly smile}   
 	 \s\MYplayer	{Xavid}
@@ -434,12 +445,13 @@
    \s\MYname	{Valerian}
    \s\MYfile	{Bodyguard.tex}
    \s\MYsex      {\male}
+	\s\MYpronouns  {He/Him}
    \s\MYnumber	{397}
    \s\MYdesc     {An imposing merman with vigilant eyes}   
 	 \s\MYplayer	{Willis}
 
   \s\MYblues	{\bPacifican{} \bMagician{}}
-  \s\MYgreens	{\gPotions{} \gBuff{} \gDecking{} \nIndianAggression{}}
+  \s\MYgreens	{\gDecking{} \gPotions{} \gBuff{} \nIndianAggression{}}
   \s\MYabils	{\aFirstAid{} \aLesserDispel{} \aPerceive{}}
   \s\MYitems	{}
   \s\MYwhites	{}
@@ -453,12 +465,13 @@
    \s\MYname	{Jared} %Narissa
    \s\MYfile	{PacificanPrince.tex}
    \s\MYsex      {\male}
+	\s\MYpronouns  {He/Him}
    \s\MYnumber	{271}
    \s\MYdesc     {A beautiful young merman with a regal bearing}   
 	 \s\MYplayer	{Nick Knapp}
 
   \s\MYblues	{\bPacifican{}}
-  \s\MYgreens	{\gDecking{} \gTreaty{}}
+  \s\MYgreens	{\gTreaty{}}
   \s\MYabils	{\aRampage{} \aXStep{}}
   \s\MYitems	{\iSignetRing{}}
   \s\MYwhites	{\wTreaty{}}
@@ -473,6 +486,7 @@
    \s\MYname	{Desara}%Damien
    \s\MYfile	{PacificanSpy.tex}
    \s\MYsex      {\female}
+	\s\MYpronouns  {She/Her}
    \s\MYnumber	{347}
    \s\MYdesc     {A merwoman with an intelligent look}   
 	 \s\MYplayer	{Adina}
@@ -491,13 +505,14 @@
 \NEW{PC}{\cPlant}{
    \s\MYname	{Osiris}
    \s\MYfile	{KingsBrother.tex}
-   \s\MYsex      {\male}
+   \s\MYsex      {\neuter}
+	\s\MYpronouns  {They/Them}
      \s\MYnumber	{481}
-  \s\MYdesc     {A middle aged merman with a rugged and wild look.}   
-	 \s\MYplayer	{Andy Piltser-Cowan}
+  \s\MYdesc     {A merperson with a rugged and wild look.}   
+	 \s\MYplayer	{Andy PC}
   
   \s\MYblues	{\bAtlantican{} \bExplorer{}}
-  \s\MYgreens	{\gDecking{}}
+  \s\MYgreens	{}
   \s\MYabils	{}
   \s\MYitems	{\iKnife{} \iPacificanLaw{} \iWillPacket{} \iWillPacket{} \iWillPacket{}}
   \s\MYwhites	{}
@@ -511,12 +526,13 @@
    \s\MYname	{Arnav}
    \s\MYfile	{Reporter.tex}
    \s\MYsex      {\male}
+	\s\MYpronouns  {He/Him}
      \s\MYnumber	{324}
   \s\MYdesc     {A reporter with a studied look.}   
 	 \s\MYplayer	{Patrick}
   
   \s\MYblues	{\bAtlantican{}}
-  \s\MYgreens	{\gDecking{}}
+  \s\MYgreens	{}
   \s\MYabils	{}
   \s\MYitems	{}
   \s\MYwhites	{}
