@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  29 JAN 2020 19:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  19 FEB 2022 15:54
 entering extended mode
-**C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Greensheets/Potions.tex
-
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Greensheets/Potions.tex
+**C:/Users/charf/Documents/GitHub/Neptune-Ball/Greensheets/Potions.tex
+(C:/Users/charf/Documents/GitHub/Neptune-Ball/Greensheets/Potions.tex
 LaTeX2e <2018-12-01>
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.c
-ls) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.cls)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
 Document Class: NeptuneBall 
   --- The Neptune Ball --- June 10, 2018 ---
 \@multicount=\count80
@@ -552,32 +551,31 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
 \!toks=\toks33
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
 \*count=\count134
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
 \:count=\count135
 \:toks=\toks34
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
-No file "C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIS
-T.tex.
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
+No file "C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIST.tex.
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
 sty"
@@ -596,8 +594,7 @@ s
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.
 sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
-)
-No file Potions.aux.
+) (Potions.aux)
 \openout1 = `Potions.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -608,6 +605,7 @@ LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 2.
 LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 2.
+
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omspzccm.fd
 "
@@ -760,7 +758,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
-<special> header="C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/P...
+<special> header="C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Postscript...
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
@@ -769,19 +767,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 [2] [3] (Potions.aux) ) 
 Here is how much of TeX's memory you used:
  16378 strings out of 492895
- 227396 string characters out of 3123735
- 394326 words of memory out of 3000000
- 20047 multiletter control sequences out of 15000+200000
+ 227002 string characters out of 3123735
+ 394279 words of memory out of 3000000
+ 20045 multiletter control sequences out of 15000+200000
  20134 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,12n,45p,1158b,617s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,45p,1149b,617s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/
 enc/dvips/base/8r.enc}<C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/urw/symbol/usyr.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/urw/times/utmb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/urw/times/utmr8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Potions.pdf (3 pages, 56599 bytes).
+Output written on Potions.pdf (3 pages, 56733 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

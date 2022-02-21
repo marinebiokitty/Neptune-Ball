@@ -1,14 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  1 FEB 2020 16:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  19 FEB 2022 14:03
 entering extended mode
-**C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Production/abil-PRINT.t
-ex
-
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Production/abil-PRINT.te
-x
+**C:/Users/charf/Documents/GitHub/Neptune-Ball/Production/abil-PRINT.tex
+(C:/Users/charf/Documents/GitHub/Neptune-Ball/Production/abil-PRINT.tex
 LaTeX2e <2018-12-01>
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.c
-ls) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.cls)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
 Document Class: NeptuneBall 
   --- The Neptune Ball --- June 10, 2018 ---
 \@multicount=\count80
@@ -554,32 +551,31 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
 \!toks=\toks33
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
 \*count=\count134
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
 \:count=\count135
 \:toks=\toks34
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
-No file "C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIS
-T.tex.
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
+No file "C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIST.tex.
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
 sty"
@@ -594,7 +590,7 @@ s
 \f@nch@O@erf=\skip52
 \f@nch@O@olf=\skip53
 \f@nch@O@orf=\skip54
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/cards.sty
+) (C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/cards.sty
 \front_card=\box61
 \back_card=\box62
 \front_box=\box63
@@ -718,11 +714,6 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 4.49997pt on input line 5.
-
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Princess.tex
-)
-LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 5.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 5.
@@ -796,175 +787,24 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
-<special> header="C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/P...
+<special> header="C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Postscript...
 
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Urchin.tex)
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 5.
-LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 5.
-
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Ariel.tex)
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Reporter.tex
-)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/PacificanSpy
-.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Shapeshifter
-.tex) (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Athena.tex)
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/PacificanPri
-nce.tex) (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Diplomat.tex
-) (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/KingsBrother
-.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Slave.tex)
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/SeaWitch.tex
-) (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-]
-[2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Manta.tex)
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/King.tex)
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Bodyguard.te
-x) (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Willow.tex)
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2] (abil-PRINT.aux)
-\openout1 = `abil-PRINT.aux'.
-
- [1
-
-] [2]
-(abil-PRINT.aux) ) 
+] [2] (abil-PRINT.aux) ) 
 Here is how much of TeX's memory you used:
- 17527 strings out of 492895
- 242854 string characters out of 3123735
- 422039 words of memory out of 3000000
- 21095 multiletter control sequences out of 15000+200000
- 26110 words of font info for 57 fonts, out of 3000000 for 9000
+ 16408 strings out of 492895
+ 226948 string characters out of 3123735
+ 391914 words of memory out of 3000000
+ 20074 multiletter control sequences out of 15000+200000
+ 21055 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,13n,45p,1506b,1672s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
-vips/base/8r.enc}<C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-urw/helvetic/uhvb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/urw/helvetic/uhvr8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/charf/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb>
-Output written on abil-PRINT.pdf (46 pages, 84781 bytes).
+ 45i,13n,45p,939b,1105s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts
+/enc/dvips/base/8r.enc}<C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/urw/helvetic/uhvb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on abil-PRINT.pdf (2 pages, 18842 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
+ 18 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

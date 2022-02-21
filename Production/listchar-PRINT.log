@@ -1,14 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  1 FEB 2020 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  5 JUL 2021 19:13
 entering extended mode
-**C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Production/listchar-PRI
-NT.tex
-
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Production/listchar-PRIN
-T.tex
+**C:/Users/charf/Documents/GitHub/Neptune-Ball/Production/listchar-PRINT.tex
+(C:/Users/charf/Documents/GitHub/Neptune-Ball/Production/listchar-PRINT.tex
 LaTeX2e <2018-12-01>
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.c
-ls) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.cls)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
 Document Class: NeptuneBall 
   --- The Neptune Ball --- June 10, 2018 ---
 \@multicount=\count80
@@ -554,32 +551,31 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
 \!toks=\toks33
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
 \*count=\count134
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
 \:count=\count135
 \:toks=\toks34
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
-No file "C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIS
-T.tex.
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
+No file "C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIST.tex.
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
 sty"
@@ -699,14 +695,12 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Princess.tex
 ) (listchar-PRINT.aux)
 \openout1 = `listchar-PRINT.aux'.
 
 
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Charsheets/Princess.tex
-)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Princess.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Princess.tex)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
@@ -770,22 +764,162 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
-<special> header="C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/P...
+<special> header="C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Postscript...
 
 ] [2] [3] [4
 
 ] (listchar-PRINT.aux)
 \openout1 = `listchar-PRINT.aux'.
 
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Urchin.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Urchin.tex) [1
+
+]
+[2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Ariel.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Ariel.tex) [1
+
+]
+[2] [3] [4] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Reporter.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Reporter.tex)
+[1
+
+] [2] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/PacificanSpy.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/PacificanSpy.tex)
+[1
+
+] [2] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Shapeshifter.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Shapeshifter.tex)
+[1
+
+] [2] [3] [4] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Athena.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Athena.tex) [1
+
+]
+[2] [3] [4] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/PacificanPrince.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/PacificanPrince.tex)
+[1
+
+] [2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Diplomat.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Diplomat.tex)
+[1
+
+] [2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/KingsBrother.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/KingsBrother.tex)
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 1.
+
+("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1
+
+] [2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Slave.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Slave.tex) [1
+
+]
+[2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/SeaWitch.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/SeaWitch.tex)
+[1
+
+] [2] [3] [4] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Manta.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Manta.tex) [1
+
+]
+[2] [3] [4] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/King.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/King.tex) [1
+
+]
+[2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Bodyguard.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Bodyguard.tex)
+[1
+
+] [2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
+
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Willow.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Charsheets/Willow.tex) [1
+
+]
+[2] [3] [4
+
+] (listchar-PRINT.aux)
+\openout1 = `listchar-PRINT.aux'.
+
  (listchar-PRINT.aux) ) 
 Here is how much of TeX's memory you used:
- 16877 strings out of 492895
- 232941 string characters out of 3123735
- 443970 words of memory out of 3000000
- 20532 multiletter control sequences out of 15000+200000
- 22804 words of font info for 54 fonts, out of 3000000 for 9000
+ 17787 strings out of 492895
+ 246673 string characters out of 3123735
+ 479231 words of memory out of 3000000
+ 21334 multiletter control sequences out of 15000+200000
+ 23625 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,13n,45p,10641b,2035s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,14n,45p,18265b,2087s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/
 enc/dvips/base/8r.enc}<C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/urw/symbol/usyr.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/font
@@ -793,9 +927,9 @@ s/type1/urw/times/utmb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/urw/times/utmbi8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/charf/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on listchar-PRINT.pdf (4 pages, 63848 bytes).
+Output written on listchar-PRINT.pdf (60 pages, 235793 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
