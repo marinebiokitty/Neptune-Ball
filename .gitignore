@@ -1,2 +1,9 @@
 
 _gitignore
+*.aux
+*.bbl
+*.blg
+*.log
+*.log
+*.aux
+*.pdf
