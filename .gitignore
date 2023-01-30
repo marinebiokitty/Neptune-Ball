@@ -4,6 +4,7 @@ _gitignore
 *.bbl
 *.blg
 *.log
-*.log
 *.aux
 *.pdf
+*.aux
+LaTeX/NeptuneBall_path.cls
