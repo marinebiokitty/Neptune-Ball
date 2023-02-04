@@ -1,14 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  1 FEB 2020 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  3 FEB 2023 17:20
 entering extended mode
-**C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Handouts/rules-scenario
-.tex
-
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/Handouts/rules-scenario.
-tex
+**C:/Users/charf/Documents/GitHub/Neptune-Ball/Handouts/rules-scenario.tex
+(C:/Users/charf/Documents/GitHub/Neptune-Ball/Handouts/rules-scenario.tex
 LaTeX2e <2018-12-01>
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
-(C:\Users\charf\OneDrive\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.c
-ls) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall.cls
+(C:\Users\charf\Documents\GitHub\Neptune-Ball\LaTeX\NeptuneBall_path.cls)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/gametex.sty
 Document Class: NeptuneBall 
   --- The Neptune Ball --- June 10, 2018 ---
 \@multicount=\count80
@@ -554,32 +551,31 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/extraction.sty
 \!toks=\toks33
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/parsename.sty
 \*count=\count134
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//LaTeX/datatypes.sty
 \:count=\count135
 \:toks=\toks34
 )
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex
-) (C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
-(C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
-No file "C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIS
-T.tex.
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/blue-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/green-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/abil-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/combat-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/mem-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/item-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/white-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/notebook-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/money-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/sign-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/subowner-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/gm-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/char-LIST.tex)
+(C:/Users/charf/Documents/GitHub/Neptune-Ball//Lists/place-LIST.tex)
+No file "C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Lists/run1-LIST.tex.
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
 sty"
@@ -601,31 +597,31 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 ) (rules-scenario.aux)
 \openout1 = `rules-scenario.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 78.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 78
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 10
 .
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omspzccm.fd
 "
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 78.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 10.
  ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    ... okay on input line 10.
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
@@ -701,22 +697,22 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 85.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 85
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 17
 .
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptmcm.fd
 "
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 85
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 17
 .
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlptmcm.fd
 "
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 85
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 17
 .
 
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxpsycm.fd
@@ -724,18 +720,18 @@ LaTeX Font Info:    Try loading font information for OMX+psycm on input line 85
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 85.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 85.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 85.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 17.
  ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 85.
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 85.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 ("C:\Users\charf\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -755,17 +751,12 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
-<special> header="C:/Users/charf/OneDrive/Documents/GitHub/Neptune-Ball/"/P...
+<special> header="C:/Users/charf/Documents/GitHub/Neptune-Ball/"/Postscript...
 {C:/Users/charf/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
 
-(rules-scenario.toc
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-)
+(rules-scenario.toc)
 \tf@toc=\write3
 \openout3 = `rules-scenario.toc'.
 
@@ -773,31 +764,32 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 166.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 82.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 379.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 108.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 379.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 108.
  [1
 
-] [2] [3] [4] [5] [6] [7] [8] (rules-scenario.aux) ) 
+] [2] [3] [4] [5] [6] [7] [8] [9]
+(rules-scenario.aux) ) 
 Here is how much of TeX's memory you used:
- 16505 strings out of 492895
- 228946 string characters out of 3123735
- 393231 words of memory out of 3000000
- 20166 multiletter control sequences out of 15000+200000
- 33677 words of font info for 77 fonts, out of 3000000 for 9000
+ 16365 strings out of 492895
+ 227325 string characters out of 3123735
+ 391417 words of memory out of 3000000
+ 20029 multiletter control sequences out of 15000+200000
+ 27385 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,13n,45p,940b,907s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/charf/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/charf/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/charf/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/charf/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/charf
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on rules-scenario.pdf (10 pages, 88855 bytes).
+ 43i,13n,45p,956b,907s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/e
+nc/dvips/base/8r.enc}<C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/urw/times/utmb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/urw/times/utmbi8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/urw/times/utmr8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on rules-scenario.pdf (11 pages, 94492 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
