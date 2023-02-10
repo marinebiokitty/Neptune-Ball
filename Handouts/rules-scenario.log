@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  3 FEB 2023 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.13)  9 FEB 2023 17:11
 entering extended mode
 **C:/Users/charf/Documents/GitHub/Neptune-Ball/Handouts/rules-scenario.tex
 (C:/Users/charf/Documents/GitHub/Neptune-Ball/Handouts/rules-scenario.tex
@@ -756,7 +756,12 @@ Non-PDF special ignored!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
 
-(rules-scenario.toc)
+(rules-scenario.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+)
 \tf@toc=\write3
 \openout3 = `rules-scenario.toc'.
 
@@ -774,11 +779,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
 ] [2] [3] [4] [5] [6] [7] [8] [9]
 (rules-scenario.aux) ) 
 Here is how much of TeX's memory you used:
- 16365 strings out of 492895
- 227325 string characters out of 3123735
- 391417 words of memory out of 3000000
- 20029 multiletter control sequences out of 15000+200000
- 27385 words of font info for 60 fonts, out of 3000000 for 9000
+ 16406 strings out of 492895
+ 227808 string characters out of 3123735
+ 390663 words of memory out of 3000000
+ 20067 multiletter control sequences out of 15000+200000
+ 33677 words of font info for 77 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,13n,45p,956b,907s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/fonts/e
@@ -787,7 +792,7 @@ pe1/urw/times/utmb8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/urw/times/utmbi8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Users/charf/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on rules-scenario.pdf (11 pages, 94492 bytes).
+Output written on rules-scenario.pdf (11 pages, 95077 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
