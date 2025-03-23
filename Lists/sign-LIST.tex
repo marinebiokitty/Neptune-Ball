@@ -732,14 +732,14 @@ Following the completion of the ceremony, NPC pages will inform everyone in game
 
 	The words on the large stone direct you to a book on a nearby bookshelf that has suddenly started to glow. You open the book to a confusing set of shifting numbers. \\
 	
-	f you would like to attempt to solve this riddle, lift only \emph{this} sign to find the sign marked ``North Stone Question'' and find the riddle below.}
+	f you would like to attempt to solve this riddle, lift only \emph{this} sign to find the sign marked ``South Stone Question'' and find the riddle below.}
   \s\MYitems {}
  }
 
 \NEW{Sign}{\sSouthStoneQuestion}{
   \s\MYname	{South Stone Question}
   \s\MYloc	{-002}
-  \s\MYtext	{Take a Sudoku puzzle from the envelope below and solve for the spaces marked with a red circle. Once you find the three numbers indicated, put them in numerical order and check your answer on the sign below this one. You will not need to solve the entire Sudoku to complete this puzzle.\\
+  \s\MYtext	{Take a Sudoku puzzle from the envelope below and \textbf{solve for the spaces marked with circles}. Once you find the three numbers indicated, put them in numerical order and check your answer on the sign below this one. \textbf{You will not need to solve the entire Sudoku to complete this puzzle.}\\
 	
 	{\bf Sudoku rules} \\
 	The objective of a sudoku is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 sub-grids that compose the grid contains all of the digits from 1 to 9 once. Each puzzle has a unique solution.}
@@ -843,7 +843,7 @@ Following the completion of the ceremony, NPC pages will inform everyone in game
 	
 	The images on the large stone show a set of paintings you recognize from the Banquet Hall. You're not quite sure what to make of it - maybe you're supposed to look for clues there? \\
 	
-	If you would like to attempt to solve this riddle, lift the ``W Sign'' in the Banquet Hall and solve the riddle below. Lift this sign when you want to check your answer.}
+	If you would like to attempt to solve this riddle, lift the ``W Sign'' in the Banquet Hall and solve the riddle below. Lift this sign only when instructed to do so.}
   \s\MYitems {}
  }
 
@@ -857,7 +857,7 @@ Following the completion of the ceremony, NPC pages will inform everyone in game
 \NEW{Sign}{\sWestStoneQuestion}{
   \s\MYname	{West Stone Question}
   \s\MYloc	{-013}
-  \s\MYtext	{The lock has altered the paintings in this hall ever so slightly, hiding letters within. This takes the form of a word search in the packet below. Certain letters are highlighted on the word search. These are the possible letters that you may need to find. If a hidden word has a highlighted letter, that is one of the 5 letters that compose your answer. Once you have found 5 letters that are both highlighted and part of a hidden word, alphabetize them, and return to the chest to input your answer.
+  \s\MYtext	{The lock has altered the paintings in this hall ever so slightly, hiding letters within. Mechanically, this takes the form of a word search in the packet below. Once you have found all of the words, you may return to the West stone and lift it to learn the next step.
 	
 	Because this puzzle requires you to look closely at the paintings in order to solve it, you must stay within line of sight of the paintings in this room in order to work on the puzzle.}
   \s\MYitems {}
@@ -873,9 +873,9 @@ Following the completion of the ceremony, NPC pages will inform everyone in game
 \NEW{Sign}{\sWestStoneAnswer}{
   \s\MYname	{West Stone Answer}
   \s\MYloc	{-002}
-  \s\MYtext	{{\bf EGHIL} \\
+  \s\MYtext	{
 	
-	You may attempt to solve the lock on the large stone (Lift the ``\sLargeStoneCover{}'' sign and read the one under it marked ``\sLargeStoneQuestion{}''). If you did not answer this question correctly, take a 15 minute penalty per question you have failed first.}
+	You may now attempt to solve the lock on the large stone (Lift the ``\sLargeStoneCover{}'' sign and read the one under it marked ``\sLargeStoneQuestion{}'').}
   \s\MYitems {}
  }
 
@@ -934,7 +934,7 @@ The answer ends when the sun sets.}
 	Third: North Word \\
 	Fourth: West Rune} \\
 	
-	You may change out the sign on the ornate chest and claim your prize. If you did not answer this question correctly, take a 15 minute penalty per question you have failed first.}
+	You may change out the sign on the ornate chest and claim your prize. If you did not answer this question correctly, first take a 15 minute penalty per line of the answer you got incorrect (up to the max of 4 lines, for a 1 hour penalty).}
   \s\MYitems {}
  }
 
@@ -1033,19 +1033,20 @@ The answer ends when the sun sets.}
   \s\MYitems {}
 } 
 
-\NEW{Sign}{\sBackgroundCheck}{
-  \s\MYname	{G packet}
-  \s\MYloc	{Stairwell}
-  \s\MYtext	{You may not interact with this sign unless you know otherwise.}
-  \s\MYitems {}
-}
-
-\NEW{Sign}{\sBackgroundCheckTwo}{
-  \s\MYname	{G packet 2}
-  \s\MYloc	{Stairwell}
-  \s\MYtext	{You are currently investigating:}
-  \s\MYitems {}
-}
+%%Replaced by a Talk to the GM mechanic
+%\NEW{Sign}{\sBackgroundCheck}{
+  %\s\MYname	{G packet}
+  %\s\MYloc	{Stairwell}
+  %\s\MYtext	{You may not interact with this sign unless you know otherwise.}
+  %\s\MYitems {}
+%}
+%
+%\NEW{Sign}{\sBackgroundCheckTwo}{
+  %\s\MYname	{G packet 2}
+  %\s\MYloc	{Stairwell}
+  %\s\MYtext	{You are currently investigating:}
+  %\s\MYitems {}
+%}
 
 %Banquet hall
 \NEW{Sign}{\sBanquetHall}{
@@ -1325,28 +1326,30 @@ The answer ends when the sun sets.}
   %\s\MYitems {}
 %}
 
-\NEW{Sign}{\sApothecaryCover}{
-  \s\MYname	{Apothecary}
-  \s\MYloc	{Stairwell}
-  \s\MYtext	{A small, compact apothecary. You may not interact with it unless you know otherwise.}
-  \s\MYitems {}
-}
 
-\NEW{Sign}{\sApothecaryOne}{
-  \s\MYname	{Apothecary}
-  \s\MYloc	{Stairwell}
-  \s\MYtext	{The apothecary squints across the counter at his patient, then declares that he needs a sample of the drug in question to make a diagnosis. If you have a sample already, great - otherwise, you can use a CR 5 attack to arrest the dealer if you can figure out when and where he appears. If you successfully arrest the dealer, you may take one sample of \iDrug{\MYnumber{}} from the location. Inform your patient that the dealer will not appear again.
-	
-	When you can produce item \iDrug{\MYnumber{}}, lift this sign.}
-  \s\MYitems {}
-}
-
-\NEW{Sign}{\sApothecaryTwo}{
-  \s\MYname	{Apothecary}
-  \s\MYloc	{Stairwell}
-  \s\MYtext	{The apothecary declares that this is a magical drug, and detoxing requires a magical solution. \cWillow{} should take a \iHealingPotion{} and a \iPoison{} at the same time (don't process the effects of either). \cWillow{\They} will retch violently for 30 seconds, at the end of which \cWillow{\they} will be fully free of the effects.}
-  \s\MYitems {}
-}
+%%%% Replaced with summonable NPC
+%\NEW{Sign}{\sApothecaryCover}{
+  %\s\MYname	{Apothecary}
+  %\s\MYloc	{Stairwell}
+  %\s\MYtext	{A small, compact apothecary. You may not interact with it unless you know otherwise.}
+  %\s\MYitems {}
+%}
+%
+%\NEW{Sign}{\sApothecaryOne}{
+  %\s\MYname	{Apothecary}
+  %\s\MYloc	{Stairwell}
+  %\s\MYtext	{The apothecary squints across the counter at his patient, then declares that he needs a sample of the drug in question to make a diagnosis. If you have a sample already, great - otherwise, you can use a CR 5 attack to arrest the dealer if you can figure out when and where he appears. If you successfully arrest the dealer, you may take one sample of \iDrug{\MYnumber{}} from the location. Inform your patient that the dealer will not appear again.
+	%
+	%When you can produce item \iDrug{\MYnumber{}}, lift this sign.}
+  %\s\MYitems {}
+%}
+%
+%\NEW{Sign}{\sApothecaryTwo}{
+  %\s\MYname	{Apothecary}
+  %\s\MYloc	{Stairwell}
+  %\s\MYtext	{The apothecary declares that this is a magical drug, and detoxing requires a magical solution. \cWillow{} should take a \iHealingPotion{} and a \iPoison{} at the same time (don't process the effects of either). \cWillow{\They} will retch violently for 30 seconds, at the end of which \cWillow{\they} will be fully free of the effects.}
+  %\s\MYitems {}
+%}
 
 %GM / oog signs
 
