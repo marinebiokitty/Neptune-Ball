@@ -65,7 +65,9 @@
 %% as the \MYhp field, that defaults to 5.
 \PRESETS{Char}{
   \FD\MYdesc	{} %% badge description
-	\newstat\MYpronouns	{Pronouns}{P}{They/Them} %% for pronouns
+  \F\MYgender	{}	 %% must be set by a command like \hehim etc.
+	\FD\MYcharpronouns{\theythem}   %% must be set by a command like \hehim etc.
+	\FD\MYplayerpronouns{}   %% DO NOT use \theythem, write ``they/them'' or whatever
   \newstat\MYcr	{Combat Rating}{CR}{2} %% for DarkWater-style combat
   \newstat\MYgamma	{$\gamma$}{$\gamma$}{0} % Underground connections
   \newstat\MYbeta	{$\beta$}{$\beta$}{0} % Emotional stats
@@ -84,92 +86,10 @@
 
 \POSTSETS{Char}{
   \resolvestats
+	\MYcharpronouns{}
   }
 
-
-%%%%%
-%% pronouns and similar gender-based macros
-%%
-%% \male, \female, \neuter, \ambiguous
-%% \mfn{<masculine>}{<feminine>}{<neuter>}
-%% \mf{<masculine>}{<feminine>}
-%% \pronoun{<command>}{<masculine>}{<feminine>}{<neuter>}
-\def\male{0}\def\female{1}\def\neuter{2}\def\ambiguous{3}
-\newcommand{\mfn}[3]{\ifcase\MYsex#1\or#2\or#3\else#1/#2\fi}
-\newcommand{\mf}[2]{\mfn{#1}{#2}{}}
-\newcommand{\pronoun}[4]{\def#1{\mfn{#2}{#3}{#4}}}
-
-\pronoun{\they}		{he}{she}{they}
-\pronoun{\They}		{He}{She}{They}
-\pronoun{\them}		{him}{her}{them}
-\pronoun{\Them}		{Him}{Her}{Them}
-\pronoun{\their}	{his}{her}{their}
-\pronoun{\Their}	{His}{Her}{Their}
-\pronoun{\theirs}	{his}{hers}{theirs}
-\pronoun{\Theirs}	{His}{Hers}{Theirs}
-\pronoun{\themself}	{himself}{herself}{themself}
-\pronoun{\Themself}	{Himself}{Herself}{Themself}
-\pronoun{\spouse}	{husband}{wife}{spouse}
-\pronoun{\Spouse}	{Husband}{Wife}{Spouse}
-\pronoun{\offspring}	{son}{daughter}{offspring}
-\pronoun{\Offspring}	{Son}{Daughter}{Offspring}
-\pronoun{\kid}		{boy}{girl}{kid}
-\pronoun{\Kid}		{Boy}{Girl}{Kid}
-\pronoun{\waif}		{urchin}{waif}{stray}
-\pronoun{\Waif}		{Urchin}{Waif}{Stray}
-\pronoun{\guy}		{guy}{gal}{person}
-\pronoun{\mer}		{merman}{mermaid}{merchild} %%teenager
-\pronoun{\sibling}	{brother}{sister}{sibling}
-\pronoun{\Sibling}	{Brother}{Sister}{Sibling}
-\pronoun{\parent}	{father}{mother}{parent}
-\pronoun{\Parent}	{Father}{Mother}{Parent}
-\pronoun{\uncle}	{uncle}{aunt}{auncle}
-\pronoun{\Uncle}	{Uncle}{Aunt}{Auncle}
-\pronoun{\nephew}	{nephew}{niece}{nibling}
-\pronoun{\Nephew}	{Nephew}{Niece}{Nibling}
-\def\aunt{\uncle}
-\def\Aunt{\Uncle}
-\def\niece{\nephew}
-\def\Niece{\Nephew}
-\pronoun{\human}	{man}{woman}{human}
-\pronoun{\Human}	{Man}{Woman}{Human}
-\pronoun{\sex}		{male}{female}{neuter}
-\pronoun{\voicesex} {masculine}{feminine}{difficult to identify}
-\pronoun{\Sex}		{Male}{Female}{Neuter}
-\pronoun{\King}		{King}{Queen}{Majesty}
-\pronoun{\Prince}		{Prince}{Princess}{Heir}
-\pronoun{\prince}		{prince}{princess}{heir}
-\pronoun{\aprince}  {a prince}{a princess}{an heir}
-\pronoun{\Noble}		{Lord}{Lady}{Noble}
-\pronoun{\Priest}		{Priest}{Priestess}{Clergymember}
-\pronoun{\priest}		{priest}{Priestess}{clergymember}
-\pronoun{\hot}		{handsome}{beautiful}{hot}
-\pronoun{\Hot}		{Handsome}{Beautiful}{Hot}
-\pronoun{\mer}		{merman}{mermaid}{merperson}
-\pronoun{\Mer}		{Merman}{Mermaid}{Merperson}
-\pronoun{\magician}		{wizard}{witch}{magician}
-\pronoun{\Magician}		{Wizard}{Witch}{Magician}
-\pronoun{\pa}		{daddy}{mommy}{parent}
-\pronoun{\Pa}		{Daddy}{Mommy}{Parent}
-\pronoun{\Pop}		{Pop}{Mom}{Parent}
-\pronoun{\pop}		{Pop}{Mom}{Parent}
-\pronoun{\paramour} {inamorato}{inamorata}{paramour}
-
-\pronoun{\have}    {has}{has}{have}
-\pronoun{\Have}    {Has}{Has}{Have}
-\pronoun{\are}    {is}{is}{are}
-\pronoun{\were}   {was}{was}{were}
-\pronoun{\does}   {does}{does}{do}
-
-\newcommand{\simpleverb}[1]{\mfn{{#1}s}{{#1}s}{{#1}}}
-
-\pronoun{\claim}  {claims}{claims}{claim}
-\pronoun{\seem}   {seems}{seems}{seem}
-\pronoun{\think}  {thinks}{thinks}{think}
-\pronoun{\listen}  {listens}{listens}{listen}
-\pronoun{\agree} {agrees}{agrees}{agree}
-
-
+\input \latex/gender.sty
 
 %%%%%
 %% PC is a subtype of Char, for regular PCs.
@@ -244,8 +164,8 @@
 \NEW{PC}{\cKing}{
    \s\MYname	{King \pre Triton}
    \s\MYfile	{King.tex}
-   \s\MYsex {\male}
-	\s\MYpronouns  {He/Him}
+   \s\MYcharpronouns{\hehim}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{531}
    \s\MYdesc     {An elderly merman with a completely white beard}
 	 \s\MYplayer	{David N}
@@ -265,8 +185,8 @@
 \NEW{PC}{\cQueen}{ 
    \s\MYname	{Iris}
    \s\MYfile	{Athena.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+	 \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{580}
    \s\MYdesc     {An elderly, Noble merwoman}
 	 \s\MYplayer	{Vivian Abraham}
@@ -285,8 +205,8 @@
 \NEW{PC}{\cGeneral}{
    \s\MYname	{General \pre Gladia}%Gladius
    \s\MYfile	{Shapeshifter.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{598}
    \s\MYdesc     {A stern merwoman wearing a military uniform}
 	 \s\MYplayer	{Rachel Simon}
@@ -305,8 +225,8 @@
 \NEW{PC}{\cWitch}{  %%Ariel.tex, Manta.tex and EricsBrother.tex know her by Ursula (her old name) via a nickname macro
    \s\MYname	{Pearl}
    \s\MYfile	{SeaWitch.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{237}
    \s\MYdesc     {A stunningly beautiful mermaid}   
 	 \s\MYplayer	{Lauren}
@@ -326,8 +246,8 @@
 \NEW{PC}{\cSlave}{ %% Eric and Ariel know her by the name Morgan/Aldric (she is in disguise right now)
    \s\MYname	{Pandora}%Morvyn
    \s\MYfile	{Slave.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{649}
    \s\MYdesc     {An elderly merwoman with far off eyes}   
 	 \s\MYplayer	{Kendra Beckler}
@@ -346,8 +266,8 @@
 \NEW{PC}{\cPriest}{
    \s\MYname	{Mercury Aquilino}%Hermes
    \s\MYfile	{Urchin.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{312}
    \s\MYdesc     {A solemnly dressed priestess of the Church of the Tides}
 	 \s\MYplayer	{Lindsay}
@@ -367,8 +287,8 @@
 \NEW{PC}{\cPrincess}{ 
    \s\MYname	{Adriana}
    \s\MYfile	{Princess.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{270}
    \s\MYdesc     {A pretty young mermaid with a tiara}   
 	 \s\MYplayer	{Karen Beres}
@@ -387,8 +307,8 @@
 \NEW{PC}{\cAriel}{
    \s\MYname	{Ariel}
    \s\MYfile	{Ariel.tex}
-   \s\MYsex      {\female}
-	 \s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{386}
    \s\MYdesc     {An innocent looking human woman with flaming red hair}   
 	 \s\MYplayer	{Faye (Walsh) Valverde}
@@ -407,8 +327,8 @@
 \NEW{PC}{\cWillow}{
    \s\MYname	{Willow}%Ash
    \s\MYfile	{Willow.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{143}
    \s\MYdesc     {A teenage human with curly red hair}
 	 \s\MYplayer	{Lynda Weinstein}
@@ -428,8 +348,8 @@
 \NEW{PC}{\cManta}{
    \s\MYname	{Sybil}%Sebastian
    \s\MYfile	{Manta.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{615}
    \s\MYdesc     {A stately, elderly merwoman wearing magician's robes}
 	 \s\MYplayer	{Sky (Skylar Rippke)}
@@ -449,8 +369,8 @@
 \NEW{PC}{\cDiplomat}{
    \s\MYname	{Caspian} %Mirage
    \s\MYfile	{Diplomat.tex}
-   \s\MYsex      {\male}
-	\s\MYpronouns  {He/Him}
+   \s\MYcharpronouns{\hehim}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{276}
    \s\MYdesc     {A young merman with a friendly smile}   
 	 \s\MYplayer	{Dan O'Hanlon}
@@ -469,8 +389,8 @@
 \NEW{PC}{\cBodyguard}{
    \s\MYname	{Valerie} %Valerian
    \s\MYfile	{Bodyguard.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{397}
    \s\MYdesc     {An imposing mermaid with vigilant eyes}   
 	 \s\MYplayer	{Gilana}
@@ -489,8 +409,8 @@
 \NEW{PC}{\cPrince}{
    \s\MYname	{Prince \pre Jared} %Narissa
    \s\MYfile	{PacificanPrince.tex}
-   \s\MYsex      {\male}
-	\s\MYpronouns  {He/Him}
+   \s\MYcharpronouns{\hehim}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{271}
    \s\MYdesc     {A beautiful young merman with a regal bearing}   
 	 \s\MYplayer	{Frank Beres}
@@ -510,8 +430,8 @@
 \NEW{PC}{\cSpy}{
    \s\MYname	{Damien}%Desara
    \s\MYfile	{PacificanSpy.tex}
-   \s\MYsex      {\male}
-	\s\MYpronouns  {He/Him}
+   \s\MYcharpronouns{\hehim}
+	 \s\MYplayerpronouns{??}
    \s\MYnumber	{347}
    \s\MYdesc     {A merman with an intelligent look}   
 	 \s\MYplayer	{Morgan Rippke}
@@ -530,8 +450,8 @@
 \NEW{PC}{\cPlant}{
    \s\MYname	{Osiris}
    \s\MYfile	{KingsBrother.tex}
-   \s\MYsex      {\male}
-	\s\MYpronouns  {He/Him}
+   \s\MYcharpronouns{\hehim}
+	 \s\MYplayerpronouns{??}
      \s\MYnumber	{481}
   \s\MYdesc     {A merman with a rugged and wild look.}   
 	 \s\MYplayer	{Will}
@@ -550,8 +470,8 @@
 \NEW{PC}{\cReporter}{
    \s\MYname	{Scully}%Arnav
    \s\MYfile	{Reporter.tex}
-   \s\MYsex      {\female}
-	\s\MYpronouns  {She/Her}
+   \s\MYcharpronouns{\sheher}
+	 \s\MYplayerpronouns{??}
      \s\MYnumber	{324}
   \s\MYdesc     {A reporter with a studied look.}   
 	 \s\MYplayer	{Jennifer}
@@ -576,84 +496,84 @@
 %%This character is the King's father, who does not appear in game
 \NEW{Name}{\cExKing}{
   \s\MYname    {Poseidon}
-  \s\MYsex      {\male}
+  \s\MYcharpronouns      {\hehim}
 }
 
 %%King's Grandfather
 \NEW{Name}{\cExExKing}{
   \s\MYname    {Neptune}
-  \s\MYsex      {\male}
+  \s\MYcharpronouns      {\hehim}
 }
 
 %% This character is the thought dead version of the queen
 \NEW{Name}{\cAthena}{
   \s\MYname    {Athena}
-  \s\MYsex      {\female}
+  \s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cPacificanRuler}{
 	\s\MYname   {Venus}
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cPacificanRulerSpouse}{
 	\s\MYname   {Marcus}
-	\s\MYsex			{\male}
+	\s\MYcharpronouns      {\hehim}
 }
 
 \NEW{Name}{\cNixie}{ %% Lady of the Lake
 	\s\MYname   {Titania}
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cJeweler}{ %% made diana's tear
 	\s\MYname   {Ophelia}
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cMother}{ %% Manta's Mother
 	\s\MYname   {Jade}
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cMotherBrother}{ %% Jade's Brother
 	\s\MYname   {Onyx}
-	\s\MYsex			{\male}
+	\s\MYcharpronouns      {\hehim}
 }
 
 \NEW{Name}{\cArielsSon}{ %% Opposite gender to willow
 	\s\MYname   {Natalie} %Nathan
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cPolio}{ %%In case we need to change the name later (also easy to add  dif name to pacificans)
 	\s\MYname   {Polio}
-	\s\MYsex			{\male}
+	\s\MYcharpronouns      {\hehim}
 }
 
 \NEW{Name}{\cVHusband}{
 	\s\MYname   {Jane}%Jason
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cEric}{
 	\s\MYname   {Eric}
-	\s\MYsex			{\male}
+	\s\MYcharpronouns      {\hehim}
 }
 
 \NEW{Name}{\cSister}{ %%
 	\s\MYname   {Julie}
-	\s\MYsex			{\female}
+	\s\MYcharpronouns      {\sheher}
 }
 
 \NEW{Name}{\cLiar}{ %%con artist who "saw the Kraken"
 	\s\MYname   {Julius Montague}
-	\s\MYsex			{\male}
+	\s\MYcharpronouns      {\hehim}
 }
 
 \NEW{Name}{\cKraken}{ %%The date of the Kraken being spotted
 	\s\MYname   {December 13th, 21 years ago}
-	\s\MYsex			{\male}
+	\s\MYcharpronouns      {\hehim}
 }
 
 \NEW{Name}{\cTOneFifty}{ %1:50 after gamestart, start time of dancing
