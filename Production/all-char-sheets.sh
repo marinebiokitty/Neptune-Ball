@@ -9,6 +9,7 @@ mv listblue-PRINT.tex listblue-BACKUP.tex
 mv listchar-PRINT.tex listchar-BACKUP.tex
 mv listgreen-PRINT.tex listgreen-BACKUP.tex
 mv abil-PRINT.tex abil-BACKUP.tex
+rm listblue-PRINT.pdf listchar-PRINT.pdf listgreen-PRINT.pdf abil-PRINT.pdf
 
 echo "Working on $character"
 
