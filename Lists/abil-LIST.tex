@@ -155,8 +155,8 @@
 
 \NEW{Abil}{\aFirstAid}{
   \s\MYname	{First Aid}
-  \s\MYtext	{Spend 1 minute roleplaying ministering to your patient. At the end of this minute, if they have not already died, show this card to them. They are no longer wounded or bloody.}
-  \s\MYeffect	{You are no longer wounded or bloody. Take off your \colorBloody{} headband immediately and wake up after 2 minutes.}
+  \s\MYtext	{You may use this ability on unconcious or wounded characters. Spend 1 minute roleplaying ministering to your patient. At the end of this minute, if they have not already died or woken up on their own, show this card to them. This ability has NO EFFECT on the ``bloody'' status.}
+  \s\MYeffect	{You are no longer unconcious or wounded. Wake up immediately.}
 }
 
 %\NEW{Abil}{\aRunAway}{
@@ -316,4 +316,10 @@
 	\s\MYname {Wish}
 	\s\MYtext {You may wish for one in-game problem to be solved to your satisfaction, subject to the usual constraints about not wishing for more wishes etc.  Call a game halt and summon a GM to approve and implement your wish.  If your wish is not approved, nothing happens.  Otherwise, the \iWishingStone{} is consumed; destroy the item.}
 	\s\MYeffect {I wish...}
+}
+
+\NEW{Abil}{\aLockPick}{
+	\s\MYname {Magical Lock Picking}
+	\s\MYtext {You have the ability to pick magical locks. This is represented by rolling a D10 (provided by GM inside a container) as many times as necessary until you roll equal to or greater than the listed ``lock difficulty''. Between each roll attempt, you must count \emph{silently} to 5. Feel free to count as quickly as you want. You musts shake the die in its container hard enough to make a little noise; this is a kludge to increase the risk of someone noticing. If someone asks what you are doing, you must tell them that you are fiddling with the lock in an obvious attempt to break into it.}
+	\s\MYeffect {You see me fiddling with the lock.}
 }
