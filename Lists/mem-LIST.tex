@@ -10,8 +10,10 @@
 
 \DECLARESUBTYPE{Mem}{Element}
 \PRESETS{Mem}{
-  %% \MYname is the trigger
+  %% \MYtrigger is the trigger
+	\s\MYname{}
   \F\MYtext	%%  text
+	\F\MYtrigger
   }
 
 
@@ -61,13 +63,13 @@
 %% that may have better syntax for use within character sheets (inside
 %% a \starttag{mems}...\endtag block).
 \newinstance{MemFold}{\memfold[2]}{
-  \s\MYname{#1}\s\MYtext{#2}}
+  \s\MYtrigger{#1}\s\MYtext{#2}}
 \newinstance{MemEnvelope}{\memenvelope[2]}{
-  \s\MYname{#1}\s\MYtext{#2}}
+  \s\MYtrigger{#1}\s\MYtext{#2}}
 \newinstance{MemCover}{\memcover[2]}{
-  \s\MYname{#1}\s\MYmems{#2}}
+  \s\MYtrigger{#1}\s\MYmems{#2}}
 \newinstance{MemPage}{\mempage[2]}{
-  \s\MYname{#1}\s\MYtext{#2}}
+  \s\MYtrigger{#1}\s\MYtext{#2}}
 
 \long\def\startmembook#1#2\endmembook{\memcover{#1}{#2}}
 
@@ -75,7 +77,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NEW{MemFold}{\mTest}{
-  \s\MYname	{Test Trigger}
+  \s\MYtrigger	{Test Trigger}
   \s\MYtext	{This is a Test of a fold-n-staple memory packet}
   }
 
@@ -84,132 +86,132 @@
 
 %%Willow's Mem-notebook
 \NEW{MemCover}{\mExplosion}{
-  \s\MYname	{$\beta$ Packet}
+  \s\MYtrigger	{$\beta$ Packet}
   \s\MYmems	{\mExplosionPageOne{}\mExplosionPageTwo{}\mExplosionPageThree{}\mExplosionPageFour{}\mExplosionPageFive{}\mExplosionPageSix{}\mExplosionPageSeven{} \mExplosionPageEight{}}
   }
 
 \NEW{MemPage}{\mExplosionPageOne}{
-  \s\MYname	{Open when 20 minutes pass in game if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when 20 minutes pass in game if your $\beta$ is 1.}
   \s\MYtext	{Holy shit! You were looking in a mirror hanging on the wall, and you just turned invisible. This is awesome! You can go wherever you want, and do whatever you want, and no one can tell you not to because they can't see you. Wait -- maybe not so cool. Your hand just went through the object you tried to pick up\ldots{}
   \emph{Go ``not here'' for 5 minutes -- you are invisible and intangible. You can still hear and see everything around you, but cannot interact with it in any way.}}
   }
 
 \NEW{MemPage}{\mExplosionPageTwo}{
-  \s\MYname	{Open when 40 minutes pass in game if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when 40 minutes pass in game if your $\beta$ is 1.}
   \s\MYtext	{Your throat starts to hurt really badly for a moment. Then the pain is gone. When you open your mouth to say something, only a bubble comes out -- no words\ldots{}
   \emph{Increase your $\alpha$ score to 2, then go mute for 10 minutes.}}
   }
 
 \NEW{MemPage}{\mExplosionPageThree}{
-  \s\MYname	{Open when 1 hour passes in game if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when 1 hour passes in game if your $\beta$ is 1.}
   \s\MYtext	{Dark fog starts to gather at the edge of your vision. All at once it sweeps over your sight and everything goes black. You can't see anything!
   \emph{You go blind for 2 minutes. You can blink your eyes open long enough to find a wall, but after that you must keep your eyes closed for 2 minutes.}}
 }
 
 \NEW{MemPage}{\mExplosionPageFour}{
-  \s\MYname	{Open when the banquet starts if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when the banquet starts if your $\beta$ is 1.}
   \s\MYtext	{You stare up at the ceiling as the banquet begins. Another stupid, boring royal function. A flash of motion catches your eye. A group of water sprites has gathered in one corner of the room. They chitter excitedly and swim up to you. They are all wearing tiny necklaces with red crosses on them. They appear harmless enough, although no one else seems to notice them\ldots{}
   \emph{You can use them to heal any wounded or unconscious person or to break any attack based restraint with a 30-count, after which they are healthy, conscious, and unrestrained. You can use this ability on yourself or someone else even if you are restrained or wounded yourself.}}
 }
 
 \NEW{MemPage}{\mExplosionPageFive}{
-  \s\MYname	{Open when 2 hours pass in game if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when 2 hours pass in game if your $\beta$ is 1.}
   \s\MYtext	{The water sprites that have been following you around start to glow with an unholy light. They morph before your eyes into imps who have blood dripping from their fangs. They turn on you and attempt to attack you. Run!
   \emph{The tiny demons are out to kill you. You must run away and roleplay accordingly (no one else can see them). If you are forced to stop moving for any reason, you are knocked out. After 1 minute, the ghosts dissipate.}}
 }
 
 \NEW{MemPage}{\mExplosionPageSix}{
-  \s\MYname	{Open when 2 hrs, 20 minutes pass in game if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when 2 hrs, 20 minutes pass in game if your $\beta$ is 1.}
   \s\MYtext	{A strange buzzing builds in the back of your skull. It crawls through your head, hurting worse and worse. The energy suddenly releases itself in the form of bolts of demonic purple fire from your eyes. You can't control it, and you can't turn it off. This sucks, you have to find some way to make it stop!
   \emph{Perform a CR 5 wound attack on the first two people you see (unassistable; still counts if resisted). If you can't see two people, run around until you do. Tell people out of game that this is clearly beyond your control. The fire dissipates after your second attack. These attacks do not bloody you.}}
 }
 
 \NEW{MemPage}{\mExplosionPageSeven}{
-  \s\MYname	{Open when 2 hours, 40 minutes pass in game if your $\beta$ is 1.}
+  \s\MYtrigger	{Open when 2 hours, 40 minutes pass in game if your $\beta$ is 1.}
   \s\MYtext	{You start to feel hot\ldots{} REALLY hot. An impending sense of disaster overwhelms you and you struggle to breathe. Your gut tells you that everyone had better get away from you as fast as possible, especially because you are rooted to the spot and cannot move. \textbf{Open page 8 in 30 seconds}.}
 }
 
 \NEW{MemPage}{\mExplosionPageEight}{
-  \s\MYname	{Page 8: Open when instructed to do so.}
+  \s\MYtrigger	{Page 8: Open when instructed to do so.}
   \s\MYtext	{A violent explosion of radiant, purple fireballs emanates in all directions from you. \emph{Everyone within 2 ZOC of you is knocked out for 2 minutes(this is not considered combat, and cannot be resisted).} \textbf{You are knocked out for 10 minutes. It is NOT obvious whether you are unconscious or dead.} A use of the ``first aid'' ability will reveal that you are only unconscious, but will not cause you to wake up before the 10 minutes have passed.}
 }
 
 %%Ash's spy membook
 \NEW{MemCover}{\mSpyBook}{
-  \s\MYname	{Questions}
+  \s\MYtrigger	{Questions}
   \s\MYmems	{\mSpyOne{} \mSpyTwo{} \mSpyThree{} \mSpyFour{} \mSpyFive{} \mSpySix{} \mSpySeven{} \mSpyEight{} \mSpyNine{} \mSpyTen{} \mSpyEleven{} \mSpyTwelve{}}
   }
 
 \NEW{MemPage}{\mSpyOne}{
-  \s\MYname	{Start with this page open pre-game. You may read through it before game start.}
+  \s\MYtrigger	{Start with this page open pre-game. You may read through it before game start.}
   \s\MYtext	{This packet represents the list of questions you've been provided with. You do not have to get them answered in order. Luckily, you have a pretty good idea of who to ask each question to. Talk to the correct person about the topic for {\bf 1 minute}. You must actually engage them about the topic for this time. It doesn't count if they ignore you or refuse to say anything. Once you have talked to the person, you must tear the page out of the notebook within {\bf 2 minutes} of concluding the conversation, open it up, and label it as an in-game item on both sides. This represents you having gleaned the necessary information and recorded it in a notebook.
   
   Your normal dealer has arranged an intermediary for you tonight: \cReporter{}. As long as you keep \cReporter{\their} involvement secret, you should be able to quietly trade answers (the pages you tear out and turn into in-game items) for doses of \iDrug{}.}
 }
 
 \NEW{MemPage}{\mSpyTwo}{
-  \s\MYname	{How powerful is the Atlantican military? (Ask the General)}
+  \s\MYtrigger	{How powerful is the Atlantican military? (Ask the General)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of the strengths and weaknesses of the \pAtlantis{}n military.}
 }
 
 \NEW{MemPage}{\mSpyThree}{
-  \s\MYname	{How unified is Atlantica politically? (Ask the Atlantican monarch or the leader of the Magician's Guild)}
+  \s\MYtrigger	{How unified is Atlantica politically? (Ask the Atlantican monarch or the leader of the Magician's Guild)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of the political landscape of \pAtlantis{}.}
 }
 
 \NEW{MemPage}{\mSpyFour}{
-  \s\MYname	{Can Atlantica afford another war? (Ask the representative of the Merchants' Guild)}
+  \s\MYtrigger	{Can Atlantica afford another war? (Ask the representative of the Merchants' Guild)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of \pAtlantis{}n economics.}
 }
 
 \NEW{MemPage}{\mSpyFive}{
-  \s\MYname	{How loyal are Atlantican citizens to the King? (Ask the Atlantican monarch's sibling)}
-  \s\MYtext	{This is a notebook page with a fairly detailed description of popular sentiment toward \cKing{\King} \cKing{\MYname}.}
+  \s\MYtrigger	{How loyal are Atlantican citizens to the King? (Ask the Atlantican monarch's sibling)}
+  \s\MYtext	{This is a notebook page with a fairly detailed description of popular sentiment toward \cKing{\King} \cKing{\MYtrigger}.}
 }
 
 \NEW{MemPage}{\mSpySix}{
-  \s\MYname	{Are you willing to pass sensitive information to unknown buyers for a price? (Ask the priest)}
+  \s\MYtrigger	{Are you willing to pass sensitive information to unknown buyers for a price? (Ask the priest)}
   \s\MYtext	{\cPriest{} is / is not \emph{(circle one)} willing to pass information.}
 }
 
 \NEW{MemPage}{\mSpySeven}{
-  \s\MYname	{How loyal are Pacificans to the Queen? (Ask the Pacifican heir)}
+  \s\MYtrigger	{How loyal are Pacificans to the Queen? (Ask the Pacifican heir)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of the \pPacifica{}n political landscape.}
 }
 
 \NEW{MemPage}{\mSpyEight}{
-  \s\MYname	{What is the current state of Pacifica's military? (Ask the Pacifican heir or their bodyguard)}
+  \s\MYtrigger	{What is the current state of Pacifica's military? (Ask the Pacifican heir or their bodyguard)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of the strengths and weaknesses of the \pPacifica{}n military.}
 }
 
 \NEW{MemPage}{\mSpyNine}{
-  \s\MYname	{How likely is Europa to get involved in an undersea war? (Ask the Europan representative)}
+  \s\MYtrigger	{How likely is Europa to get involved in an undersea war? (Ask the Europan representative)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of \pAmerica{}'s political stance on undersea wars in general.}
 }
 
 \NEW{MemPage}{\mSpyTen}{  %%Needs context
-  \s\MYname	{How would Atlantica react to a draft? (Ask the General)}
+  \s\MYtrigger	{How would Atlantica react to a draft? (Ask the General)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of popular \pAtlantis{}n opinion on a military draft.}
 }
 
 \NEW{MemPage}{\mSpyEleven}{  %%Needs context
-  \s\MYname	{How strong is the Assassin's Guild militarily? (Ask a member of the Assassin's Guild)}
+  \s\MYtrigger	{How strong is the Assassin's Guild militarily? (Ask a member of the Assassin's Guild)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of the military power of the Assassin's Guild.}
 }
 
 \NEW{MemPage}{\mSpyTwelve}{  %%Needs context
-  \s\MYname	{About how many magicians are there in the Magician's Guild? (Ask an Atlantican Magician)}
+  \s\MYtrigger	{About how many magicians are there in the Magician's Guild? (Ask an Atlantican Magician)}
   \s\MYtext	{This is a notebook page with a fairly detailed description of the strength of \pAtlantis{}'s Magician's Guild.}
 }
 
 %%Aldric's Tarot Book
 \NEW{MemCover}{\mTarot}{
-  \s\MYname	{Casting the Tarot}
+  \s\MYtrigger	{Casting the Tarot}
   \s\MYmems	{\mPlant{}\mKing{}\mQueen{}\mGeneral{}\mWitch{}\mPriest{}\mPrincess{}\mAriel{}\mWillow{}\mManta{}\mDiplomat{}\mBodyguard{}\mPrince{}\mSpy{}\mReporter{}}
   }
 
 \NEW{MemPage}{\mPlant}{
-  \s\MYname	{Open if you cast Tarot for badge 481.\newline Need: The Tower, The Devil, 481's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 481.\newline Need: The Tower, The Devil, 481's ``Tarot Score''.}
   \s\MYtext	{DEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATH
 DEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATH
 DEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATH
@@ -223,116 +225,116 @@ DEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATH
 }
 
 \NEW{MemPage}{\mKing}{
-  \s\MYname	{Open if you cast Tarot for badge 531. \newline Need: The Emperor, The Tower, 531's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 531. \newline Need: The Emperor, The Tower, 531's ``Tarot Score''.}
   \s\MYtext	{Never trust a magician. The same \cWitch{\magician} who took your \cAriel{\offspring} from you comes now for your soul.}
   }
 
 \NEW{MemPage}{\mQueen}{
-  \s\MYname	{Open if you cast Tarot for badge 580. \newline Need: The High Priestess, The Empress, 580's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 580. \newline Need: The High Priestess, The Empress, 580's ``Tarot Score''.}
   \s\MYtext	{Your lover plans to betray your country.}
  }
 
 \NEW{MemPage}{\mGeneral}{
-  \s\MYname	{Open if you cast Tarot for badge 598. \newline Need: The Empress, Strength, 598's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 598. \newline Need: The Empress, Strength, 598's ``Tarot Score''.}
   \s\MYtext	{Your lover is marked for death by an old friend.}
 }
 
 \NEW{MemPage}{\mWitch}{
-  \s\MYname	{Open if you cast Tarot for badge 237. \newline Need: The Chariot. The Magician, 237's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 237. \newline Need: The Chariot. The Magician, 237's ``Tarot Score''.}
   \s\MYtext	{One of the cornerstones of your power is crumbling.}
 }
 
 \NEW{MemPage}{\mPriest}{
-  \s\MYname	{Open if you cast Tarot for badge 312. \newline Need: The Hierophant, Death, 312's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 312. \newline Need: The Hierophant, Death, 312's ``Tarot Score''.}
   \s\MYtext	{To ruin a \cAriel{\parent}, look to the child.}
 }
 
 \NEW{MemPage}{\mPrincess}{
-  \s\MYname	{Open if you cast Tarot for badge 270. \newline Need:  Judgment, The Empress, 270's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 270. \newline Need:  Judgment, The Empress, 270's ``Tarot Score''.}
   \s\MYtext	{Your \cQueen{\parent} entered the Neptune Ball alive but may never leave it.}
 }
 
 \NEW{MemPage}{\mAriel}{
-  \s\MYname	{Open if you cast Tarot for badge 386. \newline Need: The Hermit, Wheel of Fortune, 386's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 386. \newline Need: The Hermit, Wheel of Fortune, 386's ``Tarot Score''.}
   \s\MYtext	{This is no longer your world. Something has rotted within the Explorers Guild, and the Magicians Guild schemes against the throne.}
 }
 
 \NEW{MemPage}{\mWillow}{
-  \s\MYname	{Open if you cast Tarot for badge 143. \newline Need: The Fool, The High Priestess, 143's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 143. \newline Need: The Fool, The High Priestess, 143's ``Tarot Score''.}
   \s\MYtext	{You are in great danger from magic, but it is also your greatest opportunity.}
 }
 
 \NEW{MemPage}{\mManta}{
-  \s\MYname	{Open if you cast Tarot for badge 615. \newline Need: The Hanged Man, The Magician, 615's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 615. \newline Need: The Hanged Man, The Magician, 615's ``Tarot Score''.}
   \s\MYtext	{The Tarot reveals your malicious intentions for the kingdom. Act quickly, or your opportunity may be lost.}
 }
 
 \NEW{MemPage}{\mDiplomat}{
-  \s\MYname	{Open if you cast Tarot for badge 276. \newline Need: The Lovers, The Tower, 276's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 276. \newline Need: The Lovers, The Tower, 276's ``Tarot Score''.}
   \s\MYtext	{Those who wield magic are not to be trusted. They are rarely as they seem.}
 }
 
 \NEW{MemPage}{\mBodyguard}{
-  \s\MYname	{Open if you cast Tarot for badge 397. \newline Need: The World, Strength, 397's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 397. \newline Need: The World, Strength, 397's ``Tarot Score''.}
   \s\MYtext	{The safety of all you hold dear rests with you. Never forget that knowledge is power.}
 }
 
 \NEW{MemPage}{\mPrince}{
-  \s\MYname	{Open if you cast Tarot for badge 271. \newline Need: Temperance, The Chariot, 271's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 271. \newline Need: Temperance, The Chariot, 271's ``Tarot Score''.}
   \s\MYtext	{The \cKing{\King} is being influenced by a trusted adviser. As long as they are in the way, the treaty is in danger.}
 }
 
 \NEW{MemPage}{\mSpy}{
-  \s\MYname	{Open if you cast Tarot for badge 347. \newline Need: The Sun, The Fool, 347's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 347. \newline Need: The Sun, The Fool, 347's ``Tarot Score''.}
   \s\MYtext	{True love is diplomacy's downfall. Seek the aid of your diplomatic subordinate.}
 }
 
 \NEW{MemPage}{\mReporter}{
-  \s\MYname	{Open if you cast Tarot for badge 324. \newline Need: The Hierophant, The Emperor, 324's ``Tarot Score''.}
+  \s\MYtrigger	{Open if you cast Tarot for badge 324. \newline Need: The Hierophant, The Emperor, 324's ``Tarot Score''.}
   \s\MYtext	{When you are asked a question, there is always a reason.  The information you gather serves a darker purpose.}
 }
 
 %%King Triton's Mem-notebook
 \NEW{MemCover}{\mDepression}{
-  \s\MYname	{Depression Packet}
+  \s\MYtrigger	{Depression Packet}
   \s\MYmems	{\mDepressionPageOne{}\mDepressionPageTwo{}\mDepressionPageThree{}\mDepressionPageFour{}\mDepressionPageFive{}\mDepressionPageSix{}\mDepressionPageSeven{}}
   }
 
 %%ThreeThirty
 \NEW{MemPage}{\mDepressionPageOne}{
-  \s\MYname	{Open if there is 1 hour left in game, your $\beta$ is 6 or higher and no treaty has reached the ``Complete'' state (negative).}
+  \s\MYtrigger	{Open if there is 1 hour left in game, your $\beta$ is 6 or higher and no treaty has reached the ``Complete'' state (negative).}
   \s\MYtext	{You're never going to get the treaty signed at this rate! Decrease your $\beta$ by 2.}
 }
 	
 \NEW{MemPage}{\mDepressionPageTwo}{
-  \s\MYname	{Open if any of your family living in Europa express a desire to stay (positive).}
+  \s\MYtrigger	{Open if any of your family living in Europa express a desire to stay (positive).}
   \s\MYtext	{Your heart is warmed with love for your family. Increase your $\beta$ by 2.}
 }
 		
 \NEW{MemPage}{\mDepressionPageThree}{
-  \s\MYname	{Open if you dance Merengue in game. (positive)}
+  \s\MYtrigger	{Open if you dance Merengue in game. (positive)}
   \s\MYtext	{Your dancing reminds you of happier times. Increase your $\beta$ by 2.}
 }
 	
 \NEW{MemPage}{\mDepressionPageFour}{
-  \s\MYname	{If anyone outside of your family finds out about your depression (negative).}
+  \s\MYtrigger	{If anyone outside of your family finds out about your depression (negative).}
   \s\MYtext	{How embarrassing{\ldots} Decrease your $\beta$ by 2.}
 }
 	
 \NEW{MemPage}{\mDepressionPageFive}{
-  \s\MYname	{Open if you see a purple headband. (???)}
+  \s\MYtrigger	{Open if you see a purple headband. (???)}
   \s\MYtext	{It's your \cQueen{\spouse}! \cQueen{\they} \cQueen{\are} alive?!? That's amazing! Increase your $\beta$ score by 2.
 	
 	Wait\ldots{}  \cQueen{\they} \cQueen{\are} alive\ldots{} but weren't \cQueen{\they} introduced as \cGeneral{}'s \cQueen{\spouse}? Confront \cQueen{\them} about this, then open page 6.}	
 }
 
 \NEW{MemPage}{\mDepressionPageSix}{
-  \s\MYname	{PAGE 6: Do not open until instructed to do so. (???)}
+  \s\MYtrigger	{PAGE 6: Do not open until instructed to do so. (???)}
   \s\MYtext	{Why didn't \cQueen{\they} come back? Decrease your $\beta$ score by 4. If you can get \cQueen{\them} to renounce \cGeneral{} and come back to you, open page 7.}
 }
 	
 \NEW{MemPage}{\mDepressionPageSeven}{
-  \s\MYname	{PAGE 7: Do not open until instructed to do so. (Positive)}
+  \s\MYtrigger	{PAGE 7: Do not open until instructed to do so. (Positive)}
   \s\MYtext	{You have some issues to work out between you, but for now, you're just glad that \cQueen{\they} \cQueen{\are} back. Increase your $\beta$ score by 6, and if this brings you over your cap, increase your cap to compensate.}
 }
 
@@ -342,69 +344,69 @@ DEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATHDEATH
 
 %Manta from desara
 \NEW{MemFold}{\mWPacket}{
-  \s\MYname	{W packet}
+  \s\MYtrigger	{W packet}
   \s\MYtext	{\cSpy{} is clearly researching the history of the war -- your past. \cSpy{\They} might help you prove that \cExExKing{} kidnapped and raped your \cMother{\parent}, leading to your conception. Mentioning \cMother{} should be enough to set \cSpy{} on the right track without giving too much away.}
 }
 
 %%Willow to give to family
 \NEW{MemFold}{\mAddictionRevealed}{
-  \s\MYname	{If anyone in your family finds out about your addiction, give them this packet and tell them to open it.}
-  \s\MYtext	{You've heard of this ``\iDrug{\MYname{}}'' before. It looks like \cWillow{} is addicted to it. You will need advice on how to cure \cWillow{\them}. Ask an NPC to summon the Royal Healer. (The Royal Apothecary will be played by an NPC or GM, and may need to be summoned several times to fully address this.)}
+  \s\MYtrigger	{If anyone in your family finds out about your addiction, give them this packet and tell them to open it.}
+  \s\MYtext	{You've heard of this ``\iDrug{\MYtrigger{}}'' before. It looks like \cWillow{} is addicted to it. You will need advice on how to cure \cWillow{\them}. Ask an NPC to summon the Royal Healer. (The Royal Apothecary will be played by an NPC or GM, and may need to be summoned several times to fully address this.)}
  }
  
 
 %%warning about willow
 \NEW{MemFold}{\mWillowNote}{
-  \s\MYname	{Open after 30 minutes have passed in game.}
+  \s\MYtrigger	{Open after 30 minutes have passed in game.}
   \s\MYtext	{You feel a distinct, familiar surge of power. There's definitely a budding magician here with dangerous, uncontrolled magic. You need to find them - to protect yourself from their magic, and to control them.}
 }
 
 %%Break spell
 \NEW{MemFold}{\mLovePacket}{
-  \s\MYname	{Open if 30 minutes pass without you hearing the words ``You are mine, forever'' from your ``sister''.}
+  \s\MYtrigger	{Open if 30 minutes pass without you hearing the words ``You are mine, forever'' from your ``sister''.}
   \s\MYtext	{The spell is broken. Your free will is restored and all compulsion is gone. Lose the goal: ``Find some way to remain with \cWitch{} once the ball concludes.''. Destroy the item card ``\iLoveSpell{}''.}
 }
 
 %The Queen!
 % Should be \colorQueen{}.
 \NEW{MemFold}{\mQPacketGeneric}{
-  \s\MYname	{Open if you see a purple headband}
+  \s\MYtrigger	{Open if you see a purple headband}
   \s\MYtext	{Holy shit! That's \cQueen{\King} \cAthena{}! \cQueen{\They} \cQueen{\have} been missing for 21 years!}
  }
 
 \NEW{MemFold}{\mQPacketManta}{
-  \s\MYname	{Open if you see a purple headband}
+  \s\MYtrigger	{Open if you see a purple headband}
   \s\MYtext	{Drat, \cQueen{\they} \cQueen{\have} revealed \cQueen{\themself}. This will make it much harder to get rid of \cQueen{\them}\ldots{}}
  }
 
 \NEW{MemFold}{\mQPacketAriel}{
-  \s\MYname	{Open if you see a purple headband}
+  \s\MYtrigger	{Open if you see a purple headband}
   \s\MYtext	{\emph{Disregard if you have already found your \cQueen{\parent}}\\ Wait, \cQueen{\pop}?? \cQueen{\They} disappeared 21 years ago! How come \cQueen{\they} didn't come to you first? You're \cQueen{\their} \cAriel{\offspring}!}
  }
 
 \NEW{MemFold}{\mQPacketAdriana}{
-  \s\MYname	{Open if you see a purple headband}
+  \s\MYtrigger	{Open if you see a purple headband}
   \s\MYtext	{\emph{Disregard if you have already found your \cQueen{\parent}}\\ Wait, \cQueen{\pop}?? \cQueen{\They} abandoned you 21 years ago! How could \cQueen{\they} show up today as if nothing had happened - and how come \cQueen{\they} didn't come to you first??}
  }
  
 \NEW{MemFold}{\mQPacketGladius}{
-  \s\MYname	{Open if you see a purple headband}
+  \s\MYtrigger	{Open if you see a purple headband}
   \s\MYtext	{Oh shit. \cQueen{} has revealed \cQueen{\themself} as \cAthena{} - you were afraid this was going to happen. \cKing{} is going to be pissed, and you may very well lose \cQueen{\them}\ldots{}}
  }
 
 \NEW{MemFold}{\mRevealedMem}{
-  \s\MYname	{Open if someone casts any form of dispel on you}
+  \s\MYtrigger	{Open if someone casts any form of dispel on you}
   \s\MYtext	{You have been transformed into a human! Note the type of dispel used on you, then ask a GM or an NPC for a \colorHuman{} headband and a \aRevealed{}, or retrieve them from \sRevealed{} in the \pBanquet{}. You may call a game halt if necessary. Then follow the instructions on \aRevealed{} for how to deal with your new predicament.}
  }
  
 \NEW{MemEnvelope}{\mMEnvelope}{
-  \s\MYname	{M Envelope}
+  \s\MYtrigger	{M Envelope}
   \s\MYtext	{The water turns murky before your very eyes. Dark voices whisper terrible things in your ears. A great pressure builds on your chest and you find it hard to breathe. You've been tricked by dark sorcery! \emph{Go ``Not Here'' and read the greensheets in this packet. Return to game as soon as you are ready.}}
   \s\MYgreens	{\gPotions{} \gSpirits{}}
   \s\MYabils{\aLesserDispel{} \aPerceive{}}
 }
 
 \NEW{MemFold}{\mSpymaster}{
-  \s\MYname	{Open after 1 hour has passed in game}
+  \s\MYtrigger	{Open after 1 hour has passed in game}
   \s\MYtext	{A page just passed you a note from the palace spymaster. Apparently, one of your guests is leaking state secrets. You should take steps to find and stop them - preferably subtly, lest you scare them off.}
 }
